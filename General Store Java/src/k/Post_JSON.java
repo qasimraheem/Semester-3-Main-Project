@@ -12,7 +12,7 @@ public class Post_JSON {
         Post_JSON.Post_JSON();
     }
     public static void Post_JSON() {
-        String query_url = "https://gurujsonrpc.appspot.com/guru";
+        String query_url = "http://localhost:8080/";
         String json = "{ \"method\" : \"guru.test\", \"params\" : [ \"Guru\" ], \"id\" : 123 }";
         try {
 
@@ -28,16 +28,16 @@ public class Post_JSON {
             os.close();
             // read the response
             System.out.println("running");
-            InputStream in = new BufferedInputStream(conn.getInputStream());
+            InputStream inp = new BufferedInputStream(conn.getInputStream());
             System.out.println("running2");
-            String result = IOUtils.toString(in, "UTF-8");
+            String result = IOUtils.toString(inp, "UTF-8");
             System.out.println(result+"testing");
             System.out.println("result after Reading JSON Response");
             JSONObject myResponse = new JSONObject(result);
             System.out.println("jsonrpc- "+myResponse.getString("jsonrpc"));
             System.out.println("id- "+myResponse.getInt("id"));
             System.out.println("result- "+myResponse.getString("result"));
-            in.close();
+            inp.close();
             conn.disconnect();
         } catch (Exception e) {
             System.out.println(e);
