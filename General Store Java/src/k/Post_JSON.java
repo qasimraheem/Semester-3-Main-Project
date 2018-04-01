@@ -12,8 +12,8 @@ public class Post_JSON {
         Post_JSON.Post_JSON();
     }
     public static void Post_JSON() {
-        String query_url = "http://localhost:8080/";
-        String json = "{ \"method\" : \"guru.test\", \"params\" : [ \"Guru\" ], \"id\" : 123 }";
+        String query_url = "http://localhost:8080/qasim";
+        String json = "{\"Success\":true,\"Data\":{\"Id\":\"bitcoin\",\"Name\":\"Bitcoin\",\"Symbol\":\"btc\",\"Rank\":\"1\"}}";
         try {
 
             URL url = new URL(query_url);
@@ -27,13 +27,14 @@ public class Post_JSON {
             os.write(json.getBytes("UTF-8"));
             os.close();
             // read the response
-            System.out.println("running");
+
             InputStream inp = new BufferedInputStream(conn.getInputStream());
-            System.out.println("running2");
+
             String result = IOUtils.toString(inp, "UTF-8");
-            System.out.println(result+"testing");
+            System.out.println(result);
             System.out.println("result after Reading JSON Response");
             JSONObject myResponse = new JSONObject(result);
+            System.out.println(myResponse);
             System.out.println("jsonrpc- "+myResponse.getString("jsonrpc"));
             System.out.println("id- "+myResponse.getInt("id"));
             System.out.println("result- "+myResponse.getString("result"));

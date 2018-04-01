@@ -51,7 +51,7 @@ public class Send_HTTP_Request2 {
         Result result = gson.fromJson(response.toString(),Result.class);
         if (result != null){
             Data d = result.getData();
-            System.out.println(d.getId() + "-" + d.getName() + "-" + d.getRank() + "-" + d.getSymbol());
+            System.out.println(result.getSuccess()+"-"+d.getId() + "-" + d.getName() + "-" + d.getRank() + "-" + d.getSymbol());
             System.out.println("done");
         }
 
