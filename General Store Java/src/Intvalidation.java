@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.util.Scanner;
+import java.io.*;
 
 import static java.lang.System.in;
 
@@ -52,8 +53,8 @@ public class Intvalidation {
     public static void main(String [] args) throws IOException {
         Intvalidation i=new Intvalidation();
 
-        java.io.BufferedReader br = new BufferedReader(System.in);
-        String keyPressed = br.readLine();
+
+
         try {
             char a = (char) in.read();
             System.out.println("this is "+a);
