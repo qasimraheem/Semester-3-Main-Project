@@ -1,8 +1,12 @@
 package com.chillyfacts.com;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import com.google.gson.Gson;
 import org.json.JSONObject;
 
 
@@ -37,17 +41,34 @@ public class Send_HTTP_Request2 {
         }
         in.close();
         //print in String
-        System.out.println(response);
-        System.out.println(response.toString());
+        System.out.println("response="+response);
+        System.out.println("response.toString()="+response.toString());
         //Read JSON response and print
         //JSONObject myResponse = new JSONObject(response.toString());
-        JSONObject myResponse = new JSONObject(response.toString());
-        System.out.println("running");
-        System.out.println("result after Reading JSON Response");
-        System.out.println("Id- "+myResponse.getString("Id"));
-        System.out.println("Name- "+myResponse.getString("Name"));
-        System.out.println("Symbol- "+myResponse.getString("Symbol"));
-        System.out.println("Rank- "+myResponse.getString("Rank"));
+        JSONObject fir = new JSONObject(response.toString());
+        System.out.println(fir);
+        Gson gson = new Gson();
+        Result result = gson.fromJson(response.toString(),Result.class);
+        if (result != null){
+            Data d = result.getData();
+            System.out.println(d.getId() + "-" + d.getName() + "-" + d.getRank() + "-" + d.getSymbol());
+            System.out.println("done");
+        }
+
+
+
+
+
+
+//        JSONObject myResponse = new JSONObject(fir.toString());
+//        System.out.println(myResponse);
+//        System.out.println("running");
+//        System.out.println("result after Reading JSON Response");
+//        //System.out.println("Data- "+fir.getString("Data"));
+//        System.out.println("Id- "+fir.getString("Id"));
+//        System.out.println("Name- "+myResponse.getString("Name"));
+//        System.out.println("Symbol- "+myResponse.getString("Symbol"));
+//        System.out.println("Rank- "+myResponse.getString("Rank"));
 
     }
 
