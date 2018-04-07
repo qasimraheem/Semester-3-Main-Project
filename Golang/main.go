@@ -69,7 +69,7 @@ func getEmail(c echo.Context) error {
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-	fmt.Println("this is b=", b)
+	fmt.Println("this is b=", c)
 	os.Stdout.Write(b)
 
 	var jsonBlob = []byte(b)
