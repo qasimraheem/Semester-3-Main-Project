@@ -140,7 +140,7 @@ public class Validations {
 
     public static void main(String [] args) throws IOException {
        Validations v=new Validations();
-        System.out.println(v.getIntValid("hello my naei is qasim"));
+        System.out.println(v.getIntValid("20"));
         System.out.println(v.getFloatValid("qasim",35.35));
         System.out.println(v.getTextValid("qasim 123 !@# raheem",'@'));
         System.out.println(v.getEmailValid("qasim123!@#raheem"));

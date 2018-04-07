@@ -22,7 +22,7 @@ public class Send_HTTP_Request2 {
     }
 
     public static void call_me() throws Exception {
-        String url = "http://localhost:8080";
+        String url = "http://localhost:7070";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         // optional default is GET

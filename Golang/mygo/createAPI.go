@@ -1,18 +1,13 @@
 package main
 
 import (
-	//"net/http"
-	//"os"
-	//"log"
 	"fmt"
 	//"io/ioutil"
 	"log"
-
 	//"github.com/labstack/echo"
 	//"github.com/labstack/echo/middleware"
 	//"encoding/json"
 	//"encoding/json"
-	//"os"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"encoding/json"
@@ -21,6 +16,7 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"os"
+	//"io/ioutil"
 )
 
 type data struct {
@@ -42,6 +38,12 @@ func handle(c echo.Context) error {
 		panic(err)
 	}
 	defer session.Close()
+	//resp, err := http.Get("http://localhost:8080/")
+	//if err != nil {
+	//	// handle error
+	//	fmt.Println("error")
+	//}
+	//defer resp.Body.Close()
 
 	// Optional. Switch the session to a monotonic behavior.
 	//session.SetMode(mgo.Monotonic, true)
@@ -95,16 +97,15 @@ func handle(c echo.Context) error {
 //}
 
 type emailRes struct {
-	Success bool
 	Data    data
 }
 
 func getEmail(c echo.Context) error {
 
 	res := emailRes{
-		Success: true,
-	}
 
+	}
+	fmt.Println("this is C:",c)
 	b, err := json.Marshal(res)
 	if err != nil {
 		fmt.Println("error:", err)
@@ -131,7 +132,8 @@ func main() {
 	}))
 	//connectMongo()
 	e.GET("/", handle)
-	//e.POST("/qasim", getEmail)
+	e.POST("/qasim", getEmail)
+
 	e.Logger.Fatal(e.Start(":8080"))
 	fmt.Println("start...")
 }
