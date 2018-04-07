@@ -31,6 +31,7 @@ func handle(c echo.Context) error {
 	resp, err := http.Get("https://api.coinmarketcap.com/v1/ticker/ethereum/")
 	if err != nil {
 		// handle error
+		fmt.Println("error")
 	}
 	defer resp.Body.Close() // resp.Body.Close() this statement was next to defer,  defer is used to call any statement next to it, when a function is closed, okkor
 	// easy way to understand it is , if a for loop runs for 5 time, when lop is in tis 5th iterations and near to exit defer will execute state ment nect to it like in this case it was "resp.Body.Close()"
@@ -68,7 +69,7 @@ func getEmail(c echo.Context) error {
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-	fmt.Println("this is b=", b)
+	fmt.Println("this is b=", c)
 	os.Stdout.Write(b)
 
 	var jsonBlob = []byte(b)
@@ -90,6 +91,6 @@ func main() {
 	}))
 	e.GET("/", handle)
 	e.POST("/qasim", getEmail)
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":7070"))
 	fmt.Println("start...")
 }
