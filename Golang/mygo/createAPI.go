@@ -2,127 +2,125 @@ package main
 
 import (
 	"fmt"
-	//"io/ioutil"
 	"log"
-	//"github.com/labstack/echo"
-	//"github.com/labstack/echo/middleware"
-	//"encoding/json"
-	//"encoding/json"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"encoding/json"
-	//"net/http"
 	"net/http"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"os"
-	//"io/ioutil"
 )
 
-type data struct {
+//data to get from db ***********************************************************
+type getData struct {
 	Name string
 	Cms string
 	Gpa string
 	Age string
 }
-
 type res struct {
-	Data    []data
+	Data    []getData
 }
 
-//func connectMongo(){
-func handle(c echo.Context) error {
-	session, err := mgo.Dial("127.0.0.1:27017")
-	if err != nil {
-		fmt.Println("ERROR FOUND:")
-		panic(err)
+//data from post********************************************************************
+type postData struct {
+	Name string `json:"name"`
+	Cms string `json:"Cms"`
+	Gpa string `json:"Gpa"`
+	Age string `json:"Age"`
+
+}
+type Res struct {
+	Data []postData`json:"Data"`
+}
+
+//connection to mongo ***************************************************************
+const (
+	DBName="golang"
+	CName="users"
+
+)
+var session *mgo.Session
+var err error
+func connectMongo(url string) (*mgo.Session , error){
+
+	if(session == nil){
+		session, err = mgo.Dial(url)
+		// Optional. Switch the session to a monotonic behavior.
+		//session.SetMode(mgo.Monotonic, true)
+		if err != nil {
+			fmt.Println("ERROR FOUND:")
+			panic(err)
+		}
 	}
-	defer session.Close()
-	//resp, err := http.Get("http://localhost:8080/")
-	//if err != nil {
-	//	// handle error
-	//	fmt.Println("error")
-	//}
-	//defer resp.Body.Close()
+	return session,err
+}
 
-	// Optional. Switch the session to a monotonic behavior.
-	//session.SetMode(mgo.Monotonic, true)
+//GET *********************************************************************************
+func get(c echo.Context) error {
 
+	session ,err := connectMongo("127.0.0.1:27017")
 	db := session.DB("player").C("player")
-	full:=res{}
-	err = db.Find(bson.M{"cms": "13936"}).All(&full.Data)
-	//result := data{}
-	//err = db.Find(bson.M{"cms": "13936"}).One(&result)
+	//results:=res{}
+	//err = db.Find(bson.M{}).All(&results.Data)
+
+	//  |  for one result
+	//  V
+	result := getData{}
+	err = db.Find(bson.M{"cms": "13936"}).One(&result)
+
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(full)
-
-
-	buff, _ := json.Marshal(&full)
-
+	fmt.Println(result)
+	buff, _ := json.Marshal(&result)
 	fmt.Println(string(buff))
 
-	json.Unmarshal(buff, &full)
-	return c.JSON(http.StatusOK,&full)
-
+	json.Unmarshal(buff, &result)
+	return c.JSON(http.StatusOK,&result)
 
 }
 
-//func handle(c echo.Context) error {
-//
-//	resp, err := http.Get("https://api.coinmarketcap.com/v1/ticker/ethereum/")
-//	if err != nil {
-//		// handle error
-//	}
-//	defer resp.Body.Close() // resp.Body.Close() this statement was next to defer,  defer is used to call any statement next to it, when a function is closed, okkor
-//	// easy way to understand it is , if a for loop runs for 5 time, when lop is in tis 5th iterations and near to exit defer will execute state ment nect to it like in this case it was "resp.Body.Close()"
-//	body, err := ioutil.ReadAll(resp.Body)
-//	if err != nil {
-//		log.Fatal(err)
-//	}
-//	var jsonBlob = []byte(body)
-//	var d []data
-//	error := json.Unmarshal(jsonBlob, &d)
-//	if error != nil {
-//		fmt.Println("error:", error)
-//	}
-//	var r res
-//	r.Success = true
-//	r.Data = d[0]
-//
-//	fmt.Println(r)
-//
-//	return c.JSON(http.StatusOK, r)
-//}
+//POST *********************************************************************************
+func post(c echo.Context) (err error){
 
-type emailRes struct {
-	Data    data
-}
+	session, err := mgo.Dial("127.0.0.1:27017")
+	db := session.DB("player").C("player")
+	//name:=c.FormValue("Cms")
+	//fmt.Println(name)
+	//name =c.FormValue("name")
+	//fmt.Println(name)
 
-func getEmail(c echo.Context) error {
-
-	res := emailRes{
-
+	//u:=new (postData)
+	u := new(postData)
+	if err = c.Bind(&u);err != nil{
 	}
-	fmt.Println("this is C:",c)
+	res := postData{}
+
+	fmt.Println("this is C:",postData{})
+	//res=*u
+	res = *u
 	b, err := json.Marshal(res)
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-	fmt.Println("this is b=", b)
+	fmt.Println("this is res=", res,postData{})
 	os.Stdout.Write(b)
 
 	var jsonBlob = []byte(b)
-	var r emailRes
+	var r Res
 	error := json.Unmarshal(jsonBlob, &r)
 	if error != nil {
 		fmt.Println("error:", error)
 	}
-	fmt.Println(r)
-
+	fmt.Println(res)
+	db.Insert(res)
 	return c.JSON(http.StatusOK, &r)
+
+
 }
+
 
 func main() {
 	e := echo.New()
@@ -130,9 +128,9 @@ func main() {
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},
 	}))
-	//connectMongo()
-	e.GET("/", handle)
-	e.POST("/qasim", getEmail)
+
+	e.GET("/", get)
+	e.POST("/qasim", post)
 
 	e.Logger.Fatal(e.Start(":8080"))
 	fmt.Println("start...")
