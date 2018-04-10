@@ -9,54 +9,82 @@
             padding:0px;
             background-image: url("../images/homelogo.png");
             background-repeat: no-repeat;
-            background-size: 100% 720px;
+            width: 100%;
         }
         #header{
-            width:100%;height:80px;background:#333;
+            display: inline-flex;
+            width:100%;
+            height: 90px;
+            border-bottom: 1px solid #FFCC00;
+
         }
-        #navbar{
-            width:1000px;height: 80px;float:right;
+       .logo>figure>img{
+           width: 145px;
+           height: 66px;
+       }
+       .navbar{
+           margin-left: 200px;
+           margin-bottom: 10px;
+           margin-right: 300px;
+       }
+       .navbar>ul>li{
+           margin-right: 50px;
+           display:inline;
+           float: left;
+           list-style-type: none;
+           padding: 7px;
+       }
+       .button{
+           margin-top: 25px;
+           float: right;
+           background-color: #FFFFFF;
+           border-radius: 25px;
+           width: 145px;
+           height: 45px;
+           text-align: center;
+       }
+        a{
+            margin: 0 auto;
+            text-decoration:none ;
         }
-        #navbar>li{
-            width:200px;list-style: none;float:left;
+        p{
+            color: white;
         }
-        li>a{
-            display: block;color: white;line-height: 80px;text-align: center;font-family: cursive;font-size: 20px;
+
+        p:hover{
+            color: yellow;
         }
+     .footer{
+         height: 299px;
+         width: 720px;
+         padding-left: 500px;
+         padding-top: 200px;
+     }
+
     </style>
 </head>
 <body>
    <div id="header">
-       <ul id="navbar">
+       <div class="logo">
+           <figure>
+               <img src="../images/logo.png">
+           </figure>
+       </div>
+       <div class="navbar">
+              <ul>
+                  <li><a href=""> <p><b>HOME</b></p></a></li>
+                  <li><a href=""> <p><b>TEAM</b></p></a></li>
+                  <li><a href=""> <p><b>BUSINESS</b></p></a></li>
+              </ul>
+       </div>
+       <div class="button" >
 
-           <li href="#"  >Home</li>
-           <li href="#">Team</li>
-           <li href="#">Business</li>
-           <li Href="#" style="background-color: white">Login</li>
-       </ul>
+           <a href=""/><p style="color: black"><b>LOGIN</b></p></a>
+       </div>
    </div>
-=======
-<div class="container">
-    <div class="header">
-        <h1>MY WEB PAGE</h1>
-    </div>
-    <div class="inner">
-        <div class="aside">
-            <ul>
-                <li><a href=""><p>Home</p></a> </li>
-                <li><a href=""><p>Home</p></a> </li>
-                <li><a href=""><p>Home</p></a> </li>
-                <li><a href=""><p>Home</p></a> </li>
-            </ul>
-        </div>
-        <div class="right clear">
-            <h1>This ia a Heading</h1>
-            <p>If the purpose of this issue is a bug report, site support request or you are not completely sure provide the full verbose output as followsSome floating-point math library functions in the Visual C++ 2013 x64 C Runtime (CRT) do not correctly check whether certain AVX and FMA3 instructions are available before the functions try to use them. If the instructions are not available for use, calls to these functions cause an illegal instruction exception (0xc000001d). Affected functions include log, log10, and pow, and others</p>
-            <p>If the purpose of this issue is a bug report, site support request or you are not completely sure provide the full verbose output as followsSome floating-point math library functions in the Visual C++ 2013 x64 C Runtime (CRT) do not correctly check whether certain AVX and FMA3 instructions are available before the functions try to use them. If the instructions are not available for use, calls to these functions cause an illegal instruction exception (0xc000001d). Affected functions include log, log10, and pow, and others</p>
-        </div>
-    </div>
-    <div class="footer clear"  ><p>copyright.......</p></div>
-</div>
->>>>>>> c1857fd9c73135a3a4ad6bd1e9abfa610047640d
+   <div class="footer">
+       <img src="../images/logo.png" height="180" width="330"/>
+   </div>
+
 </body>
 </html>
