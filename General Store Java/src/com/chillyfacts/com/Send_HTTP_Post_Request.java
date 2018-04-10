@@ -1,5 +1,3 @@
-//
-//
 //package com.chillyfacts.com;
 //import java.io.BufferedReader;
 //import java.io.InputStreamReader;
@@ -19,14 +17,14 @@
 //        }
 //    }
 //    public static void call_me() throws Exception {
-//        URL url = new URL("http://httpbin.org/post");
-//        Map params = new LinkedHashMap<>();
+//        URL url = new URL("http://localhost:8080/post");
+//        Map <String,Object> params = new LinkedHashMap<>();
 //        params.put("name", "Jinu Jawad");
 //        params.put("email", "helloworld@gmail.com");
 //        params.put("CODE", 1111);
 //        params.put("message", "Hello Post Test success");
 //        StringBuilder postData = new StringBuilder();
-//        for (Map.Entry param : params.entrySet()) {
+//        for (Map.Entry <String,Object> param : params.entrySet()) {
 //            if (postData.length() != 0) postData.append('&');
 //            postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
 //            postData.append('=');

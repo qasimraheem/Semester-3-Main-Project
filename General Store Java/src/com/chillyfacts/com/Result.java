@@ -1,30 +1,20 @@
 package com.chillyfacts.com;
 
+import java.util.List;
+import com.google.gson.annotations.*;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 public class Result{
 
-    @SerializedName("Success")
-    @Expose
-    private Boolean success;
     @SerializedName("Data")
     @Expose
-    private Data data;
+    private List<Data> data = null;
 
-    public Boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
-    public Data getData() {
+    public List<Data> getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(List<Data> data) {
         this.data = data;
     }
 

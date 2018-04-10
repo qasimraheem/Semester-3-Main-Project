@@ -2,127 +2,286 @@ package main
 
 import (
 	"fmt"
-	//"io/ioutil"
 	"log"
-	//"github.com/labstack/echo"
-	//"github.com/labstack/echo/middleware"
-	//"encoding/json"
-	//"encoding/json"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"encoding/json"
-	//"net/http"
 	"net/http"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"os"
-	//"io/ioutil"
 )
 
-type data struct {
+//data to get from db ***********************************************************
+type getData struct {
+	ID      bson.ObjectId `json:"_id" bson:"_id,omitempty"`
 	Name string
-	Cms string
-	Gpa string
-	Age string
+	Quantity string
+	BuyPrice string
+	SellPrice string
 }
-
 type res struct {
-	Data    []data
+	Data    []getData
 }
 
-//func connectMongo(){
-func handle(c echo.Context) error {
-	session, err := mgo.Dial("127.0.0.1:27017")
-	if err != nil {
-		fmt.Println("ERROR FOUND:")
-		panic(err)
+//data from post********************************************************************
+type postData struct {
+	ID      bson.ObjectId `json:"_id" bson:"_id,omitempty"`
+	Name string `json:"name"`
+	Quantity string `json:"quantity"`
+	BuyPrice string `json:"buyprice"`
+	SellPrice string `json:"sellprice"`
+}
+type Res struct {
+	Data []postData`json:"Data"`
+}
+type updateData struct {
+	old postData
+	change postData
+}
+
+//connection to mongo ***************************************************************
+const (
+	DBName="golang"
+	CName="users"
+
+)
+var session *mgo.Session
+var err error
+func connectMongo(url string) (*mgo.Session , error){
+
+	if(session == nil){
+		session, err = mgo.Dial(url)
+		// Optional. Switch the session to a monotonic behavior.
+		//session.SetMode(mgo.Monotonic, true)
+		if err != nil {
+			fmt.Println("ERROR FOUND:")
+			panic(err)
+		}
 	}
-	defer session.Close()
-	//resp, err := http.Get("http://localhost:8080/")
-	//if err != nil {
-	//	// handle error
-	//	fmt.Println("error")
-	//}
-	//defer resp.Body.Close()
+	return session,err
+}
 
-	// Optional. Switch the session to a monotonic behavior.
-	//session.SetMode(mgo.Monotonic, true)
+//GET *********************************************************************************
+func getAll(c echo.Context) error {
 
-	db := session.DB("player").C("player")
-	full:=res{}
-	err = db.Find(bson.M{"cms": "13936"}).All(&full.Data)
-	//result := data{}
-	//err = db.Find(bson.M{"cms": "13936"}).One(&result)
+	session ,err := connectMongo("127.0.0.1:27017")
+	db := session.DB("product").C("product")
+	results:=res{}
+	err = db.Find(bson.M{}).All(&results.Data)
+
+	//  |  for one result
+	//  V
+	//result := getData{}
+	//err = db.Find(bson.M{"name": "two"}).One(&result)
+
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(full)
-
-
-	buff, _ := json.Marshal(&full)
-
+	fmt.Println(results)
+	buff, _ := json.Marshal(&results)
 	fmt.Println(string(buff))
 
-	json.Unmarshal(buff, &full)
-	return c.JSON(http.StatusOK,&full)
+	json.Unmarshal(buff, &results)
+	return c.JSON(http.StatusOK,&results)
 
+}
+func getOne(c echo.Context) error {
+
+	session ,err := connectMongo("127.0.0.1:27017")
+	db := session.DB("player").C("player")
+	//results:=res{}
+	//err = db.Find(bson.M{}).All(&results.Data)
+
+	//  |  for one result
+	//  V
+	result := getData{}
+	cms:=c.FormValue("cms")
+	fmt.Println(cms)
+	name :=c.FormValue("name")
+	fmt.Println(name)
+	err = db.Find(bson.M{"name": name}).One(&result)
+	if err != nil {
+		//log.Fatal(err)
+	}
+	fmt.Println(result)
+	buff, _ := json.Marshal(&result)
+	fmt.Println(string(buff))
+
+	json.Unmarshal(buff, &result)
+	return c.JSON(http.StatusOK,&result)
 
 }
 
-//func handle(c echo.Context) error {
-//
-//	resp, err := http.Get("https://api.coinmarketcap.com/v1/ticker/ethereum/")
-//	if err != nil {
-//		// handle error
-//	}
-//	defer resp.Body.Close() // resp.Body.Close() this statement was next to defer,  defer is used to call any statement next to it, when a function is closed, okkor
-//	// easy way to understand it is , if a for loop runs for 5 time, when lop is in tis 5th iterations and near to exit defer will execute state ment nect to it like in this case it was "resp.Body.Close()"
-//	body, err := ioutil.ReadAll(resp.Body)
-//	if err != nil {
-//		log.Fatal(err)
-//	}
-//	var jsonBlob = []byte(body)
-//	var d []data
-//	error := json.Unmarshal(jsonBlob, &d)
-//	if error != nil {
-//		fmt.Println("error:", error)
-//	}
-//	var r res
-//	r.Success = true
-//	r.Data = d[0]
-//
-//	fmt.Println(r)
-//
-//	return c.JSON(http.StatusOK, r)
-//}
+func search(c echo.Context) error {
 
-type emailRes struct {
-	Data    data
-}
+	session ,err := connectMongo("127.0.0.1:27017")
+	db := session.DB("product").C("product")
+	results:=res{}
+	//err = db.Find(bson.M{}).All(&results)
 
-func getEmail(c echo.Context) error {
+	//  |  for one result
+	//  V
+	//result := getData{}
+	name :=c.FormValue("name")
+	fmt.Println(name)
+	quantity:=c.FormValue("quantity")
+	fmt.Println(quantity)
+	buyprice :=c.FormValue("buyprice")
+	fmt.Println(buyprice)
+	sellprice :=c.FormValue("sellprice")
+	fmt.Println(sellprice)
 
-	res := emailRes{
+	//err = db.Find(bson.M{"$or":[]bson.M{bson.M{"cms":cms},bson.M{"name":name}}}).All(&results.Data)
+	if quantity == "" && buyprice== "" && sellprice== ""{
+		err = db.Find(bson.M{"name":name}).All(&results.Data)
+	}else if name=="" && buyprice=="" && sellprice==""{
+		err = db.Find(bson.M{"quantity":quantity}).All(&results.Data)
+	}else if name=="" && quantity=="" && sellprice==""{
+		err = db.Find(bson.M{"buyprice":buyprice}).All(&results.Data)
+	}else if name=="" && quantity=="" && buyprice==""{
+		err = db.Find(bson.M{"sellprice":sellprice}).All(&results.Data)
+	}else if buyprice=="" && sellprice==""{
+		err = db.Find(bson.M{"name":name,"quantity":quantity}).All(&results.Data)
+	}else if quantity=="" && sellprice==""{
+		err = db.Find(bson.M{"name":name,"buyprice":buyprice}).All(&results.Data)
+	}else if quantity=="" && buyprice==""{
+		err = db.Find(bson.M{"name":name,"sellprice":sellprice}).All(&results.Data)
+	}else if name=="" && sellprice==""{
+		err = db.Find(bson.M{"quantity":quantity,"buyprice":buyprice}).All(&results.Data)
+	}else if name=="" && buyprice==""{
+		err = db.Find(bson.M{"quantity":quantity,"sellprice":sellprice}).All(&results.Data)
+	}else if name=="" && quantity==""{
+		err = db.Find(bson.M{"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
+	}else if name==""{
+		err = db.Find(bson.M{"quantity":quantity,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
+	}else if quantity==""{
+		err = db.Find(bson.M{"name":name,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
+	}else if buyprice==""{
+		err = db.Find(bson.M{"name":name,"quantity":quantity,"sellprice":sellprice}).All(&results.Data)
+	}else if sellprice==""{
+		err = db.Find(bson.M{"name":name,"quantity":quantity,"buyprice":buyprice}).All(&results.Data)
+	}else if name!="" && quantity != "" && buyprice!= "" && sellprice!= ""{
+		err = db.Find(bson.M{"name":name,"quantity":quantity,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
+	}else{
 
 	}
-	fmt.Println("this is C:",c)
+
+	if err != nil {
+		//log.Fatal(err)
+	}
+	fmt.Println(results)
+	buff, _ := json.Marshal(&results)
+	fmt.Println(string(buff))
+
+	json.Unmarshal(buff, &results)
+	return c.JSON(http.StatusOK,&results)
+
+}
+//POST *********************************************************************************
+func postOne(c echo.Context)(err error){
+
+	session, err := mgo.Dial("127.0.0.1:27017")
+	db := session.DB("product").C("product")
+	//name:=c.FormValue("Cms")
+	//fmt.Println(name)
+	//name =c.FormValue("name")
+	//fmt.Println(name)
+	//u:=new (postData)
+	u := new(postData)
+	if err = c.Bind(&u);err != nil{
+	}
+	res := postData{}
+	//fmt.Println("this is C:",postData{})
+	res = *u
 	b, err := json.Marshal(res)
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-	fmt.Println("this is b=", b)
+	//fmt.Println("this is res=", res)
 	os.Stdout.Write(b)
 
 	var jsonBlob = []byte(b)
-	var r emailRes
+	var r Res
 	error := json.Unmarshal(jsonBlob, &r)
 	if error != nil {
 		fmt.Println("error:", error)
 	}
-	fmt.Println(r)
-
+	fmt.Println(res)
+	db.Insert(res)
 	return c.JSON(http.StatusOK, &r)
+
+
 }
+func put(c echo.Context)(err error){
+
+	session, err := mgo.Dial("127.0.0.1:27017")
+	db := session.DB("product").C("product")
+	//name:=c.FormValue("Cms")
+	//fmt.Println(name)
+	//name =c.FormValue("name")
+	//fmt.Println(name)
+	//u:=new (postData)
+	u := new(Res)
+	if err = c.Bind(&u);err != nil{
+	}
+	res := Res{}
+	//fmt.Println("this is C:",postData{})
+	res = *u
+	b, err := json.Marshal(res)
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+	//fmt.Println("this is res=", res)
+	os.Stdout.Write(b)
+
+	var jsonBlob = []byte(b)
+	var r Res
+	error := json.Unmarshal(jsonBlob, &r)
+	if error != nil {
+		fmt.Println("error:", error)
+	}
+	fmt.Println(res)
+	db.Update(res.Data[0],res.Data[1])
+	return c.JSON(http.StatusOK, &r)
+
+
+}
+func removeOne(c echo.Context)(err error){
+
+	session, err := mgo.Dial("127.0.0.1:27017")
+	db := session.DB("product").C("product")
+	//name:=c.FormValue("Cms")
+	//fmt.Println(name)
+	//name =c.FormValue("name")
+	//fmt.Println(name)
+	//u:=new (postData)
+	u := new(postData)
+	if err = c.Bind(&u);err != nil{
+	}
+	res := postData{}
+	//fmt.Println("this is C:",postData{})
+	res = *u
+	b, err := json.Marshal(res)
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+	//fmt.Println("this is res=", res)
+	os.Stdout.Write(b)
+
+	var jsonBlob = []byte(b)
+	var r Res
+	error := json.Unmarshal(jsonBlob, &r)
+	if error != nil {
+		fmt.Println("error:", error)
+	}
+	fmt.Println(res)
+	db.Remove(res)
+	return c.JSON(http.StatusOK, &r)
+
+
+}
+
 
 func main() {
 	e := echo.New()
@@ -130,10 +289,13 @@ func main() {
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},
 	}))
-	//connectMongo()
-	e.GET("/", handle)
-	e.POST("/qasim", getEmail)
 
+	e.GET("/", getAll)
+	e.GET("/get", getOne)
+	e.GET("/search", search)
+	e.POST("/post", postOne)
+	e.DELETE("/remove",removeOne)
+	e.PUT("/update",put)
 	e.Logger.Fatal(e.Start(":8080"))
 	fmt.Println("start...")
 }
