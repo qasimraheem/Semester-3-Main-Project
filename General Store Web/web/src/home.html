@@ -2,9 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+
+        }
+        .container{
+            padding: 10px;
+            background-color: lightgray;
+            border: 3px solid black;
+            width: 98%;
+            margin: 0 auto;
+        }
+        .header{
+            font-family: Arial;
+            padding: 20px;
+            background-color: #000000;
+            color: #00cc00;
+        }
+        .inner{
+            font-family: "Times New Roman";
+            display: inline-flex;
+
+        }
+        .clear{
+            clear: both;
+        }
+        .aside> ul{
+            width: 200px;
+            list-style-type: none;
+            background-color: #00cc00;
+            color: black;
+            padding: 5px;
+        }
+        a{
+            background-color: black;
+            text-decoration: none;
+            color: white;
+        }
+        a > p{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .right{
+            padding: 50px 20px 20px 20px;
+            background-color: white;
+            color: black;
+        }
+        .right > p{
+            margin-top: 20px;
+        }
+    </style>
     <title>Title</title>
 </head>
 <body>
-
+<div class="container">
+    <div class="header">
+        <h1>MY WEB PAGE</h1>
+    </div>
+    <div class="inner">
+        <div class="aside">
+            <ul>
+                <li><a href=""><p>Home</p></a> </li>
+                <li><a href=""><p>Home</p></a> </li>
+                <li><a href=""><p>Home</p></a> </li>
+                <li><a href=""><p>Home</p></a> </li>
+            </ul>
+        </div>
+        <div class="right clear">
+            <h1>This ia a Heading</h1>
+            <p>If the purpose of this issue is a bug report, site support request or you are not completely sure provide the full verbose output as followsSome floating-point math library functions in the Visual C++ 2013 x64 C Runtime (CRT) do not correctly check whether certain AVX and FMA3 instructions are available before the functions try to use them. If the instructions are not available for use, calls to these functions cause an illegal instruction exception (0xc000001d). Affected functions include log, log10, and pow, and others</p>
+            <p>If the purpose of this issue is a bug report, site support request or you are not completely sure provide the full verbose output as followsSome floating-point math library functions in the Visual C++ 2013 x64 C Runtime (CRT) do not correctly check whether certain AVX and FMA3 instructions are available before the functions try to use them. If the instructions are not available for use, calls to these functions cause an illegal instruction exception (0xc000001d). Affected functions include log, log10, and pow, and others</p>
+        </div>
+    </div>
+    <div class="footer clear"  ><p>copyright.......</p></div>
+</div>
 </body>
 </html>

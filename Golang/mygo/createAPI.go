@@ -16,9 +16,9 @@ import (
 type getData struct {
 	ID      bson.ObjectId `json:"_id" bson:"_id,omitempty"`
 	Name string
-	Cms string
-	Gpa string
-	Age string
+	Quantity string
+	BuyPrice string
+	SellPrice string
 }
 type res struct {
 	Data    []getData
@@ -28,10 +28,9 @@ type res struct {
 type postData struct {
 	ID      bson.ObjectId `json:"_id" bson:"_id,omitempty"`
 	Name string `json:"name"`
-	Cms string `json:"Cms"`
-	Gpa string `json:"Gpa"`
-	Age string `json:"Age"`
-
+	Quantity string `json:"quantity"`
+	BuyPrice string `json:"buyprice"`
+	SellPrice string `json:"sellprice"`
 }
 type Res struct {
 	Data []postData`json:"Data"`
@@ -67,7 +66,7 @@ func connectMongo(url string) (*mgo.Session , error){
 func getAll(c echo.Context) error {
 
 	session ,err := connectMongo("127.0.0.1:27017")
-	db := session.DB("player").C("player")
+	db := session.DB("product").C("product")
 	results:=res{}
 	err = db.Find(bson.M{}).All(&results.Data)
 
@@ -101,7 +100,7 @@ func getOne(c echo.Context) error {
 	fmt.Println(cms)
 	name :=c.FormValue("name")
 	fmt.Println(name)
-	err = db.Find(bson.M{"cms": cms}).One(&result)
+	err = db.Find(bson.M{"name": name}).One(&result)
 	if err != nil {
 		//log.Fatal(err)
 	}
@@ -117,7 +116,7 @@ func getOne(c echo.Context) error {
 func search(c echo.Context) error {
 
 	session ,err := connectMongo("127.0.0.1:27017")
-	db := session.DB("player").C("player")
+	db := session.DB("product").C("product")
 	results:=res{}
 	//err = db.Find(bson.M{}).All(&results)
 
@@ -126,22 +125,46 @@ func search(c echo.Context) error {
 	//result := getData{}
 	name :=c.FormValue("name")
 	fmt.Println(name)
-	cms:=c.FormValue("cms")
-	fmt.Println(cms)
-	gpa :=c.FormValue("gpa")
-	fmt.Println(gpa)
-	age :=c.FormValue("age")
-	fmt.Println(age)
+	quantity:=c.FormValue("quantity")
+	fmt.Println(quantity)
+	buyprice :=c.FormValue("buyprice")
+	fmt.Println(buyprice)
+	sellprice :=c.FormValue("sellprice")
+	fmt.Println(sellprice)
 
 	//err = db.Find(bson.M{"$or":[]bson.M{bson.M{"cms":cms},bson.M{"name":name}}}).All(&results.Data)
-	if cms == "" && gpa == "" && age == ""{
+	if quantity == "" && buyprice== "" && sellprice== ""{
 		err = db.Find(bson.M{"name":name}).All(&results.Data)
-	}else if name=="" && gpa=="" && age==""{
-		err = db.Find(bson.M{"cms":cms}).All(&results.Data)
-	}else if gpa=="" && age==""{
-		err = db.Find(bson.M{"name":name,"cms":cms}).All(&results.Data)
+	}else if name=="" && buyprice=="" && sellprice==""{
+		err = db.Find(bson.M{"quantity":quantity}).All(&results.Data)
+	}else if name=="" && quantity=="" && sellprice==""{
+		err = db.Find(bson.M{"buyprice":buyprice}).All(&results.Data)
+	}else if name=="" && quantity=="" && buyprice==""{
+		err = db.Find(bson.M{"sellprice":sellprice}).All(&results.Data)
+	}else if buyprice=="" && sellprice==""{
+		err = db.Find(bson.M{"name":name,"quantity":quantity}).All(&results.Data)
+	}else if quantity=="" && sellprice==""{
+		err = db.Find(bson.M{"name":name,"buyprice":buyprice}).All(&results.Data)
+	}else if quantity=="" && buyprice==""{
+		err = db.Find(bson.M{"name":name,"sellprice":sellprice}).All(&results.Data)
+	}else if name=="" && sellprice==""{
+		err = db.Find(bson.M{"quantity":quantity,"buyprice":buyprice}).All(&results.Data)
+	}else if name=="" && buyprice==""{
+		err = db.Find(bson.M{"quantity":quantity,"sellprice":sellprice}).All(&results.Data)
+	}else if name=="" && quantity==""{
+		err = db.Find(bson.M{"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
+	}else if name==""{
+		err = db.Find(bson.M{"quantity":quantity,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
+	}else if quantity==""{
+		err = db.Find(bson.M{"name":name,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
+	}else if buyprice==""{
+		err = db.Find(bson.M{"name":name,"quantity":quantity,"sellprice":sellprice}).All(&results.Data)
+	}else if sellprice==""{
+		err = db.Find(bson.M{"name":name,"quantity":quantity,"buyprice":buyprice}).All(&results.Data)
+	}else if name!="" && quantity != "" && buyprice!= "" && sellprice!= ""{
+		err = db.Find(bson.M{"name":name,"quantity":quantity,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
 	}else{
-		err = db.Find(bson.M{"cms":cms}).All(&results.Data)
+
 	}
 
 	if err != nil {
@@ -159,7 +182,7 @@ func search(c echo.Context) error {
 func postOne(c echo.Context)(err error){
 
 	session, err := mgo.Dial("127.0.0.1:27017")
-	db := session.DB("player").C("player")
+	db := session.DB("product").C("product")
 	//name:=c.FormValue("Cms")
 	//fmt.Println(name)
 	//name =c.FormValue("name")
@@ -193,7 +216,7 @@ func postOne(c echo.Context)(err error){
 func put(c echo.Context)(err error){
 
 	session, err := mgo.Dial("127.0.0.1:27017")
-	db := session.DB("player").C("player")
+	db := session.DB("product").C("product")
 	//name:=c.FormValue("Cms")
 	//fmt.Println(name)
 	//name =c.FormValue("name")
@@ -227,7 +250,7 @@ func put(c echo.Context)(err error){
 func removeOne(c echo.Context)(err error){
 
 	session, err := mgo.Dial("127.0.0.1:27017")
-	db := session.DB("player").C("player")
+	db := session.DB("product").C("product")
 	//name:=c.FormValue("Cms")
 	//fmt.Println(name)
 	//name =c.FormValue("name")

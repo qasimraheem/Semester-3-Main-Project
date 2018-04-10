@@ -6,49 +6,73 @@ import com.google.gson.annotations.SerializedName;
 
 public class Data{
 
-    @SerializedName("Id")
+    @SerializedName("_id")
     @Expose
     private String id;
     @SerializedName("Name")
     @Expose
     private String name;
-    @SerializedName("Symbol")
+    @SerializedName("Quantity")
     @Expose
-    private String symbol;
-    @SerializedName("Rank")
+    private String quantity;
+    @SerializedName("BuyPrice")
     @Expose
-    private String rank;
+    private String buyprice;
+    @SerializedName("SellPrice")
+    @Expose
+    private String sellprice;
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public String getBuyprice() {
+        return buyprice;
+    }
+
+    public String getSellprice() {
+        return sellprice;
+    }
+
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getSymbol() {
-        return symbol;
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
+    public void setBuyprice(String buyprice) {
+        buyprice = buyprice;
     }
 
-    public String getRank() {
-        return rank;
+    public void setSellprice(String sellprice) {
+        sellprice = sellprice;
     }
 
-    public void setRank(String rank) {
-        this.rank = rank;
-    }
+
+
+
+
+
+
+
+
+
+
 
 }
+

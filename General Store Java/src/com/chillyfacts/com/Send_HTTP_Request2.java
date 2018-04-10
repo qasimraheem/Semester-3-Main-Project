@@ -1,12 +1,12 @@
 package com.chillyfacts.com;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
+import java.util.ArrayList;
+import java.util.List;
 import com.google.gson.Gson;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -15,14 +15,14 @@ import org.json.JSONObject;
 public class Send_HTTP_Request2 {
     public static void main(String[] args) {
         try {
-            Send_HTTP_Request2.call_me();
+            Send_HTTP_Request2.get();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void call_me() throws Exception {
-        String url = "http://localhost:7070";
+    public static void get() throws Exception {
+        String url = "http://localhost:8080";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         // optional default is GET
@@ -43,15 +43,13 @@ public class Send_HTTP_Request2 {
         //print in String
         System.out.println("response="+response);
         System.out.println("response.toString()="+response.toString());
-        //Read JSON response and print
-        //JSONObject myResponse = new JSONObject(response.toString());
-        JSONObject fir = new JSONObject(response.toString());
-        System.out.println(fir);
         Gson gson = new Gson();
-        Result result = gson.fromJson(response.toString(),Result.class);
+        Result result = gson.fromJson(response.toString(), Result.class);
         if (result != null){
-            Data d = result.getData();
-            System.out.println(result.getSuccess()+"-"+d.getId() + "-" + d.getName() + "-" + d.getRank() + "-" + d.getSymbol());
+            JSONArray jsonArray =new JSONArray(result.getData()) ;
+            List<Data> d = new ArrayList<>();
+            d=result.getData();
+            System.out.println(d.get(0).getBuyprice());
             System.out.println("done");
         }
 
