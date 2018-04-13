@@ -1,4 +1,14 @@
 package GUI;
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
+import productAPI.Data;
+import productAPI.Get;
+import productClasses.*;
+
 
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
@@ -7,9 +17,8 @@ import javafx.scene.shape.SVGPath;
 import javafx.scene.layout.HBox;
 import javafx.fxml.LoadException;
 import java.net.URL;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,7 +26,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.*;
 
-public class Controller {
+import javax.xml.stream.Location;
+
+public class Controller implements Initializable{
 
 
     public HBox productButtoN;
@@ -73,34 +84,36 @@ public class Controller {
     private VBox vbox;
 
     @FXML
-    private TableView<?> productTable;
+    private TableView<productTable> pTableID;
 
     @FXML
-    private TableColumn<?, ?> productTableName;
+    private TableColumn<productTable, String> pTableName;
 
     @FXML
-    private TableColumn<?, ?> productTableQuantity;
+    private TableColumn<productTable, String> pTableQuantity;
 
     @FXML
-    private TableColumn<?, ?> productTableButPrice;
+    private TableColumn<productTable, String> pTableBuyPrice;
 
     @FXML
-    private TableColumn<?, ?> productTableSalePrice;
+    private TableColumn<productTable, String> pTableSalePrice;
 
-    @FXML
-    void handleButtonAction(){}
-    public void setDashboardButton(HBox dashboardButton) {
-        this.dashboardButton = dashboardButton;
-    }
 
-    public void setProductTableData(List<Date> d){
+    final ObservableList<productTable> data = FXCollections.observableArrayList(
+            new productTable("sd","df","b","bnnb")
+    );
 
-    }
+
 
     public void displayMenu(MouseEvent mouseEvent) {
-        if (mouseEvent.getSource()==dashboard||mouseEvent.getSource()==dashboardButton||mouseEvent.getSource()==dashboardText){
-            System.out.println("dash button");
-            vbox.setVisible(true);
-        }
+        
+    }
+
+    public void initialize(URL Location,ResourceBundle resourceBundle){
+        pTableName.setCellValueFactory(new PropertyValueFactory<productTable, String>("tName"));
+        pTableQuantity.setCellValueFactory(new PropertyValueFactory<productTable, String>("tQuantity"));
+        pTableBuyPrice.setCellValueFactory(new PropertyValueFactory<productTable, String>("tBuyPrice"));
+        pTableSalePrice.setCellValueFactory(new PropertyValueFactory<productTable, String>("tSalePrice"));
+        pTableID.setItems(data);
     }
 }

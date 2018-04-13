@@ -120,12 +120,12 @@
       </VBox>
       <VBox layoutX="332.0" layoutY="-3.0" prefHeight="735.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;">
          <children>
-            <TableView fx:id="productTable" prefHeight="591.0" prefWidth="663.0">
+            <TableView fx:id="pTable" prefHeight="591.0" prefWidth="663.0">
               <columns>
-                <TableColumn fx:id="productTableName" prefWidth="203.0" text="Name" />
-                <TableColumn fx:id="productTableQuantity" prefWidth="96.0" text="Quantity" />
-                  <TableColumn fx:id="productTableButPrice" minWidth="0.0" prefWidth="108.0" text="BuyPrice" />
-                  <TableColumn fx:id="productTableSalePrice" prefWidth="128.0" text="SalePrice" />
+                <TableColumn fx:id="pTableName" prefWidth="203.0" text="Name" />
+                <TableColumn fx:id="pTableQuantity" prefWidth="96.0" text="Quantity" />
+                  <TableColumn fx:id="pTableBuyPrice" minWidth="0.0" prefWidth="108.0" text="BuyPrice" />
+                  <TableColumn fx:id="pTableSalePrice" prefWidth="128.0" text="SalePrice" />
                   <TableColumn prefWidth="89.0" text="Buttons" />
               </columns>
             </TableView>

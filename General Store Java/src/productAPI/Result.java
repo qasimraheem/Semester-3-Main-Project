@@ -1,4 +1,4 @@
-package Product;
+package productAPI;
 
 import java.util.List;
 
