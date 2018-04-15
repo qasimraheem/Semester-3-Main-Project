@@ -106,7 +106,7 @@ public class Controller implements Initializable{
 
 
     public void displayMenu(MouseEvent mouseEvent) {
-        
+
     }
 
     public void initialize(URL Location,ResourceBundle resourceBundle){
