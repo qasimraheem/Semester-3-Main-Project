@@ -444,14 +444,14 @@ public class Controller implements Initializable{
     @FXML
     void SearchProduct(MouseEvent mouseEvent) {
         if (mouseEvent.getSource()== productButtonSearch){
-//            productSearchName.setText(pTableID.getSelectionModel().getSelectedItem().gettName());
-//            productSearchQuantity.setText(pTableID.getSelectionModel().getSelectedItem().gettQuantity());
-//            productSearchBuyPrice.setText(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
-//            productSearchSalePrice.setText(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
             vboxSearchProduct.setVisible(true);
-        }else if(mouseEvent.getSource()==productButtonSearchTick&&(productSearchName.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettName()))&&(productSearchQuantity.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettQuantity()))&&(productSearchBuyPrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettBuyPrice()))&&(productSearchSalePrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettSalePrice()))){
-            pTableID.getItems().removeAll(pTableID.getSelectionModel().getSelectedItem());
+        }else if(mouseEvent.getSource()==productButtonSearchTick){
+            vboxSearchProduct.setVisible(false);
         }else if(mouseEvent.getSource()==productButtonSearchCross){
+            productSearchName.setText("");
+            productSearchQuantity.setText("");
+            productSearchBuyPrice.setText("");
+            productSearchSalePrice.setText("");
             vboxSearchProduct.setVisible(false);
         }
     }

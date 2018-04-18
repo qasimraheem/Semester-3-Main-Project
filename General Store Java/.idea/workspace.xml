@@ -61,11 +61,11 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="437" column="33" selection-start-line="437" selection-start-column="33" selection-end-line="437" selection-end-column="33" />
+            <state relative-caret-position="-1326">
+              <caret line="228" column="24" lean-forward="true" selection-start-line="228" selection-start-column="24" selection-end-line="228" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1524074368811" expanded="true" signature="10037:10175" ph="..." />
+                <marker date="1524075681073" expanded="true" signature="10037:10175" ph="..." />
               </folding>
             </state>
           </provider>
@@ -377,12 +377,12 @@
       <workItem from="1523901985205" duration="4963000" />
       <workItem from="1524026846301" duration="8974000" />
       <workItem from="1524042972377" duration="10364000" />
-      <workItem from="1524057347843" duration="12752000" />
+      <workItem from="1524057347843" duration="14463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47090000" />
+    <option name="totallyTimeSpent" value="48801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -445,7 +445,7 @@
           <caret line="273" column="13" selection-start-line="273" selection-start-column="13" selection-end-line="273" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1524074368811" expanded="true" signature="10037:10175" ph="..." />
+            <marker date="1524075681073" expanded="true" signature="10037:10175" ph="..." />
           </folding>
         </state>
       </provider>
@@ -473,7 +473,7 @@
           <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1524074368811" expanded="true" signature="10037:10175" ph="..." />
+            <marker date="1524075681073" expanded="true" signature="10037:10175" ph="..." />
           </folding>
         </state>
       </provider>
@@ -515,7 +515,7 @@
           <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1524074368811" expanded="true" signature="10037:10175" ph="..." />
+            <marker date="1524075681073" expanded="true" signature="10037:10175" ph="..." />
           </folding>
         </state>
       </provider>
@@ -550,7 +550,7 @@
           <caret line="112" selection-start-line="112" selection-end-line="112" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1524074368811" expanded="true" signature="10037:10175" ph="..." />
+            <marker date="1524075681073" expanded="true" signature="10037:10175" ph="..." />
           </folding>
         </state>
       </provider>
@@ -677,11 +677,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="437" column="33" selection-start-line="437" selection-start-column="33" selection-end-line="437" selection-end-column="33" />
+        <state relative-caret-position="-1326">
+          <caret line="228" column="24" lean-forward="true" selection-start-line="228" selection-start-column="24" selection-end-line="228" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1524074368811" expanded="true" signature="10037:10175" ph="..." />
+            <marker date="1524075681073" expanded="true" signature="10037:10175" ph="..." />
           </folding>
         </state>
       </provider>

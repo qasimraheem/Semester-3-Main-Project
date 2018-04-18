@@ -273,7 +273,7 @@
             </ImageView>
          </children>
       </VBox>
-      <VBox fx:id="vboxSearchProduct" layoutX="953.0" onMouseClicked="#SearchProduct" prefHeight="728.0" prefWidth="418.0" style="-fx-background-color: #292929;">
+      <VBox fx:id="vboxSearchProduct" layoutX="953.0" onMouseClicked="#SearchProduct" prefHeight="728.0" prefWidth="418.0" style="-fx-background-color: #292929;" visible="false">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="441.0" style="-fx-background-color: #3C3F41;" text="Search Product" textFill="WHITE">
                <font>
