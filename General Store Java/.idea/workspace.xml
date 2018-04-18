@@ -74,8 +74,8 @@
         <entry file="file://$PROJECT_DIR$/src/GUI/sample.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="130" column="179" selection-start-line="130" selection-start-column="179" selection-end-line="130" selection-end-column="179" />
+            <state relative-caret-position="1037">
+              <caret line="130" column="97" selection-start-line="130" selection-start-column="97" selection-end-line="130" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -389,12 +389,12 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1523647808352" duration="8735000" />
       <workItem from="1523901985205" duration="4963000" />
-      <workItem from="1524026846301" duration="4869000" />
+      <workItem from="1524026846301" duration="6031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19869000" />
+    <option name="totallyTimeSpent" value="21031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
@@ -612,8 +612,8 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/sample.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="130" column="179" selection-start-line="130" selection-start-column="179" selection-end-line="130" selection-end-column="179" />
+        <state relative-caret-position="1037">
+          <caret line="130" column="97" selection-start-line="130" selection-start-column="97" selection-end-line="130" selection-end-column="97" />
         </state>
       </provider>
     </entry>
