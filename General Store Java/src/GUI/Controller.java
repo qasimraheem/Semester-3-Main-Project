@@ -8,6 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import productAPI.Data;
 import productAPI.Get;
 import productClasses.*;
+import productAPI.*;
 
 
 import javafx.fxml.FXML;
@@ -85,6 +86,7 @@ public class Controller implements Initializable{
 
     @FXML
     private TableView<productTable> pTableID;
+    ObservableList<productTable> data;
 
     @FXML
     private TableColumn<productTable, String> pTableName;
@@ -99,9 +101,7 @@ public class Controller implements Initializable{
     private TableColumn<productTable, String> pTableSalePrice;
 
 
-    final ObservableList<productTable> data = FXCollections.observableArrayList(
-            new productTable("sd","df","b","bnnb")
-    );
+
 
 
 
@@ -110,10 +110,55 @@ public class Controller implements Initializable{
     }
 
     public void initialize(URL Location,ResourceBundle resourceBundle){
-        pTableName.setCellValueFactory(new PropertyValueFactory<productTable, String>("tName"));
-        pTableQuantity.setCellValueFactory(new PropertyValueFactory<productTable, String>("tQuantity"));
-        pTableBuyPrice.setCellValueFactory(new PropertyValueFactory<productTable, String>("tBuyPrice"));
-        pTableSalePrice.setCellValueFactory(new PropertyValueFactory<productTable, String>("tSalePrice"));
+//        TableColumn namecol = new TableColumn("Name");
+//        TableColumn quantitycol = new TableColumn("Quantity");
+//        TableColumn buypricecol = new TableColumn("BuyPrice");
+//        TableColumn salepricecol = new TableColumn("SalePrice");
+
+//        pTableID.getColumns().addAll(namecol, quantitycol,buypricecol, salepricecol);
+//        pTableID.getColumns().addAll(pTableName,pTableQuantity,pTableQuantity,pTableSalePrice);
+        productAPI.Get gat=new Get();
+        List<Data> d = new ArrayList<>();
+        try {
+
+            d=Get.get();
+            System.out.println(d.size());
+            for(int i=0;i<d.size();i++)
+                System.out.println(d.get(i).getName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        data = FXCollections.observableArrayList();
+        for (int i=0;i<d.size();i++){
+            data.add(new productTable(d.get(i).getName(),d.get(i).getQuantity(),d.get(i).getBuyPrice(),d.get(i).getSellPrice()));
+        }
+
+//        data = FXCollections.observableArrayList(
+//                new productTable("Jacob", "Smith", "jacob.smith@example.com", ""),
+//                new productTable("Isabella", "Johnson", "isabella.johnson@example.com", ""),
+//                new productTable("Ethan", "Williams", "ethan.williams@example.com", ""),
+//                new productTable("Emma", "Jones", "emma.jones@example.com", ""),
+//                new productTable("Michael", "Brown", "michael.brown@example.com", ""),
+//                new productTable("Michael", "Brown", "michael.brown@example.com", ""),
+//                new productTable("Michael", "Brown", "michael.brown@example.com", ""),
+//                new productTable("Michael", "Brown", "michael.brown@example.com", "")
+//        );
+
+        pTableName.setCellValueFactory(
+                new PropertyValueFactory<productTable,String>("tName")
+        );
+        pTableQuantity.setCellValueFactory(
+                new PropertyValueFactory<productTable,String>("tQuantity")
+        );
+        pTableBuyPrice.setCellValueFactory(
+                new PropertyValueFactory<productTable,String>("tBuyPrice")
+        );
+
+        pTableSalePrice.setCellValueFactory(
+                new PropertyValueFactory<productTable,String>("tSalePrice")
+        );
+
         pTableID.setItems(data);
     }
+
 }

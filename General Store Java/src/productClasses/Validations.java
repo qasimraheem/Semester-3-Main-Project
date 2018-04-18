@@ -1,3 +1,5 @@
+package productClasses;
+
 import java.io.IOException;
 
 

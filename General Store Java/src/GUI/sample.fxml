@@ -120,15 +120,21 @@
       </VBox>
       <VBox layoutX="332.0" layoutY="-3.0" prefHeight="735.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;">
          <children>
-            <TableView fx:id="pTable" prefHeight="591.0" prefWidth="663.0">
+            <TableView fx:id="pTableID" prefHeight="591.0" prefWidth="663.0">
               <columns>
-                <TableColumn fx:id="pTableName" prefWidth="203.0" text="Name" />
-                <TableColumn fx:id="pTableQuantity" prefWidth="96.0" text="Quantity" />
-                  <TableColumn fx:id="pTableBuyPrice" minWidth="0.0" prefWidth="108.0" text="BuyPrice" />
-                  <TableColumn fx:id="pTableSalePrice" prefWidth="128.0" text="SalePrice" />
-                  <TableColumn prefWidth="89.0" text="Buttons" />
+                <TableColumn fx:id="pTableName" prefWidth="261.0" text="Name" />
+                <TableColumn fx:id="pTableQuantity" prefWidth="120.0" text="Quantity" />
+                  <TableColumn fx:id="pTableBuyPrice" minWidth="0.0" prefWidth="111.0" text="BuyPrice" />
+                  <TableColumn fx:id="pTableSalePrice" prefWidth="129.0" text="SalePrice" />
               </columns>
             </TableView>
+            <SVGPath content="M1,16 C1,17.1 1.9,18 3,18 L11,18 C12.1,18 13,17.1 13,16 L13,4 L1,4 L1,16 L1,16 Z M14,1 L10.5,1 L9.5,0 L4.5,0 L3.5,1 L0,1 L0,3 L14,3 L14,1 L14,1 Z" />
+            <SVGPath content="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3  c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2  c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2  c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" fill="#a83838" style="-fx-blend-mode: 0.1px; -fx-scale-y: 0.1px;">
+               <VBox.margin>
+                  <Insets bottom="-186.0" top="-193.0" />
+               </VBox.margin>
+            </SVGPath>
+            <SVGPath content="M6 34.5v7.5h7.5l22.13-22.13-7.5-7.5-22.13 22.13zm35.41-20.41c.78-.78.78-2.05 0-2.83l-4.67-4.67c-.78-.78-2.05-.78-2.83 0l-3.66 3.66 7.5 7.5 3.66-3.66z" />
          </children>
       </VBox>
       <VBox fx:id="vbox" layoutX="954.0" layoutY="-3.0" prefHeight="735.0" prefWidth="419.0" style="-fx-background-color: #2B2B2B;" visible="false">
