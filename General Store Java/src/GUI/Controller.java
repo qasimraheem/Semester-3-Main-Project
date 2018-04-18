@@ -1,11 +1,15 @@
 package GUI;
+import com.sun.javafx.tools.resource.ConsolidatedResources;
 import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
 import productAPI.Data;
 import productAPI.Get;
 import productClasses.*;
@@ -17,9 +21,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.*;
 import javafx.fxml.LoadException;
+
+import java.awt.*;
 import java.net.URL;
 import java.util.*;
+import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -248,12 +258,24 @@ public class Controller implements Initializable{
             productUpdateBuyPrice.setText(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
             productUpdateSalePrice.setText(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
             vboxUpdateProduct.setVisible(true);
+            productUpdateNewName.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
         }else if(mouseEvent.getSource()==productButtonUpdateTick&&(productUpdateName.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettName()))&&(productUpdateQuantity.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettQuantity()))&&(productUpdateBuyPrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettBuyPrice()))&&(productUpdateSalePrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettSalePrice()))){
+            if(productUpdateNewName.getText().equalsIgnoreCase("")){
+                productUpdateNewName.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(2))));
+            }
+            if(productUpdateNewQuantity.getText().equalsIgnoreCase("")){
+                productUpdateNewQuantity.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(2))));
+            }
+            if(productUpdateNewBuyPrice.getText().equalsIgnoreCase("")){
+                productUpdateNewBuyPrice.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(2))));
+            }
+            if(productUpdateNewSalePrice.getText().equalsIgnoreCase("")){
+                productUpdateNewSalePrice.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(2))));
+            }
             pTableID.getSelectionModel().getSelectedItem().settName(productUpdateNewName.getText());
             pTableID.getSelectionModel().getSelectedItem().settQuantity(productUpdateNewQuantity.getText());
             pTableID.getSelectionModel().getSelectedItem().settBuyPrice(productUpdateNewBuyPrice.getText());
             pTableID.getSelectionModel().getSelectedItem().settSalePrice(productUpdateNewSalePrice.getText());
-            pTableID.getItems().setAll(pTableID.getSelectionModel().getSelectedItem());
         }else if(mouseEvent.getSource()==productButtonUpdateCross){
             vboxUpdateProduct.setVisible(false);
         }
