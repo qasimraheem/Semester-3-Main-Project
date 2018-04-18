@@ -1,10 +1,16 @@
 package GUI;
 import com.sun.javafx.tools.resource.ConsolidatedResources;
 import javafx.beans.InvalidationListener;
-import javafx.collections.FXCollections;
+
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+
+
+import javafx.collections.transformation.FilteredList;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
@@ -27,9 +33,11 @@ import javafx.scene.*;
 import javafx.fxml.LoadException;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.*;
 import java.util.List;
+import java.util.function.Predicate;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -176,6 +184,27 @@ public class Controller implements Initializable{
     @FXML
     private ImageView productButtonUpdateCross;
 
+    @FXML
+    private VBox vboxSearchProduct;
+
+    @FXML
+    private TextField productSearchName;
+
+    @FXML
+    private TextField productSearchQuantity;
+
+    @FXML
+    private TextField productSearchBuyPrice;
+
+    @FXML
+    private TextField productSearchSalePrice;
+
+    @FXML
+    private ImageView productButtonSearchTick;
+
+    @FXML
+    private ImageView productButtonSearchCross;
+
 
     public void displayMenu(MouseEvent mouseEvent) {
 
@@ -183,6 +212,8 @@ public class Controller implements Initializable{
 
 
     Validations validate=new Validations();
+
+
     public void initialize(URL Location,ResourceBundle resourceBundle){
 //        TableColumn namecol = new TableColumn("Name");
 //        TableColumn quantitycol = new TableColumn("Quantity");
@@ -259,26 +290,171 @@ public class Controller implements Initializable{
             productUpdateSalePrice.setText(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
             vboxUpdateProduct.setVisible(true);
             productUpdateNewName.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
+            productUpdateNewQuantity.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
+            productUpdateNewBuyPrice.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
+            productUpdateNewSalePrice.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
+
+
+
+
         }else if(mouseEvent.getSource()==productButtonUpdateTick&&(productUpdateName.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettName()))&&(productUpdateQuantity.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettQuantity()))&&(productUpdateBuyPrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettBuyPrice()))&&(productUpdateSalePrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettSalePrice()))){
+
+
+            boolean lockUpdate1=false,lockUpdate2=false,lockUpdate3=false,lockUpdate4=false;
+
             if(productUpdateNewName.getText().equalsIgnoreCase("")){
                 productUpdateNewName.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(2))));
+                lockUpdate1=true;
+            }else {
+                productUpdateNewName.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
+
             }
-            if(productUpdateNewQuantity.getText().equalsIgnoreCase("")){
+            if(productUpdateNewQuantity.getText().equalsIgnoreCase("")||(validate.getDoubleValid(productUpdateNewQuantity.getText())==0)){
                 productUpdateNewQuantity.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(2))));
+                lockUpdate2=true;
+            }else{
+                productUpdateNewQuantity.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
             }
-            if(productUpdateNewBuyPrice.getText().equalsIgnoreCase("")){
+            if(productUpdateNewBuyPrice.getText().equalsIgnoreCase("")||(validate.getDoubleValid(productUpdateNewBuyPrice.getText())==0)){
                 productUpdateNewBuyPrice.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(2))));
+                lockUpdate3=true;
+            }else{
+                productUpdateNewBuyPrice.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
             }
-            if(productUpdateNewSalePrice.getText().equalsIgnoreCase("")){
+            if(productUpdateNewSalePrice.getText().equalsIgnoreCase("") ||(validate.getDoubleValid(productUpdateNewSalePrice.getText())==0)){
                 productUpdateNewSalePrice.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(2))));
+                lockUpdate4=true;
+            }else{
+                productUpdateNewSalePrice.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(0))));
             }
-            pTableID.getSelectionModel().getSelectedItem().settName(productUpdateNewName.getText());
-            pTableID.getSelectionModel().getSelectedItem().settQuantity(productUpdateNewQuantity.getText());
-            pTableID.getSelectionModel().getSelectedItem().settBuyPrice(productUpdateNewBuyPrice.getText());
-            pTableID.getSelectionModel().getSelectedItem().settSalePrice(productUpdateNewSalePrice.getText());
+
+            if((lockUpdate1==false)&&(lockUpdate2==false)&&(lockUpdate3==false)&&(lockUpdate4==false)){
+
+                pTableID.getSelectionModel().getSelectedItem().settName(productUpdateNewName.getText());
+                pTableID.getSelectionModel().getSelectedItem().settQuantity(productUpdateNewQuantity.getText());
+                pTableID.getSelectionModel().getSelectedItem().settBuyPrice(productUpdateNewBuyPrice.getText());
+                pTableID.getSelectionModel().getSelectedItem().settSalePrice(productUpdateNewSalePrice.getText());
+
+            }
+
+
         }else if(mouseEvent.getSource()==productButtonUpdateCross){
             vboxUpdateProduct.setVisible(false);
         }
     }
+
+    @FXML
+    private void initialize() {
+
+    }
+
+    @FXML
+    public void SearchProductList(javafx.scene.input.KeyEvent keyEvent) {
+
+        SortedList<productTable> sortedData,sortedQuantity,sortedBuyPrice,sortedSalePrice;
+        if(keyEvent.getSource()==productSearchName){
+
+            FilteredList<productTable> filteredName=new FilteredList<>(data, n -> true);
+            productSearchName.setOnKeyReleased(n ->{
+                productSearchName.textProperty().addListener(((observable, oldValue, newValue) -> {
+                    filteredName.setPredicate((Predicate<? super productTable>) data-> {
+                        if(newValue==null || newValue.isEmpty()){
+                            return true;
+                        }
+                        String lowerCaseFilter = newValue.toLowerCase();
+                        if(data.gettName().toLowerCase().contains(lowerCaseFilter)){
+                            return true;
+                        }
+                        return false;
+                    });
+                }));
+            });
+            sortedData = new SortedList<>(filteredName);
+            sortedData.comparatorProperty().bind(pTableID.comparatorProperty());
+            pTableID.setItems(sortedData);
+            data=sortedData;
+
+        }else if(keyEvent.getSource()==productSearchQuantity){
+
+            FilteredList<productTable> filteredQuantity=new FilteredList<>(data, q -> true);
+            productSearchQuantity.setOnKeyReleased(q -> {
+                productSearchQuantity.textProperty().addListener(((observable, oldValue, newValue) -> {
+                    filteredQuantity.setPredicate((Predicate<? super productTable>) data -> {
+                        if(newValue==null || newValue.isEmpty()){
+                            return true;
+                        }
+                        String lowerCaseFilter = newValue.toLowerCase();
+                        if (data.gettQuantity().toLowerCase().contains(lowerCaseFilter)) {
+                            return true;
+                        }
+                        return false;
+                    });
+                }));
+            });
+            sortedQuantity= new SortedList<>(filteredQuantity);
+            sortedQuantity.comparatorProperty().bind(pTableID.comparatorProperty());
+            pTableID.setItems(sortedQuantity);
+            data=sortedQuantity;
+        }else if(keyEvent.getSource()==productSearchBuyPrice){
+            FilteredList<productTable> filteredBuyPrice=new FilteredList<>(data, b -> true);
+            productSearchBuyPrice.setOnKeyReleased(b -> {
+                productSearchBuyPrice.textProperty().addListener(((observable, oldValue, newValue) -> {
+                    filteredBuyPrice.setPredicate((Predicate<? super productTable>) data -> {
+                        if(newValue==null || newValue.isEmpty()){
+                            return true;
+                        }
+                        String lowerCaseFilter = newValue.toLowerCase();
+                        if (data.gettBuyPrice().toLowerCase().contains(lowerCaseFilter)) {
+                            return true;
+                        }
+                        return false;
+                    });
+                }));
+            });
+            sortedBuyPrice = new SortedList<>(filteredBuyPrice);
+            sortedBuyPrice.comparatorProperty().bind(pTableID.comparatorProperty());
+            pTableID.setItems(sortedBuyPrice );
+            data=sortedBuyPrice;
+
+        }else if(keyEvent.getSource()==productSearchSalePrice){
+            FilteredList<productTable> filteredSalePrice=new FilteredList<>(data, s -> true);
+            productSearchSalePrice.setOnKeyReleased(s -> {
+                productSearchSalePrice.textProperty().addListener(((observable, oldValue, newValue) -> {
+                    filteredSalePrice.setPredicate((Predicate<? super productTable>) data -> {
+                        if(newValue==null || newValue.isEmpty()){
+                            return true;
+                        }
+                        String lowerCaseFilter = newValue.toLowerCase();
+                        if (data.gettSalePrice().toLowerCase().contains(lowerCaseFilter)) {
+                            return true;
+                        }
+                        return false;
+                    });
+                }));
+            });
+            sortedSalePrice = new SortedList<>(filteredSalePrice);
+            sortedSalePrice.comparatorProperty().bind(pTableID.comparatorProperty());
+            pTableID.setItems(sortedSalePrice);
+            data=sortedSalePrice;
+        }
+
+
+    }
+
+    @FXML
+    void SearchProduct(MouseEvent mouseEvent) {
+        if (mouseEvent.getSource()== productButtonSearch){
+//            productSearchName.setText(pTableID.getSelectionModel().getSelectedItem().gettName());
+//            productSearchQuantity.setText(pTableID.getSelectionModel().getSelectedItem().gettQuantity());
+//            productSearchBuyPrice.setText(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
+//            productSearchSalePrice.setText(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
+            vboxSearchProduct.setVisible(true);
+        }else if(mouseEvent.getSource()==productButtonSearchTick&&(productSearchName.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettName()))&&(productSearchQuantity.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettQuantity()))&&(productSearchBuyPrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettBuyPrice()))&&(productSearchSalePrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettSalePrice()))){
+            pTableID.getItems().removeAll(pTableID.getSelectionModel().getSelectedItem());
+        }else if(mouseEvent.getSource()==productButtonSearchCross){
+            vboxSearchProduct.setVisible(false);
+        }
+    }
+
 
 }

@@ -143,7 +143,7 @@
                   <Insets left="273.0" top="-83.0" />
                </VBox.margin>
             </ImageView>
-            <ImageView fx:id="productButtonSearch" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="productButtonSearch" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#SearchProduct" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
                   <Insets left="416.0" top="-77.0" />
                </VBox.margin>
@@ -267,6 +267,54 @@
                </image>
             </ImageView>
             <ImageView fx:id="productButtonUpdateCross" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#UpdateProduct" pickOnBounds="true" preserveRatio="true" translateX="246.0" translateY="-31.0">
+               <image>
+                  <Image url="@images/cross.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox fx:id="vboxSearchProduct" layoutX="953.0" onMouseClicked="#SearchProduct" prefHeight="728.0" prefWidth="418.0" style="-fx-background-color: #292929;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="441.0" style="-fx-background-color: #3C3F41;" text="Search Product" textFill="WHITE">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="76.0" text="Name" textFill="WHITE" translateX="40.0" translateY="45.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productSearchName" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="350.0" onKeyReleased="#SearchProductList" promptText="NONE" translateX="40.0" translateY="45.0" />
+            <Label prefHeight="30.0" prefWidth="76.0" text="Quantity" textFill="WHITE" translateX="40.0" translateY="45.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productSearchQuantity" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" translateX="40.0" translateY="45.0" />
+            <Label prefHeight="30.0" prefWidth="76.0" text="BuyPrice" textFill="WHITE" translateX="40.0" translateY="45.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productSearchBuyPrice" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" translateX="40.0" translateY="45.0" />
+            <Label prefHeight="30.0" prefWidth="76.0" text="SalePrice" textFill="WHITE" translateX="40.0" translateY="45.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productSearchSalePrice" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" translateX="40.0" translateY="45.0" />
+            <Label prefHeight="30.0" prefWidth="332.0" text="Do you want to keep Searched Data in table?" textFill="WHITE" translateX="40.0" translateY="131.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="productButtonSearchTick" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#SearchProduct" pickOnBounds="true" preserveRatio="true" translateX="91.0" translateY="170.0">
+               <image>
+                  <Image url="@images/tick.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="productButtonSearchCross" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#SearchProduct" pickOnBounds="true" preserveRatio="true" translateX="246.0" translateY="98.0">
                <image>
                   <Image url="@images/cross.png" />
                </image>
