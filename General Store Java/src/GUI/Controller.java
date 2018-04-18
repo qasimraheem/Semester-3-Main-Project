@@ -5,6 +5,7 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import productAPI.Data;
 import productAPI.Get;
 import productClasses.*;
@@ -25,6 +26,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+
 import javafx.scene.control.*;
 
 import javax.xml.stream.Location;
@@ -85,6 +87,19 @@ public class Controller implements Initializable{
     private VBox vbox;
 
     @FXML
+    private VBox vboxDeleteProduct;
+
+    @FXML
+    private ImageView productButtonDelete;
+
+    @FXML
+    private ImageView productButtonUpdate;
+
+    @FXML
+    private ImageView productButtonSearch;
+
+
+    @FXML
     private TableView<productTable> pTableID;
     ObservableList<productTable> data;
 
@@ -100,15 +115,64 @@ public class Controller implements Initializable{
     @FXML
     private TableColumn<productTable, String> pTableSalePrice;
 
+    @FXML
+    private TextField productDeleteName;
 
+    @FXML
+    private TextField productDeleteQuantity;
 
+    @FXML
+    private TextField productDeleteBuyPrice;
 
+    @FXML
+    private TextField productDeleteSalePrice;
+
+    @FXML
+    private ImageView productButtonDeleteTick;
+
+    @FXML
+    private ImageView productButtonDeleteCross;
+
+    @FXML
+    private VBox vboxUpdateProduct;
+
+    @FXML
+    private TextField productUpdateName;
+
+    @FXML
+    private TextField productUpdateQuantity;
+
+    @FXML
+    private TextField productUpdateBuyPrice;
+
+    @FXML
+    private TextField productUpdateSalePrice;
+
+    @FXML
+    private TextField productUpdateNewName;
+
+    @FXML
+    private TextField productUpdateNewQuantity;
+
+    @FXML
+    private TextField productUpdateNewBuyPrice;
+
+    @FXML
+    private TextField productUpdateNewSalePrice;
+
+    @FXML
+    private ImageView productButtonUpdateTick;
+
+    @FXML
+    private ImageView productButtonUpdateCross;
 
 
     public void displayMenu(MouseEvent mouseEvent) {
 
     }
 
+
+    Validations validate=new Validations();
     public void initialize(URL Location,ResourceBundle resourceBundle){
 //        TableColumn namecol = new TableColumn("Name");
 //        TableColumn quantitycol = new TableColumn("Quantity");
@@ -159,6 +223,40 @@ public class Controller implements Initializable{
         );
 
         pTableID.setItems(data);
+    }
+
+    public void DeleteProduct(MouseEvent mouseEvent) {
+
+        if (mouseEvent.getSource()== productButtonDelete && (pTableID.getSelectionModel().getSelectedItem()!=null)){
+            productDeleteName.setText(pTableID.getSelectionModel().getSelectedItem().gettName());
+            productDeleteQuantity.setText(pTableID.getSelectionModel().getSelectedItem().gettQuantity());
+            productDeleteBuyPrice.setText(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
+            productDeleteSalePrice.setText(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
+            vboxDeleteProduct.setVisible(true);
+        }else if(mouseEvent.getSource()==productButtonDeleteTick&&(productDeleteName.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettName()))&&(productDeleteQuantity.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettQuantity()))&&(productDeleteBuyPrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettBuyPrice()))&&(productDeleteSalePrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettSalePrice()))){
+            pTableID.getItems().removeAll(pTableID.getSelectionModel().getSelectedItem());
+        }else if(mouseEvent.getSource()==productButtonDeleteCross){
+            vboxDeleteProduct.setVisible(false);
+        }
+
+    }
+
+    public void UpdateProduct(MouseEvent mouseEvent) {
+        if (mouseEvent.getSource()== productButtonUpdate && (pTableID.getSelectionModel().getSelectedItem()!=null)){
+            productUpdateName.setText(pTableID.getSelectionModel().getSelectedItem().gettName());
+            productUpdateQuantity.setText(pTableID.getSelectionModel().getSelectedItem().gettQuantity());
+            productUpdateBuyPrice.setText(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
+            productUpdateSalePrice.setText(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
+            vboxUpdateProduct.setVisible(true);
+        }else if(mouseEvent.getSource()==productButtonUpdateTick&&(productUpdateName.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettName()))&&(productUpdateQuantity.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettQuantity()))&&(productUpdateBuyPrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettBuyPrice()))&&(productUpdateSalePrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettSalePrice()))){
+            pTableID.getSelectionModel().getSelectedItem().settName(productUpdateNewName.getText());
+            pTableID.getSelectionModel().getSelectedItem().settQuantity(productUpdateNewQuantity.getText());
+            pTableID.getSelectionModel().getSelectedItem().settBuyPrice(productUpdateNewBuyPrice.getText());
+            pTableID.getSelectionModel().getSelectedItem().settSalePrice(productUpdateNewSalePrice.getText());
+            pTableID.getItems().setAll(pTableID.getSelectionModel().getSelectedItem());
+        }else if(mouseEvent.getSource()==productButtonUpdateCross){
+            vboxUpdateProduct.setVisible(false);
+        }
     }
 
 }
