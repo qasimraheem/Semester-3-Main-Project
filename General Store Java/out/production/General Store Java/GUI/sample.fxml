@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -123,16 +122,14 @@
          <children>
             <TableView fx:id="pTableID" prefHeight="591.0" prefWidth="663.0">
               <columns>
-                <TableColumn fx:id="pTableName" prefWidth="203.0" text="Name" />
-                <TableColumn fx:id="pTableQuantity" prefWidth="96.0" text="Quantity" />
-                  <TableColumn fx:id="pTableBuyPrice" minWidth="0.0" prefWidth="108.0" text="BuyPrice" />
-                  <TableColumn fx:id="pTableSalePrice" prefWidth="58.0" text="SalePrice" />
-                  <TableColumn prefWidth="159.0" text="Buttons">
-                     <graphic>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="update" />
-                     </graphic></TableColumn>
+                <TableColumn fx:id="pTableName" prefWidth="261.0" text="Name" />
+                <TableColumn fx:id="pTableQuantity" prefWidth="120.0" text="Quantity" />
+                  <TableColumn fx:id="pTableBuyPrice" minWidth="0.0" prefWidth="111.0" text="BuyPrice" />
+                  <TableColumn fx:id="pTableSalePrice" prefWidth="129.0" text="SalePrice" />
               </columns>
             </TableView>
+            <SVGPath content="M1,16 C1,17.1 1.9,18 3,18 L11,18 C12.1,18 13,17.1 13,16 L13,4 L1,4 L1,16 L1,16 Z M14,1 L10.5,1 L9.5,0 L4.5,0 L3.5,1 L0,1 L0,3 L14,3 L14,1 L14,1 Z" />
+            <SVGPath content="M6 34.5v7.5h7.5l22.13-22.13-7.5-7.5-22.13 22.13zm35.41-20.41c.78-.78.78-2.05 0-2.83l-4.67-4.67c-.78-.78-2.05-.78-2.83 0l-3.66 3.66 7.5 7.5 3.66-3.66z" />
          </children>
       </VBox>
       <VBox fx:id="vbox" layoutX="954.0" layoutY="-3.0" prefHeight="735.0" prefWidth="419.0" style="-fx-background-color: #2B2B2B;" visible="false">

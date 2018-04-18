@@ -74,8 +74,8 @@
         <entry file="file://$PROJECT_DIR$/src/GUI/sample.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="138" column="19" lean-forward="true" selection-start-line="138" selection-start-column="19" selection-end-line="138" selection-end-column="19" />
+            <state relative-caret-position="161">
+              <caret line="130" column="179" selection-start-line="130" selection-start-column="179" selection-end-line="130" selection-end-column="179" />
             </state>
           </provider>
         </entry>
@@ -150,10 +150,10 @@
         <option value="$PROJECT_DIR$/src/productAPI/Post.java" />
         <option value="$PROJECT_DIR$/src/productAPI/Put.java" />
         <option value="$PROJECT_DIR$/src/productAPI/Search.java" />
-        <option value="$PROJECT_DIR$/src/GUI/sample.fxml" />
         <option value="$PROJECT_DIR$/src/productClasses/Validations.java" />
         <option value="$PROJECT_DIR$/src/productAPI/Get.java" />
         <option value="$PROJECT_DIR$/src/GUI/Controller.java" />
+        <option value="$PROJECT_DIR$/src/GUI/sample.fxml" />
       </list>
     </option>
   </component>
@@ -165,10 +165,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2408" />
-    <option name="y" value="-14" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="3866" />
+    <option name="height" value="2106" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
@@ -389,15 +389,15 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1523647808352" duration="8735000" />
       <workItem from="1523901985205" duration="4963000" />
-      <workItem from="1524026846301" duration="4769000" />
+      <workItem from="1524026846301" duration="4869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19769000" />
+    <option name="totallyTimeSpent" value="19869000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1360" y="-6" width="1933" height="1053" extended-state="6" />
+    <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -612,8 +612,8 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/sample.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="138" column="19" lean-forward="true" selection-start-line="138" selection-start-column="19" selection-end-line="138" selection-end-column="19" />
+        <state relative-caret-position="161">
+          <caret line="130" column="179" selection-start-line="130" selection-start-column="179" selection-end-line="130" selection-end-column="179" />
         </state>
       </provider>
     </entry>
