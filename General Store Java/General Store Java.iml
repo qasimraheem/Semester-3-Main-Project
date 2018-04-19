@@ -7,8 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="org.apache.commons.io" level="project" />
+    <orderEntry type="library" name="fontawesomefx-8.0.1-sources" level="project" />
     <orderEntry type="library" name="java-json" level="project" />
+    <orderEntry type="library" name="org.apache.commons.io" level="project" />
     <orderEntry type="library" name="gson-2.8.2" level="project" />
   </component>
 </module>

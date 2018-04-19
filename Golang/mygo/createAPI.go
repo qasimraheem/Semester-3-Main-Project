@@ -133,35 +133,35 @@ func search(c echo.Context) error {
 	fmt.Println(sellprice)
 
 	//err = db.Find(bson.M{"$or":[]bson.M{bson.M{"cms":cms},bson.M{"name":name}}}).All(&results.Data)
-	if quantity == "" && buyprice== "" && sellprice== ""{
+	if (quantity == "" && buyprice== "" && sellprice== "")||(quantity == "null" && buyprice== "null" && sellprice== "null"){
 		err = db.Find(bson.M{"name":name}).All(&results.Data)
-	}else if name=="" && buyprice=="" && sellprice==""{
+	}else if (name=="" && buyprice=="" && sellprice=="")||(name=="null" && buyprice=="null" && sellprice=="null"){
 		err = db.Find(bson.M{"quantity":quantity}).All(&results.Data)
-	}else if name=="" && quantity=="" && sellprice==""{
+	}else if (name=="" && quantity=="" && sellprice=="")||(name=="null" && quantity=="null" && sellprice=="null"){
 		err = db.Find(bson.M{"buyprice":buyprice}).All(&results.Data)
-	}else if name=="" && quantity=="" && buyprice==""{
+	}else if (name=="" && quantity=="" && buyprice=="")||(name=="null" && quantity=="null" && buyprice=="null"){
 		err = db.Find(bson.M{"sellprice":sellprice}).All(&results.Data)
-	}else if buyprice=="" && sellprice==""{
+	}else if (buyprice=="" && sellprice=="")||(buyprice=="null" && sellprice=="null"){
 		err = db.Find(bson.M{"name":name,"quantity":quantity}).All(&results.Data)
-	}else if quantity=="" && sellprice==""{
+	}else if (quantity=="" && sellprice=="")||(quantity=="null" && sellprice=="null"){
 		err = db.Find(bson.M{"name":name,"buyprice":buyprice}).All(&results.Data)
-	}else if quantity=="" && buyprice==""{
+	}else if (quantity=="" && buyprice=="")||(quantity=="null" && buyprice=="null"){
 		err = db.Find(bson.M{"name":name,"sellprice":sellprice}).All(&results.Data)
-	}else if name=="" && sellprice==""{
+	}else if (name=="" && sellprice=="")||(name=="null" && sellprice=="null"){
 		err = db.Find(bson.M{"quantity":quantity,"buyprice":buyprice}).All(&results.Data)
-	}else if name=="" && buyprice==""{
+	}else if (name=="" && buyprice=="")||(name=="null" && buyprice=="null"){
 		err = db.Find(bson.M{"quantity":quantity,"sellprice":sellprice}).All(&results.Data)
-	}else if name=="" && quantity==""{
+	}else if (name=="" && quantity=="")||(name=="null" && quantity=="null"){
 		err = db.Find(bson.M{"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
-	}else if name==""{
+	}else if (name=="")||(name=="null"){
 		err = db.Find(bson.M{"quantity":quantity,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
-	}else if quantity==""{
+	}else if (quantity=="")||(quantity=="null"){
 		err = db.Find(bson.M{"name":name,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
-	}else if buyprice==""{
+	}else if (buyprice=="")||(buyprice=="null"){
 		err = db.Find(bson.M{"name":name,"quantity":quantity,"sellprice":sellprice}).All(&results.Data)
-	}else if sellprice==""{
+	}else if (sellprice=="")||(sellprice=="null"){
 		err = db.Find(bson.M{"name":name,"quantity":quantity,"buyprice":buyprice}).All(&results.Data)
-	}else if name!="" && quantity != "" && buyprice!= "" && sellprice!= ""{
+	}else if (name!="" && quantity != "" && buyprice!= "" && sellprice!= "")||(name!="null" && quantity != "null" && buyprice!= "null" && sellprice!= "null"){
 		err = db.Find(bson.M{"name":name,"quantity":quantity,"buyprice":buyprice,"sellprice":sellprice}).All(&results.Data)
 	}else{
 
@@ -242,7 +242,12 @@ func put(c echo.Context)(err error){
 		fmt.Println("error:", error)
 	}
 	fmt.Println(res)
-	db.Update(res.Data[0],res.Data[1])
+	result := getData{}
+	//var get_data getData
+
+	//(db.Find(res.Data[0]).One(&get_data)
+	err = db.Find(bson.M{"name": res.Data[0].Name,"quantity":res.Data[0].Quantity,"sellprice":res.Data[0].SellPrice,"buyprice":res.Data[0].BuyPrice}).One(&result)
+	db.Update(result,res.Data[1])
 	return c.JSON(http.StatusOK, &r)
 
 
@@ -291,7 +296,7 @@ func main() {
 	}))
 
 	e.GET("/", getAll)
-	e.GET("/get", getOne)
+	//e.GET("/get", getOne)
 	e.GET("/search", search)
 	e.POST("/post", postOne)
 	e.DELETE("/remove",removeOne)
