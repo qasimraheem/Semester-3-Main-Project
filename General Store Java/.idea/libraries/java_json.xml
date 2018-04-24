@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="java-json">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/Compressed/java-json/java-json/java-json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/x_lib/java-json/java-json/java-json.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/Downloads/Compressed/java-json/java-json/java-json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/x_lib/java-json/java-json/java-json.jar!/" />
     </SOURCES>
   </library>
 </component>
