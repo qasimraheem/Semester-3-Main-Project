@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1048.0" style="-fx-background-color: #5F5F5F;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1372.0" style="-fx-background-color: #5F5F5F;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
    <children>
       <VBox prefHeight="728.0" prefWidth="311.0" style="-fx-background-color: #3C3F41;">
          <children>
@@ -119,7 +119,7 @@
             </HBox>
          </children>
       </VBox>
-      <VBox disable="true" layoutX="332.0" layoutY="-3.0" prefHeight="728.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;" visible="false">
+      <VBox layoutX="332.0" layoutY="-3.0" prefHeight="728.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;">
          <children>
             <TableView fx:id="pTableID" prefHeight="591.0" prefWidth="663.0">
               <columns>
@@ -155,7 +155,7 @@
             </ImageView>
          </children>
       </VBox>
-      <VBox fx:id="vboxDeleteProduct" layoutX="953.0" prefHeight="728.0" prefWidth="419.0" style="-fx-background-color: #292929;" visible="false">
+      <VBox fx:id="vboxDeleteProduct" layoutX="953.0" prefHeight="728.0" prefWidth="419.0" style="-fx-background-color: #292929;">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="441.0" style="-fx-background-color: #3C3F41;" text="Delete Selected Product" textFill="WHITE">
                <font>
@@ -323,6 +323,5 @@
             </ImageView>
          </children>
       </VBox>
-      <VBox layoutX="332.0" layoutY="-4.0" prefHeight="735.0" prefWidth="567.0" />
    </children>
 </AnchorPane>
