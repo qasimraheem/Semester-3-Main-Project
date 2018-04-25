@@ -1,9 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b91d5828-272b-4e9c-b1cd-2477a9b18f11" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Golang/main.go" afterPath="$PROJECT_DIR$/Golang/main.go" />
+    <list default="true" id="9d35ccb2-2fbb-40d6-8ec5-114bf8192576" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store Java/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/GUI/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/GUI/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/GUI/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/GUI/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/Validations.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/com/chillyfacts/com/Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/com/chillyfacts/com/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/com/chillyfacts/com/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/com/chillyfacts/com/Send_HTTP_Request2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/k/Post_JSON.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/LoginForm$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/LoginForm$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/LoginForm$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/LoginForm$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/LoginForm$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/LoginForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/out/production/General Store Java/login_register/RegisterForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/GUI/.idea/GUI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/GUI/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/GUI/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/GUI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store Java/src/GUI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/GUI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store Java/src/GUI/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/GUI/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store Java/src/GUI/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/Validations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/com/chillyfacts/com/Data.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/com/chillyfacts/com/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/com/chillyfacts/com/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/com/chillyfacts/com/Send_HTTP_Post_Request.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/com/chillyfacts/com/Send_HTTP_Request2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/k/Post_JSON.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/login_register/LoginForm.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/login_register/LoginForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/login_register/RegisterForm.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/src/login_register/RegisterForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/gson-2.8.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/CDL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/CDL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/Cookie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/Cookie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/CookieList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/CookieList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/HTTP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/HTTP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/HTTPTokener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/HTTPTokener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONML.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONML.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONObject$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONObject$Null.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONStringer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONStringer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONTokener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONTokener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/JSONWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/XML.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/XML.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/XMLTokener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/java-json/java-json/java-json/org/json/XMLTokener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/META-INF/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/META-INF/NOTICE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/CopyUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/DirectoryWalker$CancelException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/DirectoryWalker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/EndianUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/FileCleaner$Reaper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/FileCleaner$Tracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/FileCleaner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/FileDeleteStrategy$ForceFileDeleteStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/FileDeleteStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/FileSystemUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/FilenameUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/HexDump.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/IOCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/IOUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/LineIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/AbstractFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/AgeFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/AndFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/CanReadFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/CanWriteFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/ConditionalFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/DelegateFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/DirectoryFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/EmptyFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/FalseFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/FileFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/FileFilterUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/HiddenFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/IOFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/NameFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/NotFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/OrFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/PrefixFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/SizeFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/SuffixFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/TrueFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/WildcardFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/filefilter/WildcardFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/input/ClassLoaderObjectInputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/input/CountingInputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/input/DemuxInputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/input/NullInputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/input/NullReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/input/ProxyInputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/input/ProxyReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/input/SwappedDataInputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/ByteArrayOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/CountingOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/DeferredFileOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/DemuxOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/LockableFileWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/NullOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/NullWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/ProxyOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/ProxyWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/TeeOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store Java/x_lib/org.apache.commons.io_/org.apache.commons.io/org/apache/commons/io/output/ThresholdingOutputStream.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,54 +155,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="createAPI.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Golang/mygo/createAPI.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="109" column="19" lean-forward="true" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-              <folding>
-                <element signature="e#14#336#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Golang/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-              <folding>
-                <element signature="e#14#190#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>getEmail</find>
-    </findStrings>
-  </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go/1.9.2/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Golang/main.go" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -67,28 +164,22 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="y" value="23" />
-    <option name="width" value="1438" />
-    <option name="height" value="946" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -99,26 +190,33 @@
             <path>
               <item name="Semester-3-Main-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Semester-3-Main-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Golang" type="462c0819:PsiDirectoryNode" />
+              <item name="General Store Java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Semester-3-Main-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Semester-3-Main-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Golang" type="462c0819:PsiDirectoryNode" />
-              <item name="mygo" type="462c0819:PsiDirectoryNode" />
+              <item name="General Store Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Semester-3-Main-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Semester-3-Main-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="General Store Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="go.sdk.automatically.set" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -133,32 +231,10 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -167,27 +243,14 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -198,77 +261,65 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-      <method />
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b91d5828-272b-4e9c-b1cd-2477a9b18f11" name="Default" comment="" />
-      <created>1522865204804</created>
+      <changelist id="9d35ccb2-2fbb-40d6-8ec5-114bf8192576" name="Default" comment="" />
+      <created>1524632721116</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1522865204804</updated>
-      <workItem from="1522865206695" duration="38000" />
+      <updated>1524632721116</updated>
+      <workItem from="1524632726245" duration="462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38000" />
+    <option name="totallyTimeSpent" value="462000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1438" height="946" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24283667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22326675" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25036603" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,31 +327,5 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Golang/mygo/createAPI.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="109" column="19" lean-forward="true" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-          <folding>
-            <element signature="e#14#336#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Golang/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-          <folding>
-            <element signature="e#14#190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
