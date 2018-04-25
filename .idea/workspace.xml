@@ -1,142 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d35ccb2-2fbb-40d6-8ec5-114bf8192576" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Point of Sale.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store Web/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/dont touch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/img/cec_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/CTMLoader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/CTMWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/aframe-extras.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/aframe-teleport-controls.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/aframe.0.4.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/aframe.0.5.0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/aframe.0.5.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/aframe.0.7.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/anim_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/anim_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/ctm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/ctm_component.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/envMapMaterial.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/lzma.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mobile_component.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_1_HEAD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_1_LEFT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_1_RIGHT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_2_HEAD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_2_LEFT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_2_RIGHT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_3_HEAD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_3_LEFT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_3_RIGHT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_4_HEAD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_4_LEFT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/mocap/am_threejs_CEC_BODY_4_RIGHT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/js/spheres_anim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/Room.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/_fractal_3.obj.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/acropolis.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/castle_lake.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/david.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/david.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/david_bike_hall_3.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/david_bike_hall_3.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/david_low.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/female_head.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/female_head.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/female_head_low.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/female_helmet.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/female_helmet.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/floor.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/floor.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/fractal_1.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/fractal_1.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/fractal_2.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/fractal_2.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/fractal_3.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/fractal_3.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/good_samaritan.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/greek_bust.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/greek_bust.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/greek_bust_low.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/hall.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/hall_full.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/hall_low_floor.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/lamps.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/lamps.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/lion.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/lion.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/lion_low.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/monk.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/monk.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/monk_uv.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/monk_uv.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/moonlight.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/nefertiti.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/nefertiti.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/old_man.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/old_man.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/paintings.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/podiums.ctm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/podiums.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/models/vrweb.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/screenshots/thehall1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/screenshots/thehall2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/screenshots/thehall3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/screenshots/thehall4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/screenshots/thehall5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/test/houseSurface_Color.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/test/houseSurface_Color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/test/house_c4d.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/4431-normal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/9548-bump.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/acropolis.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/castle_lake.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/anim2/negx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/anim2/negy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/anim2/negz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/anim2/posx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/anim2/posy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/anim2/posz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/hall/negx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/hall/negy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/hall/negz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/hall/posx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/hall/posy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/cube/hall/posz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/david.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/david_bike_hall_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/female_head.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/female_head_normal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/female_head_specular.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/female_helmet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/floor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/floor_bumpmap.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/floor_normal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/fractal_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/fractal_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/fractal_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/good_samaritan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/greek_bust.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/hall.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/hall_normal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/lamp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/lamps.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/lion.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/monk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/monk_uv.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/moonlight.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/nefertiti.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/old_man.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/podiums.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/sky_sphere.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/vrweb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store Web/web/vr/textures/vrweb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Golang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Golang/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$anning.doc" beforeDir="false" afterPath="$PROJECT_DIR$/~$anning.doc" afterDir="false" />
-    </list>
+    <list default="true" id="9d35ccb2-2fbb-40d6-8ec5-114bf8192576" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -272,15 +137,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524632721116</updated>
-      <workItem from="1524632726245" duration="952000" />
+      <workItem from="1524632726245" duration="1039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="952000" />
+    <option name="totallyTimeSpent" value="1039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
