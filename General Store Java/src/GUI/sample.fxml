@@ -3,6 +3,7 @@
 <!--<?import com.gluonhq.charm.glisten.control.ProgressBar?>-->
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1372.0" style="-fx-background-color: #5F5F5F;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1048.0" style="-fx-background-color: #5F5F5F;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
    <children>
       <VBox prefHeight="728.0" prefWidth="311.0" style="-fx-background-color: #3C3F41;">
          <children>
@@ -119,7 +120,7 @@
             </HBox>
          </children>
       </VBox>
-      <VBox layoutX="332.0" layoutY="-3.0" prefHeight="728.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;">
+      <VBox disable="true" layoutX="332.0" layoutY="-3.0" prefHeight="728.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;" visible="false">
          <children>
             <TableView fx:id="pTableID" prefHeight="591.0" prefWidth="663.0">
               <columns>
@@ -155,7 +156,7 @@
             </ImageView>
          </children>
       </VBox>
-      <VBox fx:id="vboxDeleteProduct" layoutX="953.0" prefHeight="728.0" prefWidth="419.0" style="-fx-background-color: #292929;">
+      <VBox fx:id="vboxDeleteProduct" layoutX="953.0" prefHeight="728.0" prefWidth="419.0" style="-fx-background-color: #292929;" visible="false">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="441.0" style="-fx-background-color: #3C3F41;" text="Delete Selected Product" textFill="WHITE">
                <font>
@@ -321,6 +322,89 @@
                   <Image url="@images/cross.png" />
                </image>
             </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="339.0" layoutY="7.0" prefHeight="735.0" prefWidth="1043.0" visible="false">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="209.0" text="Add New Product" translateX="250.0" translateY="10.0">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="110.0" text="Product Name" translateX="117.0" translateY="171.0" />
+            <Label prefHeight="40.0" prefWidth="110.0" text="Product Quantity" translateX="117.0" translateY="191.0" />
+            <TextField alignment="CENTER_RIGHT" layoutX="10.0" layoutY="71.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="180.0" promptText="0" translateX="300.0" translateY="143.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="180.0" promptText="Product Name" translateX="300.0" translateY="45.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <TextField alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="180.0" promptText="0.0" translateX="301.0" translateY="120.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <Label prefHeight="40.0" prefWidth="110.0" text="Buy Price" translateX="117.0" translateY="89.0" />
+            <TextField alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="180.0" promptText="0.0" translateX="300.0" translateY="96.0" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <Label prefHeight="40.0" prefWidth="110.0" text="Sale Price" translateX="117.0" translateY="68.0" />
+            <TextField alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="180.0" text="0.0" translateX="302.0" translateY="19.0" />
+            <ImageView fitHeight="80.0" fitWidth="80.0" translateX="320.0" translateY="90.0">
+               <image>
+                  <Image url="@images/Reset_icn.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="66.0" fitWidth="154.0" translateX="500.0" translateY="13.0">
+               <image>
+                  <Image url="@images/save_button.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="352.0" layoutY="-17.0" prefHeight="743.0" prefWidth="1054.0">
+         <children>
+            <VBox prefHeight="728.0" prefWidth="1037.0">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="771.0" prefWidth="384.0" style="-fx-background-color: #FCB215;" translateX="670.0">
+                     <children>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="169.0" text="Search" translateX="100.0" translateY="20.0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0">
+                                 <image>
+                                    <Image url="@images/search.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </children>
