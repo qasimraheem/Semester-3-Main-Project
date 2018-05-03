@@ -1,0 +1,13 @@
+.root{
+    -icons-color: -fx-text-base-color;
+}
+
+.awesome{
+    -fx-font-family:  FontAwesome;
+    -fx-font-size: 16px;
+    -fx-text-fill: -icons-color;
+}
+
+.awesome:hover{
+
+}

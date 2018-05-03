@@ -1,0 +1,18 @@
+.input{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 17;
+    /*-fx-font-family: ;*/
+    -fx-border-color:#FFFFFF;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-color: #00000000;
+}
+.input:hover{
+    -fx-border-color:#2196F3;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-color: #00000000;
+}
+.input:focused{
+    -fx-border-color:#FFCD00 ;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-color: #00000000;
+}

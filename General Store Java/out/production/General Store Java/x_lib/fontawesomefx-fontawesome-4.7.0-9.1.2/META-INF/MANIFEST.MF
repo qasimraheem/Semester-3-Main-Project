@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: de.jensd.fx.glyphs.fontawesome.demo.FontAwesomeIconsDemoAp
+ p
+Automatic-Module-Name: de.jensd.fx.glyphs.fontawesome
+

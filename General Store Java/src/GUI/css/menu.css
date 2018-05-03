@@ -1,0 +1,27 @@
+.btns{
+    -fx-background-color: #3C3F41;
+}
+.btns:hover{
+    -fx-border-color: #FFCD00;
+    -fx-border-width: 0 0 3 0;
+    -fx-background-color: linear-gradient(#535658, #3C3F41);
+}
+.btns:pressed:hover{
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+    -fx-effect: dropshadow(two-pass-box, #0000005F, 30, 0.5, 0, 0);
+    -fx-border-radius:2px;
+}
+.btnsimg{
+    -fx-fill: #FFFFFF;
+}
+.btnsimgactive{
+    -fx-fill: #FFCD00;
+}
+
+.btnstext{
+    -fx-text-fill:#FFFFFF;
+}
+.btnstextactive{
+    -fx-text-fill:#FFCD00 ;
+}

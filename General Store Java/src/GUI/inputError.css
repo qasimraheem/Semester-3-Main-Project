@@ -1,0 +1,7 @@
+.inputError{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 17;
+    -fx-border-color:#DE5246;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-color: #00000000;
+}

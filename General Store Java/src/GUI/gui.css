@@ -1,0 +1,32 @@
+.pane{
+    -fx-border-width: 15px;
+    -fx-border-color: #FFCD00;
+    -fx-border-radius: 100px;
+    -fx-background-color: #3C3F41;
+    -fx-background-radius: 100px;
+    -fx-background-repeat: stretch;
+    -fx-background-size: 200 200;
+    /*-fx-background-position: center center;*/
+    /*-fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);*/
+}
+.pane2{
+    /*-fx-background-image: url("images/home.png");*/
+    /*-fx-background-position: center center;*/
+    -fx-background-color: #5F5F5F;
+}
+.avatar2{
+    -fx-background-radius: 100px;
+    -fx-background-repeat: stretch;
+    -fx-background-size: 200 200;
+    /*-fx-background-position: center center;*/
+    -fx-effect: dropshadow(two-pass-box, black, 30, 0.5, 0, 0);
+}
+.employee_user{
+    -fx-background-color: #3C3F41e0;
+}
+.divImage{
+
+    -fx-background-image:url("images/qasimraheem.jpg");
+    -fx-background-position: center center;
+
+}

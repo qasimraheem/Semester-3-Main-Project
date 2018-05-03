@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>4</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>596</x>
-      <y>320</y>
-      <w>84</w>
-      <h>76</h>
+      <x>469</x>
+      <y>525</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>ADMIN
 --
@@ -22,10 +22,10 @@ MANAGE RECORD()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>212</x>
-      <y>164</y>
-      <w>84</w>
-      <h>76</h>
+      <x>7</x>
+      <y>7</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>INVENTORY
 --
@@ -40,10 +40,10 @@ UPDATE TO INVENTORY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>292</x>
-      <y>28</y>
-      <w>84</w>
-      <h>76</h>
+      <x>0</x>
+      <y>308</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>ITEM
 --
@@ -60,23 +60,12 @@ UPDATE TO INVENTORY</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>248</x>
-      <y>100</y>
-      <w>92</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>210.0;10.0;10.0;160.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>692</x>
-      <y>152</y>
-      <w>84</w>
-      <h>76</h>
+      <x>665</x>
+      <y>217</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Employee
 --
@@ -96,10 +85,10 @@ MANAGE RECORD()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>688</x>
-      <y>320</y>
-      <w>84</w>
-      <h>76</h>
+      <x>672</x>
+      <y>532</y>
+      <w>147</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>SALEMAN
 --
@@ -114,32 +103,32 @@ MANAGE RECORD()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>636</x>
-      <y>224</y>
-      <w>84</w>
-      <h>104</h>
+      <x>546</x>
+      <y>343</y>
+      <w>133</w>
+      <h>196</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>190.0;10.0;10.0;240.0</additional_attributes>
+    <additional_attributes>170.0;10.0;10.0;260.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>224</y>
-      <w>16</w>
-      <h>104</h>
+      <x>728</x>
+      <y>343</y>
+      <w>28</w>
+      <h>203</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;20.0;240.0</additional_attributes>
+    <additional_attributes>10.0;10.0;20.0;270.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>784</x>
-      <y>320</y>
-      <w>84</w>
-      <h>76</h>
+      <x>868</x>
+      <y>525</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>STAFF
 --
@@ -153,45 +142,26 @@ MANAGE RECORD()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
-      <y>224</y>
-      <w>104</w>
-      <h>104</h>
+      <x>805</x>
+      <y>343</y>
+      <w>154</w>
+      <h>196</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;240.0;240.0</additional_attributes>
+    <additional_attributes>10.0;10.0;200.0;260.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>544</x>
-      <y>152</y>
-      <w>84</w>
-      <h>76</h>
-    </coordinates>
-    <panel_attributes>CUSTOMER
---
-ID
-NAME
---
-BUY ITEMS
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>396</x>
-      <y>156</y>
-      <w>84</w>
-      <h>76</h>
+      <x>322</x>
+      <y>315</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>BILL
 --
 ID
 TIME
-CUSTOMER
 --
 BUYED ITEMS
 
@@ -201,10 +171,10 @@ BUYED ITEMS
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>32</y>
-      <w>84</w>
-      <h>76</h>
+      <x>651</x>
+      <y>0</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>PERSON
 --
@@ -219,23 +189,109 @@ PHONE NUMBER
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>664</x>
-      <y>104</y>
-      <w>76</w>
-      <h>56</h>
+      <x>728</x>
+      <y>126</y>
+      <w>21</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;170.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>104</y>
-      <w>84</w>
-      <h>56</h>
+      <x>70</x>
+      <y>133</y>
+      <w>21</w>
+      <h>189</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>190.0;10.0;10.0;120.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>581</y>
+      <w>133</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+teaches to &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>336</y>
+      <w>196</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=
+m2=1..*
+can have multiple items&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;260.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>210</y>
+      <w>539</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+teaches to &gt;</panel_attributes>
+    <additional_attributes>10.0;150.0;750.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>560</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Bill_ID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>441</y>
+      <w>49</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>273</x>
+      <y>560</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Time</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>301</x>
+      <y>441</y>
+      <w>77</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;170.0</additional_attributes>
   </element>
 </diagram>
