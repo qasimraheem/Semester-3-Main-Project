@@ -12,18 +12,20 @@ import org.json.*;
 
 
 public class Post{
-    public static void main(String[] args) {
-        try {
-            Data data=new Data();
-            data.setName("tahseen");
-            data.setQuantity("1000");
-            data.setBuyPrice("2000");
-            data.setSellPrice("3000");
-            Post.post(data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
+//    public static void main(String[] args) {
+//        try {
+//            Data data=new Data();
+//            data.setName("tahseen");
+//            data.setQuantity("1000");
+//            data.setBuyPrice("2000");
+//            data.setSellPrice("3000");
+//            Post.post(data);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     public static void call_me2() throws Exception {
         Data d=new Data();
         d.setName("aloo");
@@ -46,7 +48,7 @@ public class Post{
 //        System.out.println("name"+form_data.getString("name"));
     }
 
-    private static JSONObject post(Data d) throws IOException, JSONException {
+    public static JSONObject post(Data d) throws IOException, JSONException {
         String query = "http://localhost:8080/post";
 //        Data d=new Data();
 

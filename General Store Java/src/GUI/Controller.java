@@ -821,16 +821,28 @@ public class Controller implements Initializable {
             }
 
             if((lockUpdate1==false)&&(lockUpdate2==false)&&(lockUpdate3==false)&&(lockUpdate4==false)){
+                Data d=new Data();
+                d.setName(AddProductName.getText());
+                d.setQuantity(AddProductQuantity.getText());
+                d.setBuyPrice(AddProductBuyPrice.getText());
+                d.setSellPrice(AddProductSalePrice.getText());
+                AddProductName.setText("");
+                AddProductQuantity.setText("");
+                AddProductBuyPrice.setText("");
+                AddProductSalePrice.setText("");
 
-                pTableID.getSelectionModel().getSelectedItem().settName(AddProductName.getText());
-                pTableID.getSelectionModel().getSelectedItem().settQuantity(AddProductQuantity.getText());
-                pTableID.getSelectionModel().getSelectedItem().settBuyPrice(AddProductBuyPrice.getText());
-                pTableID.getSelectionModel().getSelectedItem().settSalePrice(AddProductSalePrice.getText());
-
+                try{
+                    Post.post(d);
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
+
+    //Product
+    
     private void addButtonAction(ActionEvent actionEvent) {
         System.out.println(actionEvent.getSource());
     }
