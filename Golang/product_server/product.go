@@ -244,7 +244,6 @@ func put(c echo.Context)(err error){
 	fmt.Println(res)
 	result := getData{}
 	//var get_data getData
-
 	//(db.Find(res.Data[0]).One(&get_data)
 	err = db.Find(bson.M{"name": res.Data[0].Name,"quantity":res.Data[0].Quantity,"sellprice":res.Data[0].SellPrice,"buyprice":res.Data[0].BuyPrice}).One(&result)
 	db.Update(result,res.Data[1])

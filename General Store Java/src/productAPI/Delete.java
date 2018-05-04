@@ -12,18 +12,18 @@ import org.json.*;
 
 
 public class Delete{
-    public static void main(String[] args) {
-        try {
-            Data d=new Data();
-            d.setName("tahseen");
-            d.setQuantity("1000");
-            d.setBuyPrice("2000");
-            d.setSellPrice("3000");
-            Delete.delete(d);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//            Data d=new Data();
+//            d.setName("tahseen");
+//            d.setQuantity("1000");
+//            d.setBuyPrice("2000");
+//            d.setSellPrice("3000");
+//            Delete.delete(d);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
     public static void call_me2() throws Exception {
         Data d=new Data();
         d.setName("");
@@ -46,7 +46,7 @@ public class Delete{
 //        System.out.println("name"+form_data.getString("name"));
     }
 
-    private static JSONObject delete(Data delete) throws IOException, JSONException {
+    public static JSONObject delete(Data delete) throws IOException, JSONException {
         String query = "http://localhost:8080/remove";
         Data d = delete;
 

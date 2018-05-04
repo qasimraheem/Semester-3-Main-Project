@@ -1,44 +1,37 @@
-package productAPI;
-import java.io.*;
+package GUI.billAPI;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.json.JSONObject;
 
-import org.json.*;
+public class Post{
 
-
-
-public class Put{
 //    public static void main(String[] args) {
 //        try {
-//            Data d=new Data();
-//            Data up=new Data();
-//
-//            //old data
-//            d.setName("windows_CD");
-//            d.setQuantity("1000");
-//            d.setSellPrice("2000");
-//            d.setBuyPrice("300" +
-//                    "0");
-//            //new data
-//            up.setName("dogy");
-//            up.setQuantity("1000");
-//            up.setSellPrice("2000");
-//            up.setBuyPrice("3000");
-//
-//
-//            Put.put(d,up);
+//            Data data=new Data();
+//            data.setName("tahseen");
+//            data.setQuantity("1000");
+//            data.setBuyPrice("2000");
+//            data.setSellPrice("3000");
+//            Post.post(data);
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
 //    }
+
     public static void call_me2() throws Exception {
         Data d=new Data();
-        d.setName("");
-        d.setQuantity("");
-        d.setBuyPrice("");
-        d.setSellPrice("");
+        d.setName("aloo");
+        d.setQuantity("1000");
+        d.setBuyPrice("2000");
+        d.setSellPrice("3000");
         String data=("{\"Name\":\""+d.getName()+"\",\"Quantity\":\""+d.getQuantity()+"\",\"BuyPrice\":\""+d.getBuyPrice()+"\",\"SellPrice\":\""+d.getSellPrice()+"\"}");
         System.out.println("data="+data);
 
@@ -55,17 +48,12 @@ public class Put{
 //        System.out.println("name"+form_data.getString("name"));
     }
 
-    public static void put(Data oldData, Data newData) throws IOException, JSONException {
-        String query = "http://localhost:8080/update";
-        Data d=oldData;
-        Data up=newData;
-        //        Data d=new Data();
-//        d.setName("");
-//        d.setQuantity("");
-//        d.setBuyPrice("");
-//        d.setSellPrice("");
+    public static JSONObject post(Data d) throws IOException, JSONException {
+        String query = "http://localhost:8080/post";
+//        Data d=new Data();
+
         System.out.println(d.getBuyPrice()+d.getSellPrice());
-        String json = "{\"Data\": [{\"Name\":\""+d.getName()+"\",\"Quantity\":\""+d.getQuantity()+"\",\"BuyPrice\":\""+d.getBuyPrice()+"\",\"SellPrice\":\""+d.getSellPrice()+"\"},{\"Name\":\""+up.getName()+"\",\"Quantity\":\""+up.getQuantity()+"\",\"BuyPrice\":\""+up.getBuyPrice()+"\",\"SellPrice\":\""+up.getSellPrice()+"\"}]}";
+        String json = "{\"Name\":\""+d.getName()+"\",\"Quantity\":\""+d.getQuantity()+"\",\"BuyPrice\":\""+d.getBuyPrice()+"\",\"SellPrice\":\""+d.getSellPrice()+"\"}";
         System.out.println(json);
         URL url = new URL(query);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -73,7 +61,7 @@ public class Put{
         conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
         conn.setDoOutput(true);
         conn.setDoInput(true);
-        conn.setRequestMethod("PUT");
+        conn.setRequestMethod("POST");
 
         OutputStream os = conn.getOutputStream();
         os.write(json.getBytes("UTF-8"));
@@ -88,6 +76,6 @@ public class Put{
         in.close();
         conn.disconnect();
 
-        //return jsonObject;
+        return jsonObject;
     }
 }

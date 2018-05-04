@@ -1,12 +1,14 @@
-package productAPI;
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
+package GUI.billAPI;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.json.*;
-
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 
 public class Put{

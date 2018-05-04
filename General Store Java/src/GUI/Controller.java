@@ -439,6 +439,12 @@ public class Controller implements Initializable {
     @FXML
     private ImageView productButtonSearch1;
 
+
+    @FXML
+    private ImageView productButtonUpdateDown;
+
+
+
     @FXML
     private ImageView productButtonRefresh1;
 
@@ -549,6 +555,8 @@ public class Controller implements Initializable {
 ////////////////
             productIcon.setFill(Color.valueOf("#F3C300"));
             productText.setTextFill(Color.valueOf("#F3C300"));
+
+            getProductTableData();
 
         } else if (mouseEvent.getSource() == billButton) {
             anchorSale.setVisible(false);
@@ -842,35 +850,7 @@ public class Controller implements Initializable {
 
 
     //Product
-    
-    private void addButtonAction(ActionEvent actionEvent) {
-        System.out.println(actionEvent.getSource());
-    }
-
-    public void getSaleQuantity(ActionEvent actionEvent){
-
-    }
-
-
-
-    Validations validate=new Validations();
-
-
-    public void initialize(URL Location,ResourceBundle resourceBundle){
-
-
-        WebEngine image = Employee_Image_Web.getEngine();
-        image.load("file:///C:/Users/qasim/Desktop/Semester-3-Main-Project/Golang/Image_server/Users_images/qasim.html");
-        WebEngine canvas = CanvasWeb.getEngine();
-        canvas.load("");
-
-//        TableColumn namecol = new TableColumn("Name");
-//        TableColumn quantitycol = new TableColumn("Quantity");
-//        TableColumn buypricecol = new TableColumn("BuyPrice");
-//        TableColumn salepricecol = new TableColumn("SalePrice");
-
-//        pTableID.getColumns().addAll(namecol, quantitycol,buypricecol, salepricecol);
-//        pTableID.getColumns().addAll(pTableName,pTableQuantity,pTableQuantity,pTableSalePrice);
+    public void getProductTableData(){
         productAPI.Get gat=new Get();
         List<Data> d = new ArrayList<>();
         try {
@@ -914,10 +894,9 @@ public class Controller implements Initializable {
 
         pTableID.setItems(data);
     }
-
     public void DeleteProduct(MouseEvent mouseEvent) {
 
-        if (mouseEvent.getSource()== productButtonDelete && (pTableID.getSelectionModel().getSelectedItem()!=null)){
+        if(mouseEvent.getSource()== productButtonDelete && (pTableID.getSelectionModel().getSelectedItem()!=null)){
             productDeleteName.setText(pTableID.getSelectionModel().getSelectedItem().gettName());
             productDeleteQuantity.setText(pTableID.getSelectionModel().getSelectedItem().gettQuantity());
             productDeleteBuyPrice.setText(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
@@ -925,18 +904,46 @@ public class Controller implements Initializable {
             vboxDeleteProduct.setVisible(true);
         }else if(mouseEvent.getSource()==productButtonDeleteTick&&(productDeleteName.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettName()))&&(productDeleteQuantity.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettQuantity()))&&(productDeleteBuyPrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettBuyPrice()))&&(productDeleteSalePrice.getText().equalsIgnoreCase( pTableID.getSelectionModel().getSelectedItem().gettSalePrice()))){
             try {
+                Data d=new Data();
+                d.setName(pTableID.getSelectionModel().getSelectedItem().gettName());
+                d.setQuantity(pTableID.getSelectionModel().getSelectedItem().gettQuantity());
+                d.setBuyPrice(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
+                d.setSellPrice(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
+                try{
+                 Delete.delete(d);
+                }catch(Exception e) {
+                    e.printStackTrace();
+                }
+
                 pTableID.getItems().removeAll(pTableID.getSelectionModel().getSelectedItem());
+                productDeleteName.setText("");
+                productDeleteQuantity.setText("");
+                productDeleteBuyPrice.setText("");
+                productDeleteSalePrice.setText("");
+                vboxDeleteProduct.setVisible(false);
+
             }catch (Exception ex){
                 System.out.println("Delete Error here!");
                 System.out.println(pTableID.getSelectionModel().getSelectedItem().gettName()+pTableID.getSelectionModel().getSelectedItem().gettQuantity());
-                Data setnew=new Data();
+                Data d=new Data();
 
-                setnew.setName(pTableID.getSelectionModel().getSelectedItem().gettName());
-                setnew.setQuantity(pTableID.getSelectionModel().getSelectedItem().gettQuantity());
-                setnew.setBuyPrice(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
-                setnew.setSellPrice(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
+                d.setName(pTableID.getSelectionModel().getSelectedItem().gettName());
+                d.setQuantity(pTableID.getSelectionModel().getSelectedItem().gettQuantity());
+                d.setBuyPrice(pTableID.getSelectionModel().getSelectedItem().gettBuyPrice());
+                d.setSellPrice(pTableID.getSelectionModel().getSelectedItem().gettSalePrice());
 
+                try{
+                    Delete.delete(d);
+                }catch(Exception e) {
+                    e.printStackTrace();
+                }
 
+                productDeleteName.setText("");
+                productDeleteQuantity.setText("");
+                productDeleteBuyPrice.setText("");
+                productDeleteSalePrice.setText("");
+                vboxDeleteProduct.setVisible(false);
+                getProductTableData();
 
             }
 
@@ -945,7 +952,6 @@ public class Controller implements Initializable {
         }
 
     }
-
     public void UpdateProduct(MouseEvent mouseEvent) {
         if (mouseEvent.getSource()== productButtonUpdate && (pTableID.getSelectionModel().getSelectedItem()!=null)){
             productUpdateName.setText(pTableID.getSelectionModel().getSelectedItem().gettName());
@@ -997,24 +1003,80 @@ public class Controller implements Initializable {
 
             if((lockUpdate1==false)&&(lockUpdate2==false)&&(lockUpdate3==false)&&(lockUpdate4==false)){
 
+
+                Data old_d=new Data();
+                Data new_d=new Data();
+                //set old data
+                old_d.setName(productUpdateName.getText());
+                old_d.setQuantity(productUpdateQuantity.getText());
+                old_d.setBuyPrice(productUpdateBuyPrice.getText());
+                old_d.setSellPrice(productUpdateSalePrice.getText());
+                //set new data
+                new_d.setName(productUpdateNewName.getText());
+                new_d.setQuantity(productUpdateNewQuantity.getText());
+                new_d.setBuyPrice(productUpdateNewBuyPrice.getText());
+                new_d.setSellPrice(productUpdateNewSalePrice.getText());
+                System.out.println(old_d.getName()+old_d.getQuantity()+old_d.getBuyPrice()+old_d.getSellPrice());
+                System.out.println(new_d.getName()+new_d.getQuantity()+new_d.getBuyPrice()+new_d.getSellPrice());
+                try{
+                    Put.put(old_d,new_d);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 pTableID.getSelectionModel().getSelectedItem().settName(productUpdateNewName.getText());
                 pTableID.getSelectionModel().getSelectedItem().settQuantity(productUpdateNewQuantity.getText());
                 pTableID.getSelectionModel().getSelectedItem().settBuyPrice(productUpdateNewBuyPrice.getText());
                 pTableID.getSelectionModel().getSelectedItem().settSalePrice(productUpdateNewSalePrice.getText());
 
+                productUpdateName.setText("");
+                productUpdateQuantity.setText("");
+                productUpdateBuyPrice.setText("");
+                productUpdateSalePrice.setText("");
+
+                productUpdateNewName.setText("");
+                productUpdateNewQuantity.setText("");
+                productUpdateNewBuyPrice.setText("");
+                productUpdateNewSalePrice.setText("");
+
+                vboxUpdateProduct.setVisible(false);
             }
 
+
         }else if(mouseEvent.getSource()==productButtonUpdateCross){
+            productUpdateName.setText("");
+            productUpdateQuantity.setText("");
+            productUpdateBuyPrice.setText("");
+            productUpdateSalePrice.setText("");
+
+            productUpdateNewName.setText("");
+            productUpdateNewQuantity.setText("");
+            productUpdateNewBuyPrice.setText("");
+            productUpdateNewSalePrice.setText("");
+
             vboxUpdateProduct.setVisible(false);
+        }else if(mouseEvent.getSource()==productButtonUpdateDown){
+
+            productUpdateNewName.setText(productUpdateName.getText());
+            productUpdateNewQuantity.setText(productUpdateQuantity.getText());
+            productUpdateNewBuyPrice.setText(productUpdateBuyPrice.getText());
+            productUpdateNewSalePrice.setText(productUpdateSalePrice.getText());
         }
     }
-
-    @FXML
-    private void initialize() {
-
+    public void SearchProduct(MouseEvent mouseEvent) {
+        if (mouseEvent.getSource()== productButtonSearch){
+            data2 = data;
+            vboxSearchProduct.setVisible(true);
+        }else if(mouseEvent.getSource()==productButtonSearchTick){
+            vboxSearchProduct.setVisible(false);
+        }else if(mouseEvent.getSource()==productButtonSearchCross){
+            productSearchName.setText("");
+            productSearchQuantity.setText("");
+            productSearchBuyPrice.setText("");
+            productSearchSalePrice.setText("");
+            pTableID.setItems(data);
+            vboxSearchProduct.setVisible(false);
+        }
     }
-
-    @FXML
     public void SearchProductList(KeyEvent keyEvent) {
 
         SortedList<productTable> sortedData,sortedQuantity,sortedBuyPrice,sortedSalePrice;
@@ -1107,26 +1169,7 @@ public class Controller implements Initializable {
 
 
     }
-
-    @FXML
-    void SearchProduct(MouseEvent mouseEvent) {
-        if (mouseEvent.getSource()== productButtonSearch){
-            data2 = data;
-            vboxSearchProduct.setVisible(true);
-        }else if(mouseEvent.getSource()==productButtonSearchTick){
-            vboxSearchProduct.setVisible(false);
-        }else if(mouseEvent.getSource()==productButtonSearchCross){
-            productSearchName.setText("");
-            productSearchQuantity.setText("");
-            productSearchBuyPrice.setText("");
-            productSearchSalePrice.setText("");
-            pTableID.setItems(data);
-            vboxSearchProduct.setVisible(false);
-        }
-    }
-
-    @FXML
-    void RefreshProduct(MouseEvent mouseEvent) {
+    public void RefreshProduct(MouseEvent mouseEvent) {
         if (mouseEvent.getSource()== productButtonRefresh){
 
             productAPI.Get gat=new Get();
@@ -1164,6 +1207,52 @@ public class Controller implements Initializable {
         }
 
     }
+
+
+    //Bills
+    private void addButtonAction(ActionEvent actionEvent) {
+        System.out.println(actionEvent.getSource());
+    }
+
+    public void getSaleQuantity(ActionEvent actionEvent){
+
+    }
+
+
+
+    Validations validate=new Validations();
+
+
+    public void initialize(URL Location,ResourceBundle resourceBundle){
+
+
+        WebEngine image = Employee_Image_Web.getEngine();
+        image.load("file:///C:/Users/qasim/Desktop/Semester-3-Main-Project/Golang/Image_server/Users_images/qasim.html");
+        WebEngine canvas = CanvasWeb.getEngine();
+        canvas.load("");
+
+//        TableColumn namecol = new TableColumn("Name");
+//        TableColumn quantitycol = new TableColumn("Quantity");
+//        TableColumn buypricecol = new TableColumn("BuyPrice");
+//        TableColumn salepricecol = new TableColumn("SalePrice");
+
+//        pTableID.getColumns().addAll(namecol, quantitycol,buypricecol, salepricecol);
+//        pTableID.getColumns().addAll(pTableName,pTableQuantity,pTableQuantity,pTableSalePrice);
+
+    }
+
+
+
+
+    @FXML
+    private void initialize() {
+
+    }
+
+
+
+
+
 
 
     @FXML
