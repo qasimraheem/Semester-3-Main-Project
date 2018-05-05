@@ -101,7 +101,7 @@ public class JSONTokener {
 
 
     /**
-     * Get the hex value of a character (base16).
+     * Bill_Get the hex value of a character (base16).
      * @param c A character between '0' and '9' or between 'A' and 'F' or
      * between 'a' and 'f'.
      * @return  An int between 0 and 15, or -1 if c was not a hex digit.
@@ -140,7 +140,7 @@ public class JSONTokener {
 
 
     /**
-     * Get the next character in the source string.
+     * Bill_Get the next character in the source string.
      *
      * @return The next character, or 0 if past the end of the source string.
      */
@@ -194,7 +194,7 @@ public class JSONTokener {
 
 
     /**
-     * Get the next n characters.
+     * Bill_Get the next n characters.
      *
      * @param n     The number of characters to take.
      * @return      A string of n characters.
@@ -222,7 +222,7 @@ public class JSONTokener {
 
 
     /**
-     * Get the next char in the string, skipping whitespace.
+     * Bill_Get the next char in the string, skipping whitespace.
      * @throws JSONException
      * @return  A character, or 0 if there are no more characters.
      */
@@ -299,7 +299,7 @@ public class JSONTokener {
 
 
     /**
-     * Get the text up but not including the specified character or the
+     * Bill_Get the text up but not including the specified character or the
      * end of line, whichever comes first.
      * @param  delimiter A delimiter character.
      * @return   A string.
@@ -320,7 +320,7 @@ public class JSONTokener {
 
 
     /**
-     * Get the text up but not including one of the specified delimiter
+     * Bill_Get the text up but not including one of the specified delimiter
      * characters or the end of line, whichever comes first.
      * @param delimiters A set of delimiter characters.
      * @return A string, trimmed.
@@ -343,7 +343,7 @@ public class JSONTokener {
 
 
     /**
-     * Get the next value. The value can be a Boolean, Double, Integer,
+     * Bill_Get the next value. The value can be a Boolean, Double, Integer,
      * JSONArray, JSONObject, Long, or String, or the JSONObject.NULL object.
      * @throws JSONException If syntax error.
      *

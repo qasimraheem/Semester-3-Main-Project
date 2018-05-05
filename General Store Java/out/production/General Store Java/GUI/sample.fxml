@@ -302,7 +302,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorProduct" prefHeight="728.0" prefWidth="1036.0" translateX="332.0">
+      <AnchorPane fx:id="anchorProduct" prefHeight="728.0" prefWidth="1036.0" translateX="332.0" visible="false">
          <children>
             <VBox fx:id="Product" prefHeight="728.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;" stylesheets="@css/icons.css">
                <children>
@@ -575,7 +575,7 @@
             <Label layoutX="743.0" layoutY="345.0" prefHeight="38.0" prefWidth="174.0" text="Select Actions To Get View" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorBills" layoutX="332.0" prefHeight="730.0" prefWidth="1040.0" visible="false">
+      <AnchorPane fx:id="anchorBills" layoutX="332.0" prefHeight="730.0" prefWidth="1040.0">
          <children>
             <VBox fx:id="Product2" prefHeight="735.0" prefWidth="633.0" style="-fx-background-color: #4F4F4F;" stylesheets="@css/icons.css">
                <children>
@@ -618,25 +618,25 @@
                         <Font size="33.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="30.0" prefWidth="76.0" text="Bill #" textFill="WHITE" translateX="40.0" translateY="35.0">
+                  <Label prefHeight="30.0" prefWidth="76.0" text="Bill #" textFill="WHITE" translateX="40.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="productSearchName11" focusTraversable="false" maxHeight="26.0" maxWidth="337.0" minHeight="-Infinity" minWidth="337.0" onKeyReleased="#SearchProductList" prefHeight="26.0" prefWidth="337.0" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="35.0" />
-                  <Label prefHeight="30.0" prefWidth="103.0" text="Total Items" textFill="WHITE" translateX="40.0" translateY="35.0">
+                  <TextField fx:id="productSearchName11" focusTraversable="false" maxHeight="26.0" maxWidth="337.0" minHeight="-Infinity" minWidth="337.0" onKeyReleased="#SearchProductList" prefHeight="26.0" prefWidth="337.0" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" />
+                  <Label prefHeight="30.0" prefWidth="103.0" text="Total Items" textFill="WHITE" translateX="40.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="productSearchQuantity11" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="35.0" />
-                  <Label prefHeight="30.0" prefWidth="76.0" text="Total Price" textFill="WHITE" translateX="40.0" translateY="35.0">
+                  <TextField fx:id="productSearchQuantity11" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" />
+                  <Label prefHeight="30.0" prefWidth="76.0" text="Total Price" textFill="WHITE" translateX="40.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="productSearchBuyPrice11" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="35.0" />
-                  <TableView maxWidth="338.0" prefHeight="399.0" prefWidth="338.0" translateX="40.0" translateY="45.0">
+                  <TextField fx:id="productSearchBuyPrice11" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" />
+                  <TableView maxWidth="338.0" prefHeight="399.0" prefWidth="338.0" translateX="40.0" translateY="10.0">
                     <columns>
                       <TableColumn prefWidth="140.0" text="Name" />
                       <TableColumn prefWidth="93.0" text="Quantity" />

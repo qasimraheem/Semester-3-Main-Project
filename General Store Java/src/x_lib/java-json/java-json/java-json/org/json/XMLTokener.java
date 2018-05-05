@@ -56,7 +56,7 @@ public class XMLTokener extends JSONTokener {
     }
 
     /**
-     * Get the text in the CDATA block.
+     * Bill_Get the text in the CDATA block.
      * @return The string up to the <code>]]&gt;</code>.
      * @throws JSONException If the <code>]]&gt;</code> is not found.
      */
@@ -81,7 +81,7 @@ public class XMLTokener extends JSONTokener {
 
 
     /**
-     * Get the next XML outer token, trimming whitespace. There are two kinds
+     * Bill_Get the next XML outer token, trimming whitespace. There are two kinds
      * of tokens: the '<' character which begins a markup tag, and the content
      * text between markup tags.
      *
@@ -209,7 +209,7 @@ public class XMLTokener extends JSONTokener {
 
 
     /**
-     * Get the next XML Token. These tokens are found inside of angle
+     * Bill_Get the next XML Token. These tokens are found inside of angle
      * brackets. It may be one of these characters: <code>/ > = ! ?</code> or it
      * may be a string wrapped in single quotes or double quotes, or it may be a
      * name.
@@ -345,7 +345,7 @@ public class XMLTokener extends JSONTokener {
     			return true;
     		}
     		/*
-    		 * Get the next character. If there isn't one, then defeat is ours.
+    		 * Bill_Get the next character. If there isn't one, then defeat is ours.
     		 */
     		c = next();
     		if (c == 0) {

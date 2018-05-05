@@ -58,11 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/billAPI/ProductData.java">
+      <file leaf-file-name="Bill_Post.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/BillAPI/Bill_Post.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="-871">
+              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,29 +70,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/billAPI/Data.java">
+      <file leaf-file-name="Bill_ProductData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/BillAPI/Bill_ProductData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Result.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/billAPI/Result.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Get.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/billAPI/Get.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="146">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,7 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update</find>
       <find>New</find>
       <find>data</find>
       <find>delete</find>
@@ -139,6 +123,7 @@
       <find>setnew</find>
       <find>old_d</find>
       <find>productUpdate</find>
+      <find>total</find>
     </findStrings>
     <replaceStrings>
       <replace>AddProduct</replace>
@@ -192,6 +177,13 @@
         <option value="$PROJECT_DIR$/src/GUI/billAPI/Data.java" />
         <option value="$PROJECT_DIR$/src/productAPI/Data.java" />
         <option value="$PROJECT_DIR$/src/GUI/billAPI/Get.java" />
+        <option value="$PROJECT_DIR$/src/GUI/billAPI/Result.java" />
+        <option value="$PROJECT_DIR$/src/GUI/billAPI/Bill_Get.java" />
+        <option value="$PROJECT_DIR$/src/GUI/BillAPI/Bill_Result.java" />
+        <option value="$PROJECT_DIR$/src/GUI/BillAPI/Bill_Get.java" />
+        <option value="$PROJECT_DIR$/src/GUI/BillAPI/Bill_Data.java" />
+        <option value="$PROJECT_DIR$/src/GUI/BillAPI/Bill_ProductData.java" />
+        <option value="$PROJECT_DIR$/src/GUI/BillAPI/Bill_Post.java" />
       </list>
     </option>
   </component>
@@ -202,7 +194,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -239,7 +231,7 @@
               <item name="General Store Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="billAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="BillAPI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="General Store Java" type="b2602c69:ProjectViewProjectNode" />
@@ -295,7 +287,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Bill_Post">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -306,6 +298,28 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Bill_Get" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.BillAPI.Bill_Get" />
+      <module name="General Store Java" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.BillAPI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Bill_Post" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.BillAPI.Bill_Post" />
+      <module name="General Store Java" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.BillAPI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -428,13 +442,16 @@
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Validations" />
       <item itemvalue="Application.AnimatedPropertiesTest" />
+      <item itemvalue="Application.Bill_Get" />
+      <item itemvalue="Application.Bill_Post" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Bill_Post" />
+        <item itemvalue="Application.Bill_Get" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.AnimatedPropertiesTest" />
         <item itemvalue="Application.Validations" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -462,15 +479,16 @@
       <workItem from="1525009876573" duration="13668000" />
       <workItem from="1525081966580" duration="9162000" />
       <workItem from="1525156098007" duration="44783000" />
-      <workItem from="1525358024809" duration="26033000" />
+      <workItem from="1525358024809" duration="35096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189110000" />
+    <option name="totallyTimeSpent" value="198173000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -482,14 +500,14 @@
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31160572" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31160572" />
       <window_info anchor="right" id="Mongo Explorer" order="8" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17130308" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17130308" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3290938" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -528,27 +546,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/productAPI/Get.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productClasses/Validations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2431">
-          <caret line="143" column="39" selection-start-line="143" selection-start-column="39" selection-end-line="143" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productClasses/productTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -562,18 +559,6 @@
           <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10445#15837#0" />
-            <element signature="e#15844#16788#0" />
-            <element signature="e#16793#17489#0" />
-            <element signature="e#17494#25077#0" />
-            <element signature="e#25084#28301#0" />
-            <element signature="e#28308#30250#0" />
-            <element signature="e#30255#32929#0" />
-            <element signature="e#37866#38520#0" />
-            <element signature="e#38525#43078#0" />
-            <element signature="e#43083#44434#0" />
-            <element signature="e#46017#46018#0" expanded="true" />
-            <element signature="e#46076#46077#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -605,18 +590,6 @@
           <caret line="112" selection-start-line="112" selection-end-line="112" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10445#15837#0" />
-            <element signature="e#15844#16788#0" />
-            <element signature="e#16793#17489#0" />
-            <element signature="e#17494#25077#0" />
-            <element signature="e#25084#28301#0" />
-            <element signature="e#28308#30250#0" />
-            <element signature="e#30255#32929#0" />
-            <element signature="e#37866#38520#0" />
-            <element signature="e#38525#43078#0" />
-            <element signature="e#43083#44434#0" />
-            <element signature="e#46017#46018#0" expanded="true" />
-            <element signature="e#46076#46077#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -639,13 +612,6 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/productAPI/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productAPI/Search.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -799,20 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productAPI/Get.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productAPI/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="25" column="11" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productAPI/Delete.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -820,39 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productAPI/Put.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="33" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/billAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="1062" column="9" selection-start-line="1062" selection-start-column="9" selection-end-line="1062" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10445#15837#0" />
-            <element signature="e#15844#16788#0" />
-            <element signature="e#16793#17489#0" />
-            <element signature="e#17494#25077#0" />
-            <element signature="e#25084#28301#0" />
-            <element signature="e#28308#30250#0" />
-            <element signature="e#30255#32929#0" />
-            <element signature="e#37866#38520#0" />
-            <element signature="e#38525#43078#0" />
-            <element signature="e#43083#44434#0" />
-            <element signature="e#46017#46018#0" expanded="true" />
-            <element signature="e#46076#46077#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -876,15 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/billAPI/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="51">
           <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productAPI/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -898,17 +814,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/billAPI/Get.java">
+    <entry file="file://$PROJECT_DIR$/src/productAPI/Result.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="85">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/billAPI/Result.java">
+    <entry file="file://$PROJECT_DIR$/src/productAPI/Get.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="272">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="26" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BillAPI/Bill_Get.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productAPI/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="79" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productAPI/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BillAPI/Bill_Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productAPI/Put.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-602">
+          <caret line="41" column="52" lean-forward="true" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BillAPI/Bill_Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="607" column="39" lean-forward="true" selection-start-line="607" selection-start-column="39" selection-end-line="607" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BillAPI/Bill_ProductData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BillAPI/Bill_Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-871">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

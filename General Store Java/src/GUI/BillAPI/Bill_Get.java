@@ -1,4 +1,4 @@
-package GUI.billAPI;
+package GUI.BillAPI;
 
 import com.google.gson.Gson;
 import org.json.JSONArray;
@@ -10,24 +10,21 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+public class Bill_Get {
 
-//Read more: http://javarevisited.blogspot.com/2013/02/how-to-convert-json-string-to-java-object-jackson-example-tutorial.html#ixzz5BPS9fWNa
+//    public static void main(String[] args) {
+//        try {
+//            List<Bill_Data> d = new ArrayList<>();
+//            d=Bill_Get.get();
+//            System.out.println(d.size());
+//            for(int i=0;i<d.size();i++)
+//                System.out.println(d.get(0).getBillid());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
-public class Get{
-
-    public static void main(String[] args) {
-        Data data=new Data();
-        try {
-            List<Data> d = new ArrayList<>();
-            d=Get.get();
-            System.out.println(d.size());
-            for(int i=0;i<d.size();i++)
-                System.out.println(d.get(0).getName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static List<Data> get() throws Exception{
+    public static List<Bill_Data> get() throws Exception {
         String url = "http://localhost:8082";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -50,32 +47,15 @@ public class Get{
         System.out.println("response="+response);
         System.out.println("response.toString()="+response.toString());
         Gson gson = new Gson();
-        Result result = gson.fromJson(response.toString(), Result.class);
-        List<Data> d = new ArrayList<>();
+        Bill_Result result = gson.fromJson(response.toString(), Bill_Result.class);
+        List<Bill_Data> d = new ArrayList<>();
         if (result != null){
             JSONArray jsonArray =new JSONArray(result.getData()) ;
             d=result.getData();
-            System.out.println(d.get(0).getBuyPrice());
+            System.out.println(d.get(0).getTotalitems());
             System.out.println("done");
         }
         return d;
-
-
-
-
-//        JSONObject myResponse = new JSONObject(fir.toString());
-//        System.out.println(myResponse);
-//        System.out.println("running");
-//        System.out.println("result after Reading JSON Response");
-//        //System.out.println("Data- "+fir.getString("Data"));
-//        System.out.println("Id- "+fir.getString("Id"));
-//        System.out.println("Name- "+myResponse.getString("Name"));
-//        System.out.println("Symbol- "+myResponse.getString("Symbol"));
-//        System.out.println("Rank- "+myResponse.getString("Rank"));
-
     }
-
-
-
 
 }

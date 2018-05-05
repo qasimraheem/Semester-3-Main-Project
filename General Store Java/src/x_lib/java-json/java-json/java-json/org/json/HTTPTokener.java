@@ -42,7 +42,7 @@ public class HTTPTokener extends JSONTokener {
 
 
     /**
-     * Get the next token or string. This is used in parsing HTTP headers.
+     * Bill_Get the next token or string. This is used in parsing HTTP headers.
      * @throws JSONException
      * @return A String.
      */

@@ -17,7 +17,7 @@ public class Get{
 //    public static void main(String[] args) {
 //        try {
 //            List<Data> d = new ArrayList<>();
-//            d=Get.get();
+//            d=Bill_Get.get();
 //            System.out.println(d.size());
 //            for(int i=0;i<d.size();i++)
 //                System.out.println(d.get(0).getName());

@@ -180,7 +180,7 @@ public class JSONArray {
     
     
     /**
-     * Get the object value associated with an index.
+     * Bill_Get the object value associated with an index.
      * @param index
      *  The index must be between 0 and length() - 1.
      * @return An object value.
@@ -196,7 +196,7 @@ public class JSONArray {
 
 
     /**
-     * Get the boolean value associated with an index.
+     * Bill_Get the boolean value associated with an index.
      * The string values "true" and "false" are converted to boolean.
      *
      * @param index The index must be between 0 and length() - 1.
@@ -220,7 +220,7 @@ public class JSONArray {
 
 
     /**
-     * Get the double value associated with an index.
+     * Bill_Get the double value associated with an index.
      *
      * @param index The index must be between 0 and length() - 1.
      * @return      The value.
@@ -241,7 +241,7 @@ public class JSONArray {
 
 
     /**
-     * Get the int value associated with an index.
+     * Bill_Get the int value associated with an index.
      *
      * @param index The index must be between 0 and length() - 1.
      * @return      The value.
@@ -261,7 +261,7 @@ public class JSONArray {
 
 
     /**
-     * Get the JSONArray associated with an index.
+     * Bill_Get the JSONArray associated with an index.
      * @param index The index must be between 0 and length() - 1.
      * @return      A JSONArray value.
      * @throws JSONException If there is no value for the index. or if the
@@ -278,7 +278,7 @@ public class JSONArray {
 
 
     /**
-     * Get the JSONObject associated with an index.
+     * Bill_Get the JSONObject associated with an index.
      * @param index subscript
      * @return      A JSONObject value.
      * @throws JSONException If there is no value for the index or if the
@@ -295,7 +295,7 @@ public class JSONArray {
 
 
     /**
-     * Get the long value associated with an index.
+     * Bill_Get the long value associated with an index.
      *
      * @param index The index must be between 0 and length() - 1.
      * @return      The value.
@@ -316,7 +316,7 @@ public class JSONArray {
 
 
     /**
-     * Get the string associated with an index.
+     * Bill_Get the string associated with an index.
      * @param index The index must be between 0 and length() - 1.
      * @return      A string value.
      * @throws JSONException If there is no string value for the index.
@@ -363,7 +363,7 @@ public class JSONArray {
 
 
     /**
-     * Get the number of elements in the JSONArray, included nulls.
+     * Bill_Get the number of elements in the JSONArray, included nulls.
      *
      * @return The length (or size).
      */
@@ -373,7 +373,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional object value associated with an index.
+     * Bill_Get the optional object value associated with an index.
      * @param index The index must be between 0 and length() - 1.
      * @return      An object value, or null if there is no
      *              object at that index.
@@ -385,7 +385,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional boolean value associated with an index.
+     * Bill_Get the optional boolean value associated with an index.
      * It returns false if there is no value at that index,
      * or if the value is not Boolean.TRUE or the String "true".
      *
@@ -398,7 +398,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional boolean value associated with an index.
+     * Bill_Get the optional boolean value associated with an index.
      * It returns the defaultValue if there is no value at that index or if
      * it is not a Boolean or the String "true" or "false" (case insensitive).
      *
@@ -416,7 +416,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional double value associated with an index.
+     * Bill_Get the optional double value associated with an index.
      * NaN is returned if there is no value for the index,
      * or if the value is not a number and cannot be converted to a number.
      *
@@ -429,7 +429,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional double value associated with an index.
+     * Bill_Get the optional double value associated with an index.
      * The defaultValue is returned if there is no value for the index,
      * or if the value is not a number and cannot be converted to a number.
      *
@@ -447,7 +447,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional int value associated with an index.
+     * Bill_Get the optional int value associated with an index.
      * Zero is returned if there is no value for the index,
      * or if the value is not a number and cannot be converted to a number.
      *
@@ -460,7 +460,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional int value associated with an index.
+     * Bill_Get the optional int value associated with an index.
      * The defaultValue is returned if there is no value for the index,
      * or if the value is not a number and cannot be converted to a number.
      * @param index The index must be between 0 and length() - 1.
@@ -477,7 +477,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional JSONArray associated with an index.
+     * Bill_Get the optional JSONArray associated with an index.
      * @param index subscript
      * @return      A JSONArray value, or null if the index has no value,
      * or if the value is not a JSONArray.
@@ -489,7 +489,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional JSONObject associated with an index.
+     * Bill_Get the optional JSONObject associated with an index.
      * Null is returned if the key is not found, or null if the index has
      * no value, or if the value is not a JSONObject.
      *
@@ -503,7 +503,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional long value associated with an index.
+     * Bill_Get the optional long value associated with an index.
      * Zero is returned if there is no value for the index,
      * or if the value is not a number and cannot be converted to a number.
      *
@@ -516,7 +516,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional long value associated with an index.
+     * Bill_Get the optional long value associated with an index.
      * The defaultValue is returned if there is no value for the index,
      * or if the value is not a number and cannot be converted to a number.
      * @param index The index must be between 0 and length() - 1.
@@ -533,7 +533,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional string value associated with an index. It returns an
+     * Bill_Get the optional string value associated with an index. It returns an
      * empty string if there is no value at that index. If the value
      * is not a string and is not null, then it is coverted to a string.
      *
@@ -546,7 +546,7 @@ public class JSONArray {
 
 
     /**
-     * Get the optional string associated with an index.
+     * Bill_Get the optional string associated with an index.
      * The defaultValue is returned if the key is not found.
      *
      * @param index The index must be between 0 and length() - 1.

@@ -46,7 +46,7 @@ SOFTWARE.
 public class CDL {
 
     /**
-     * Get the next value. The value can be wrapped in quotes. The value can
+     * Bill_Get the next value. The value can be wrapped in quotes. The value can
      * be empty.
      * @param x A JSONTokener of the source text.
      * @return The value string, or null if empty.

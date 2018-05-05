@@ -1,9 +1,11 @@
-package GUI.billAPI;
+package GUI.BillAPI;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ProductData {
+import java.util.List;
+
+public class Bill_ProductData {
 
     @SerializedName("Name")
     @Expose
@@ -18,6 +20,14 @@ public class ProductData {
     @Expose
     private String sellprice;
 
+    public Bill_ProductData() {
+    }
+    public Bill_ProductData(String name, String quantity, String buyprice, String sellprice) {
+        this.name = name;
+        this.quantity = quantity;
+        this.buyprice = buyprice;
+        this.sellprice = sellprice;
+    }
 
     public String getName() {
         return name;
@@ -55,15 +65,4 @@ public class ProductData {
 
 
 
-
-
-
-
-
-
-
-
-
 }
-
-
