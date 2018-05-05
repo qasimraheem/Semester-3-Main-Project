@@ -1,4 +1,4 @@
-package GUI.BillAPI;
+package BillAPI;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -1,11 +1,16 @@
 package GUI;
 
+import BillAPI.Bill_Data;
+import BillAPI.Bill_Post;
+import BillAPI.Bill_ProductData;
 import com.sun.javafx.tools.resource.ConsolidatedResources;
 import javafx.beans.InvalidationListener;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import saleClasses.*;
 import java.io.File;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -407,6 +412,9 @@ public class Controller implements Initializable {
     private TableColumn<SaleSearch_Table, String> SaleSearchTablePrice;
 
     @FXML
+    private TableColumn<SaleSearch_Table, String> SaleSearchTableQuantity;
+
+    @FXML
     private TableView<SaleItems_Table> SaleItemsTable;
 
     @FXML
@@ -617,13 +625,16 @@ public class Controller implements Initializable {
         }
         SaleSearchdata = FXCollections.observableArrayList();
         for (int i = 0; i < d.size(); i++) {
-            SaleSearchdata.add(new SaleSearch_Table(d.get(i).getName(), d.get(i).getSellPrice()));
+            SaleSearchdata.add(new SaleSearch_Table(d.get(i).getName(), d.get(i).getQuantity(),d.get(i).getBuyPrice(), d.get(i).getSellPrice()));
         }
         SaleSearchTableName.setCellValueFactory(
                 new PropertyValueFactory<SaleSearch_Table, String>("tName")
         );
         SaleSearchTablePrice.setCellValueFactory(
                 new PropertyValueFactory<SaleSearch_Table, String>("tPrice")
+        );
+        SaleSearchTableQuantity.setCellValueFactory(
+                new PropertyValueFactory<SaleSearch_Table, String>("tQuantity")
         );
 
         SaleSearchTable.setItems(SaleSearchdata);
@@ -647,12 +658,19 @@ public class Controller implements Initializable {
 
     }
     public void SaleButtonsActions(MouseEvent mouseEvent) {
-
+        boolean flagquantityremove=true;
+        boolean flagquantityadd=true;
         if (mouseEvent.getSource() == SaleAdd) {
-            if (SaleAddQuantity.getText().equalsIgnoreCase("") || validate.getIntValid(SaleAddQuantity.getText()) == 0) {
+            int quantityset=Integer.parseInt(SaleAddQuantity.getText());
+            int quantitystored=Integer.parseInt(SaleSearchTable.getSelectionModel().getSelectedItem().gettQuantity());
+            if(quantityset>quantitystored){
+                flagquantityadd=false;
+            }
+
+            if (SaleAddQuantity.getText().equalsIgnoreCase("") || validate.getIntValid(SaleAddQuantity.getText()) == 0||flagquantityadd==false) {
                 SaleAddQuantity.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(0, 0, 2, 0))));
             } else if(SaleSearchTable.getSelectionModel().isEmpty()){
-                System.out.println("empty");
+                System.out.println("SaleAddempty");
             }else {
                 boolean flagfind = false;
                 SaleItemdata = FXCollections.observableArrayList();
@@ -664,8 +682,29 @@ public class Controller implements Initializable {
                         String quantity = Integer.toString(validate.getIntValid(SaleAddQuantity.getText()) + validate.getIntValid(SaleItemdata2.get(i).gettQuantity()));
                         String PriceX = Double.toString(validate.getDoubleValid(quantity) * validate.getDoubleValid(SaleSearchTable.getSelectionModel().getSelectedItem().gettPrice()));
                         System.out.println("find" + quantity + PriceX);
+                        try {
+                            Data d=new Data();
+                            Data up=new Data();
+                            String quantityRemain=Integer.toString(validate.getIntValid(SaleSearchTable.getSelectionModel().getSelectedItem().gettQuantity())-validate.getIntValid(SaleAddQuantity.getText()));
+                            //old data
+                            d.setName(SaleSearchTable.getSelectionModel().getSelectedItem().gettName());
+                            d.setQuantity(SaleSearchTable.getSelectionModel().getSelectedItem().gettQuantity());
+                            d.setBuyPrice(SaleSearchTable.getSelectionModel().getSelectedItem().gettBuyPrice());
+                            d.setSellPrice(SaleSearchTable.getSelectionModel().getSelectedItem().gettPrice());
+
+                            //new data
+                            up.setName(SaleSearchTable.getSelectionModel().getSelectedItem().gettName());
+                            up.setQuantity(quantityRemain);
+                            up.setSellPrice(SaleSearchTable.getSelectionModel().getSelectedItem().gettPrice());
+                            up.setBuyPrice(SaleSearchTable.getSelectionModel().getSelectedItem().gettBuyPrice());
+
+                            Put.put(d,up);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         SaleItemdata.add(new SaleItems_Table(ID, SaleItemdata2.get(i).gettName(), quantity, SaleItemdata2.get(i).gettPrice(), PriceX));
                         flagfind = true;
+
                     } else {
                         int id = i + 1;
                         String ID = Integer.toString(id);
@@ -678,6 +717,26 @@ public class Controller implements Initializable {
                         int id = SaleItemdata.size() + 1;
                         String ID = Integer.toString(id);
                         String PriceX = Double.toString(validate.getDoubleValid(SaleAddQuantity.getText()) * validate.getDoubleValid(SaleSearchTable.getSelectionModel().getSelectedItem().gettPrice()));
+                        try {
+                            Data d=new Data();
+                            Data up=new Data();
+                            String quantityRemain=Integer.toString(validate.getIntValid(SaleSearchTable.getSelectionModel().getSelectedItem().gettQuantity())-validate.getIntValid(SaleAddQuantity.getText()));
+                            //old data
+                            d.setName(SaleSearchTable.getSelectionModel().getSelectedItem().gettName());
+                            d.setQuantity(SaleSearchTable.getSelectionModel().getSelectedItem().gettQuantity());
+                            d.setBuyPrice(SaleSearchTable.getSelectionModel().getSelectedItem().gettBuyPrice());
+                            d.setSellPrice(SaleSearchTable.getSelectionModel().getSelectedItem().gettPrice());
+
+                            //new data
+                            up.setName(SaleSearchTable.getSelectionModel().getSelectedItem().gettName());
+                            up.setQuantity(quantityRemain);
+                            up.setSellPrice(SaleSearchTable.getSelectionModel().getSelectedItem().gettPrice());
+                            up.setBuyPrice(SaleSearchTable.getSelectionModel().getSelectedItem().gettBuyPrice());
+
+                            Put.put(d,up);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         SaleItemdata.add(new SaleItems_Table(ID, SaleSearchTable.getSelectionModel().getSelectedItem().gettName(), SaleAddQuantity.getText(), SaleSearchTable.getSelectionModel().getSelectedItem().gettPrice(), PriceX));
 //                    System.out.println(ID+SaleSearchTable.getSelectionModel().getSelectedItem().gettName()+" "+SaleSearchTable.getSelectionModel().getSelectedItem().gettPrice());
                     }
@@ -703,16 +762,32 @@ public class Controller implements Initializable {
 
                 SaleItemsTable.setItems(SaleItemdata);
                 SaleItemdata2 = SaleItemdata;
+
+                SaleAddQuantity.setText("");
+                getSaleBillTableData();
+                getSaleSearchTableData();
             }
-            SaleAddQuantity.setText("");
-            getSaleBillTableData();
+
 
         }
         if(mouseEvent.getSource()==SaleRefresh){
             getSaleSearchTableData();
         }
         if(mouseEvent.getSource()==SaleRemove){
-            if (SaleRemoveQuantity.getText().equalsIgnoreCase("") || validate.getIntValid(SaleRemoveQuantity.getText()) == 0) {
+            String name11=SaleItemsTable.getSelectionModel().getSelectedItem().gettName();
+            String name22;
+            for (int j=0;j<SaleSearchdata.size();j++) {
+                name22 = SaleSearchdata.get(j).gettName();
+                System.out.println(name11 + "=" + name22);
+                if (name11.equals(name22)) {
+                    int setquantity=validate.getIntValid(SaleRemoveQuantity.getText());
+                    int storedquantity=validate.getIntValid(SaleItemsTable.getSelectionModel().getSelectedItem().gettQuantity());
+                    if(setquantity>storedquantity){
+                        flagquantityremove=false;
+                    }
+                }
+            }
+            if (SaleRemoveQuantity.getText().equalsIgnoreCase("") || validate.getIntValid(SaleRemoveQuantity.getText()) == 0||flagquantityremove==false) {
                 SaleRemoveQuantity.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(2), new BorderWidths(0, 0, 2, 0))));
             }else if(SaleItemsTable.getSelectionModel().isEmpty()){
                 System.out.println("Empyt");
@@ -732,6 +807,43 @@ public class Controller implements Initializable {
                     String ID = Integer.toString(id);
                     if (SaleItemdata2.get(i).gettName() == SaleItemsTable.getSelectionModel().getSelectedItem().gettName()){
                         String quantity = Integer.toString( validate.getIntValid(SaleItemdata2.get(i).gettQuantity())-validate.getIntValid(SaleRemoveQuantity.getText()));
+                        try {
+                            System.out.println("in try");
+                            Data d=new Data();
+                            Data up=new Data();
+                            //old data
+                            String name1=SaleItemsTable.getSelectionModel().getSelectedItem().gettName();
+                            String name2;
+                            for (int j=0;j<SaleSearchdata.size();j++){
+                                name2=SaleSearchdata.get(j).gettName();
+                                System.out.println(name1+"="+name2);
+                                if(name1.equals(name2)){
+                                    System.out.println("error");
+                                    int prevoiusquantity=validate.getIntValid(SaleSearchdata.get(j).gettQuantity());
+                                    int newquantity= validate.getIntValid(SaleRemoveQuantity.getText());
+                                    newquantity=prevoiusquantity+newquantity;
+                                    String quantityRemain=Integer.toString(newquantity);
+                                    System.out.println("remain quantity"+quantityRemain);
+                                    d.setName(SaleItemsTable.getSelectionModel().getSelectedItem().gettName());
+                                    d.setQuantity(SaleSearchdata.get(j).gettQuantity());
+                                    d.setBuyPrice(SaleSearchdata.get(j).gettBuyPrice());
+                                    d.setSellPrice(SaleSearchdata.get(j).gettPrice());
+
+                                    //new data
+                                    up.setName(SaleSearchdata.get(j).gettName());
+                                    up.setQuantity(quantityRemain);
+                                    up.setSellPrice(SaleSearchdata.get(j).gettPrice());
+                                    up.setBuyPrice(SaleSearchdata.get(j).gettBuyPrice());
+
+                                }else {
+                                    System.out.println("not found"+j);
+                                }
+                            }
+
+                            Put.put(d,up);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         if(quantity=="0"||validate.getIntValid(quantity)<=0){
 //                            SaleItemdata2.remove(i);
                             id_reverse++;
@@ -768,9 +880,12 @@ public class Controller implements Initializable {
 
                 SaleItemsTable.setItems(SaleItemdata);
                 SaleItemdata2 = SaleItemdata;
+
+
+                SaleRemoveQuantity.setText("");
+                getSaleBillTableData();
+                getSaleSearchTableData();
             }
-            SaleRemoveQuantity.setText("");
-            getSaleBillTableData();
 
         }
         if(mouseEvent.getSource()==SaleCross){
@@ -782,8 +897,28 @@ public class Controller implements Initializable {
             SaleItemdata2=SaleItemdata;
             getSaleBillTableData();
         }
-        if(mouseEvent.getSource()==SaleTick){
+        if(mouseEvent.getSource()==SaleTick&&SaleBilldata.size()>0){
+            try {
+            Bill_Data data=new Bill_Data();
+            data.setBillid("tahseen");
+            data.setTotalitems(SaleBilldata.get(0).gettItems());
+            data.setTotalprice(SaleBilldata.get(0).gettPrice());
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date();
+            System.out.println(dateFormat.format(date));
+            data.setDate(dateFormat.format(date));
+            List<Bill_ProductData> billProductData = new ArrayList<>();
+            Bill_ProductData[] b=new Bill_ProductData[SaleItemdata2.size()];
+            for(int i=0;i<SaleItemdata2.size();i++){
+                b[i]=new Bill_ProductData(SaleItemdata2.get(i).gettName(),SaleItemdata2.get(i).gettQuantity(),SaleItemdata2.get(i).gettPriceX(),SaleItemdata2.get(i).gettPrice());
+                billProductData.add(b[i]);
 
+            }
+            data.setProductData(billProductData);
+            Bill_Post.post(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         }
     }
 

@@ -1,4 +1,4 @@
-package GUI.BillAPI;
+package BillAPI;
 
 import com.google.gson.Gson;
 import org.json.JSONArray;

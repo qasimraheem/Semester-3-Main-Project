@@ -134,7 +134,7 @@
             </HBox>
          </children>
       </VBox>
-      <AnchorPane fx:id="anchorSale" layoutX="331.0" prefHeight="730.0" prefWidth="1040.0" visible="false">
+      <AnchorPane fx:id="anchorSale" layoutX="331.0" prefHeight="730.0" prefWidth="1040.0">
          <children>
             <VBox fx:id="Product1" prefHeight="735.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;" stylesheets="@css/icons.css">
                <children>
@@ -201,8 +201,9 @@
                   <TextField fx:id="SaleSearch" focusTraversable="false" maxHeight="26.0" maxWidth="350.0" minHeight="-Infinity" minWidth="350.0" prefHeight="26.0" prefWidth="402.0" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="33.0" translateY="31.0" />
                   <TableView fx:id="SaleSearchTable" maxWidth="350.0" minWidth="250.0" prefHeight="463.0" prefWidth="350.0" translateX="33.0" translateY="68.0">
                     <columns>
-                      <TableColumn fx:id="SaleSearchTableName" editable="false" prefWidth="256.0" text="Name" />
-                        <TableColumn fx:id="SaleSearchTablePrice" prefWidth="93.0" text="Price" />
+                      <TableColumn fx:id="SaleSearchTableName" editable="false" prefWidth="191.0" text="Name" />
+                        <TableColumn fx:id="SaleSearchTablePrice" prefWidth="89.0" text="Price" />
+                        <TableColumn fx:id="SaleSearchTableQuantity" prefWidth="144.0" text="Quantity" />
                     </columns>
                   </TableView>
                   <ImageView fx:id="SaleAdd" fitHeight="50.0" fitWidth="57.0" onMouseClicked="#SaleButtonsActions" pickOnBounds="true" preserveRatio="true" styleClass="icons" translateX="33.0" translateY="96.0">
@@ -575,7 +576,7 @@
             <Label layoutX="743.0" layoutY="345.0" prefHeight="38.0" prefWidth="174.0" text="Select Actions To Get View" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorBills" layoutX="332.0" prefHeight="730.0" prefWidth="1040.0">
+      <AnchorPane fx:id="anchorBills" layoutX="332.0" prefHeight="730.0" prefWidth="1040.0" visible="false">
          <children>
             <VBox fx:id="Product2" prefHeight="735.0" prefWidth="633.0" style="-fx-background-color: #4F4F4F;" stylesheets="@css/icons.css">
                <children>
