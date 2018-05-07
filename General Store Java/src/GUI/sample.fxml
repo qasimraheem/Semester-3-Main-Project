@@ -6,7 +6,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ProgressBar?>
@@ -91,12 +91,12 @@
             </HBox>
             <HBox fx:id="productButtoN" onMouseClicked="#displayMenu" prefHeight="63.0" prefWidth="303.0" styleClass="btns">
                <children>
-                  <SVGPath fx:id="productIcon" content="M174,174H24V77L43.868,47,53.8,29h90.4Q159.1,53,174,77v97ZM58.768,36L33.934,77H164.066V75L139.232,36H58.768Zm6.954,5h66.556l2.98,7H62.742V46ZM57.775,53h82.45l2.98,7H54.795V58ZM50.821,65h96.358l2.98,7H47.841V70Zm29.8,48c-10.264,3.29-9.341,13.425-7.081,17.153,2.818,4.647,6.7,8,13.041,7.847,8.781-.212,19.526.512,30.794-1,6.029-.984,8.487-7.031,8.941-12-1.862-6.87-2.008-10.244-10.927-12H80.623Z" fill="#ffcd00" strokeDashOffset="10.0" style="-fx-scale-y: .25; -fx-scale-x: .25;">
+                  <SVGPath fx:id="productIcon" content="M174,174H24V77L43.868,47,53.8,29h90.4Q159.1,53,174,77v97ZM58.768,36L33.934,77H164.066V75L139.232,36H58.768Zm6.954,5h66.556l2.98,7H62.742V46ZM57.775,53h82.45l2.98,7H54.795V58ZM50.821,65h96.358l2.98,7H47.841V70Zm29.8,48c-10.264,3.29-9.341,13.425-7.081,17.153,2.818,4.647,6.7,8,13.041,7.847,8.781-.212,19.526.512,30.794-1,6.029-.984,8.487-7.031,8.941-12-1.862-6.87-2.008-10.244-10.927-12H80.623Z" fill="WHITE" strokeDashOffset="10.0" style="-fx-scale-y: .25; -fx-scale-x: .25;">
                      <HBox.margin>
                         <Insets bottom="-47.0" left="-31.0" right="-21.0" top="-41.0" />
                      </HBox.margin>
                   </SVGPath>
-                  <Label fx:id="productText" prefHeight="63.0" prefWidth="174.0" text="Products" textFill="#ffcd00">
+                  <Label fx:id="productText" prefHeight="63.0" prefWidth="174.0" text="Products" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="28.0" />
                      </font>
@@ -134,7 +134,7 @@
             </HBox>
          </children>
       </VBox>
-      <AnchorPane fx:id="anchorSale" layoutX="331.0" prefHeight="730.0" prefWidth="1040.0">
+      <AnchorPane fx:id="anchorSale" layoutX="331.0" prefHeight="730.0" prefWidth="1040.0" visible="false">
          <children>
             <VBox fx:id="Product1" prefHeight="735.0" prefWidth="622.0" style="-fx-background-color: #4F4F4F;" stylesheets="@css/icons.css">
                <children>
@@ -516,7 +516,7 @@
                   </ImageView>
                </children>
             </VBox>
-            <VBox fx:id="vboxSearchProduct" onMouseClicked="#SearchProduct" prefHeight="728.0" prefWidth="418.0" style="-fx-background-color: #292929;" stylesheets="@css/icons.css" translateX="621.0" visible="false">
+            <VBox fx:id="vboxSearchProduct" onMouseClicked="#SearchProduct" prefHeight="728.0" prefWidth="418.0" style="-fx-background-color: #292929;" stylesheets="@css/icons.css" translateX="621.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="441.0" style="-fx-background-color: #3C3F41;" text="Search Product" textFill="WHITE">
                      <font>
@@ -580,15 +580,15 @@
          <children>
             <VBox fx:id="Product2" prefHeight="735.0" prefWidth="633.0" style="-fx-background-color: #4F4F4F;" stylesheets="@css/icons.css">
                <children>
-                  <TableView fx:id="pTableID1" prefHeight="591.0" prefWidth="663.0">
+                  <TableView fx:id="BillTable" onMouseClicked="#GetBillsDetail" prefHeight="591.0" prefWidth="663.0">
                      <columns>
-                        <TableColumn fx:id="pTableName1" prefWidth="93.99996948242188" text="Bill #" />
-                        <TableColumn fx:id="pTableQuantity1" prefWidth="163.0" text="Total Items" />
-                        <TableColumn fx:id="pTableBuyPrice1" minWidth="0.0" prefWidth="171.0" text="Total Price" />
-                        <TableColumn fx:id="pTableSalePrice1" prefWidth="204.0" text="Date/time" />
+                        <TableColumn fx:id="BillTableID" prefWidth="93.99996948242188" text="Bill #" />
+                        <TableColumn fx:id="BillTableTotalItems" prefWidth="163.0" text="Total Items" />
+                        <TableColumn fx:id="BillTableTotalPrice" minWidth="0.0" prefWidth="171.0" text="Total Price" />
+                        <TableColumn fx:id="BillTableDate" prefWidth="204.0" text="Date/time" />
                      </columns>
                   </TableView>
-                  <ImageView fx:id="productButtonSearch1" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#SearchProduct" pickOnBounds="true" preserveRatio="true" styleClass="icons" translateX="201.0" translateY="26.0">
+                  <ImageView fx:id="billSearch" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#BillButtons" pickOnBounds="true" preserveRatio="true" styleClass="icons" translateX="201.0" translateY="26.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -599,7 +599,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
-                  <ImageView fx:id="productButtonRefresh1" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#RefreshProduct" pickOnBounds="true" preserveRatio="true" styleClass="icons" translateX="401.0" translateY="-34.0">
+                  <ImageView fx:id="billrefresh" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#BillButtons" pickOnBounds="true" preserveRatio="true" styleClass="icons" translateX="401.0" translateY="-34.0">
                      <image>
                         <Image url="@images/refresh1.png" />
                      </image>
@@ -619,34 +619,16 @@
                         <Font size="33.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="30.0" prefWidth="76.0" text="Bill #" textFill="WHITE" translateX="40.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="productSearchName11" focusTraversable="false" maxHeight="26.0" maxWidth="337.0" minHeight="-Infinity" minWidth="337.0" onKeyReleased="#SearchProductList" prefHeight="26.0" prefWidth="337.0" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" />
-                  <Label prefHeight="30.0" prefWidth="103.0" text="Total Items" textFill="WHITE" translateX="40.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="productSearchQuantity11" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" />
-                  <Label prefHeight="30.0" prefWidth="76.0" text="Total Price" textFill="WHITE" translateX="40.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="productSearchBuyPrice11" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" />
-                  <TableView maxWidth="338.0" prefHeight="399.0" prefWidth="338.0" translateX="40.0" translateY="10.0">
+                  <TableView fx:id="BillTableDetait" maxWidth="338.0" prefHeight="588.0" prefWidth="338.0" translateX="40.0" translateY="20.0">
                     <columns>
-                      <TableColumn prefWidth="140.0" text="Name" />
-                      <TableColumn prefWidth="93.0" text="Quantity" />
-                        <TableColumn prefWidth="104.0" text="Price x1" />
+                      <TableColumn fx:id="BillTableName" prefWidth="140.0" text="Name" />
+                      <TableColumn fx:id="BillTableQuantity" prefWidth="93.0" text="Quantity" />
+                        <TableColumn fx:id="BillTablePrice" prefWidth="104.0" text="Price x1" />
                     </columns>
                   </TableView>
                </children>
             </VBox>
-            <VBox fx:id="vboxSearchProduct1" onMouseClicked="#SearchProduct" prefHeight="735.0" prefWidth="409.0" style="-fx-background-color: #292929;" translateX="633.0" visible="false">
+            <VBox fx:id="vboxBillSearch" onMouseClicked="#SearchProduct" prefHeight="735.0" prefWidth="409.0" style="-fx-background-color: #292929;" translateX="633.0" visible="false">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="441.0" style="-fx-background-color: #3C3F41;" text="Search Bills" textFill="WHITE">
                      <font>
@@ -658,33 +640,25 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="productSearchName1" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="350.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="45.0" />
+                  <TextField fx:id="billtextid" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="350.0" onKeyReleased="#SearchBillList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="45.0" />
                   <Label prefHeight="30.0" prefWidth="103.0" text="Total Items" textFill="WHITE" translateX="40.0" translateY="45.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="productSearchQuantity1" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="45.0" />
+                  <TextField fx:id="billtextitems" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchBillList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="45.0" />
                   <Label prefHeight="30.0" prefWidth="76.0" text="Total Price" textFill="WHITE" translateX="40.0" translateY="45.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="productSearchBuyPrice1" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchProductList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="45.0" />
-                  <Label prefHeight="30.0" prefWidth="103.0" text="Date" textFill="WHITE" translateX="40.0" translateY="75.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <ComboBox prefHeight="29.0" prefWidth="84.0" promptText="DD" translateX="40.0" translateY="91.0" />
-                  <ComboBox prefHeight="29.0" prefWidth="105.0" promptText="MM" translateX="124.0" translateY="62.0" />
-                  <ComboBox prefHeight="29.0" prefWidth="118.0" promptText="YYYY" translateX="229.0" translateY="33.0" />
+                  <TextField fx:id="billtextprice" alignment="TOP_RIGHT" focusTraversable="false" maxHeight="8.0" maxWidth="12.0" minHeight="-Infinity" minWidth="250.0" onKeyReleased="#SearchBillList" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="40.0" translateY="45.0" />
                   <Label prefHeight="30.0" prefWidth="332.0" text="Do you want to keep Searched Data in table?" textFill="WHITE" translateX="40.0" translateY="131.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="productButtonSearchTick1" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#SearchProduct" pickOnBounds="true" preserveRatio="true" translateX="91.0" translateY="170.0">
+                  <ImageView fx:id="billtick" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#BillButtons" pickOnBounds="true" preserveRatio="true" translateX="91.0" translateY="170.0">
                      <image>
                         <Image url="@images/tick.png" />
                      </image>
@@ -695,7 +669,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
-                  <ImageView fx:id="productButtonSearchCross1" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#SearchProduct" pickOnBounds="true" preserveRatio="true" translateX="246.0" translateY="110.0">
+                  <ImageView fx:id="billcross" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#BillButtons" pickOnBounds="true" preserveRatio="true" translateX="246.0" translateY="110.0">
                      <image>
                         <Image url="@images/cross.png" />
                      </image>
@@ -726,58 +700,60 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <children>
-                              <WebView fx:id="Employee_Image_Web" prefHeight="200.0" prefWidth="200.0" />
-                              <ImageView fx:id="AddImage" fitHeight="50.0" fitWidth="55.0" layoutX="75.0" layoutY="75.0" onMouseClicked="#Explorer" pickOnBounds="true" preserveRatio="true">
+                              <WebView fx:id="Employee_Image_Web" onMouseEntered="#ShowImageEdit" onMouseExited="#HideImageEdit" prefHeight="200.0" prefWidth="200.0" />
+                              <ImageView fx:id="AddImage" fitHeight="50.0" fitWidth="55.0" layoutX="75.0" layoutY="75.0" onMouseClicked="#Explorer" onMouseEntered="#ShowImageEdit" pickOnBounds="true" preserveRatio="true" styleClass="icons" visible="false">
                                  <image>
                                     <Image url="@images/if_32_171485.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </Pane>
-                        <Text fill="#ffcd00" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName" translateX="150.0" translateY="92.0" wrappingWidth="559.9830722808838">
+                        <Text fill="#ffcd00" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee" translateX="150.0" translateY="92.0" wrappingWidth="559.9830722808838">
                            <font>
                               <Font size="47.0" />
                            </font>
                         </Text>
                      </children>
                   </HBox>
-                  <HBox maxHeight="1200.0" maxWidth="1200.0" minHeight="489.0" minWidth="0.0" prefHeight="1000.0" prefWidth="1036.0" styleClass="divImage" stylesheets="@gui.css" translateY="-240.0">
+                  <HBox fx:id="hBoxImageDiv" maxHeight="1200.0" maxWidth="1200.0" minHeight="489.0" minWidth="0.0" prefHeight="1000.0" prefWidth="1036.0" styleClass="divImage" stylesheets="@gui.css" translateY="-240.0">
                      <children>
-                        <VBox maxHeight="1000.0" maxWidth="1044.0" minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="1036.0" styleClass="employee_user" stylesheets="@gui.css">
+                        <VBox fx:id="vboxEmployeeDiv" maxHeight="1000.0" maxWidth="1044.0" minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="1036.0" styleClass="employee_user" stylesheets="@gui.css">
                            <children>
                               <Label prefHeight="30.0" prefWidth="138.0" text="New Username" textFill="WHITE" translateX="100.0" translateY="29.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="productSearchName2" focusTraversable="false" maxHeight="30.0" maxWidth="499.0" minHeight="0.0" minWidth="0.0" onKeyReleased="#SearchProductList" prefHeight="483.0" prefWidth="21.0" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="100.0" translateY="29.0" />
+                              <TextField fx:id="employeeUsername" focusTraversable="false" maxHeight="30.0" maxWidth="499.0" minHeight="0.0" minWidth="0.0" onKeyReleased="#SearchProductList" prefHeight="483.0" prefWidth="21.0" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="100.0" translateY="29.0" />
                               <Label prefHeight="30.0" prefWidth="138.0" text="New Password" textFill="WHITE" translateX="100.0" translateY="29.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <PasswordField maxWidth="499.0" prefHeight="26.0" prefWidth="444.0" promptText="**********" styleClass="input" stylesheets="@css/input.css" translateX="100.0" translateY="29.0" />
+                              <PasswordField fx:id="employeePassword" maxWidth="499.0" prefHeight="26.0" prefWidth="444.0" promptText="**********" styleClass="input" stylesheets="@css/input.css" translateX="100.0" translateY="29.0" />
                               <ProgressBar prefHeight="20.0" prefWidth="499.0" progress="0.0" translateX="100.0" translateY="30.0" />
                               <Label prefHeight="30.0" prefWidth="151.0" text="Confirm Password" textFill="WHITE" translateX="100.0" translateY="29.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <PasswordField maxWidth="499.0" prefHeight="26.0" prefWidth="444.0" promptText="**********" styleClass="input" stylesheets="@css/input.css" translateX="100.0" translateY="29.0" />
-                              <Label prefHeight="30.0" prefWidth="119.0" text="User Type" textFill="WHITE" translateX="100.0" translateY="29.0">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
+                              <PasswordField fx:id="employeeconfirm" maxWidth="499.0" prefHeight="26.0" prefWidth="444.0" promptText="**********" styleClass="input" stylesheets="@css/input.css" translateX="100.0" translateY="29.0" />
                               <GlyphsStack />
-                              <ComboBox maxWidth="499.0" minWidth="0.0" prefHeight="28.0" prefWidth="21.0" promptText="Select User Type" translateX="100.0" translateY="29.0" />
                               <Label prefHeight="30.0" prefWidth="119.0" text="Image URL" textFill="WHITE" translateX="100.0" translateY="29.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="productSearchSalePrice11" editable="false" focusTraversable="false" maxHeight="30.0" maxWidth="499.0" minHeight="0.0" minWidth="0.0" onKeyReleased="#SearchProductList" prefHeight="483.0" prefWidth="21.0" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="100.0" translateY="29.0" />
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" translateX="700.0" translateY="-31.0">
+                              <TextField fx:id="employeeImageUrl" editable="false" focusTraversable="false" maxHeight="30.0" maxWidth="499.0" minHeight="0.0" minWidth="0.0" onKeyReleased="#SearchProductList" prefHeight="483.0" prefWidth="21.0" promptText="NONE" styleClass="input" stylesheets="@css/input.css" translateX="100.0" translateY="29.0" />
+                              <ImageView fx:id="EmployeeEdit" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#EmployeeButtons" pickOnBounds="true" preserveRatio="true" styleClass="icons" translateX="700.0" translateY="-31.0">
+                                 <image>
+                                    <Image url="@images/edit.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="EmployeeNew" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#EmployeeButtons" pickOnBounds="true" preserveRatio="true" styleClass="icons" translateX="800.0" translateY="-90.0">
                                  <image>
                                     <Image url="@images/if_Download_1031520.png" />
                                  </image>
@@ -791,6 +767,44 @@
                   </HBox>
                </children>
             </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorLogin" prefHeight="730.0" prefWidth="1368.0" styleClass="loginBack" stylesheets="@gui.css">
+         <children>
+            <AnchorPane layoutX="438.0" layoutY="110.0" prefHeight="510.0" prefWidth="492.0" style="-fx-background-color: #282828;" stylesheets="@gui.css">
+               <children>
+                  <ImageView fitHeight="219.0" fitWidth="379.0" layoutX="57.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/bcd.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="loginuser" layoutX="117.0" layoutY="257.0" prefHeight="35.0" prefWidth="312.0" promptText="UserName" style="-fx-background-color: #FFFFFF; -fx-border-radius: 0px; -fx-border-color: #FFFFFF; -fx-border-width: 2px;">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="loginpassword" layoutX="117.0" layoutY="299.0" prefHeight="26.0" prefWidth="312.0" promptText="Password" style="-fx-background-color: #FFFFFF; -fx-border-radius: 0px; -fx-border-color: #FFFFFF; -fx-border-width: 2px;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="loginbutton" layoutX="57.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#Login" prefHeight="49.0" prefWidth="379.0" style="-fx-background-color: #FFCD00;" styleClass="icons3" text="LOGIN">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="31.0" fitWidth="27.0" layoutX="71.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="66.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Touch.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

@@ -12,28 +12,28 @@ import java.net.URL;
 
 public class Employee_Put {
 
-    public static void main(String[] args) {
-
-        try {
-            Employee_Data d=new Employee_Data();
-            Employee_Data up=new Employee_Data();
-
-            //old data
-            d.setUsername("tahseen");
-            d.setPassword("12345678");
-            d.setImage("C:/Users/qasim/Desktop/user_yellow.jpg");
-
-            //new data
-            up.setUsername("qasim");
-            up.setPassword("13936");
-            up.setImage("C:/Users/qasim/Desktop/b.jpg");
-
-
-            Employee_Put.put(d,up);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//
+//        try {
+//            Employee_Data d=new Employee_Data();
+//            Employee_Data up=new Employee_Data();
+//
+//            //old data
+//            d.setUsername("tahseen");
+//            d.setPassword("12345678");
+//            d.setImage("C:/Users/qasim/Desktop/user_yellow.jpg");
+//
+//            //new data
+//            up.setUsername("qasim");
+//            up.setPassword("13936");
+//            up.setImage("C:/Users/qasim/Desktop/b.jpg");
+//
+//
+//            Employee_Put.put(d,up);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
         public static void call_me2() throws Exception {
             Employee_Data d=new Employee_Data();
             d.setUsername("");

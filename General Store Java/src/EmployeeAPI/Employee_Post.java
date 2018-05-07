@@ -12,17 +12,17 @@ import java.net.URL;
 
 public class Employee_Post {
 
-    public static void main(String[] args) {
-        try {
-            Employee_Data data=new Employee_Data();
-            data.setUsername("tahseen");
-            data.setPassword("12345678");
-            data.setImage("C:/Users/qasim/Desktop/user_yellow.jpg");
-            Employee_Post.post(data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//            Employee_Data data=new Employee_Data();
+//            data.setUsername("tahseen");
+//            data.setPassword("12345678");
+//            data.setImage("C:/Users/qasim/Desktop/user_yellow.jpg");
+//            Employee_Post.post(data);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
         public static JSONObject post(Employee_Data d) throws IOException, JSONException {
             String query = "http://localhost:8081/post";

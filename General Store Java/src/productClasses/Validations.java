@@ -86,6 +86,30 @@ public class Validations {
         }
         return  String.valueOf(ch);
     }
+    public String getUserValid(String text){
+        char []ch=text.toCharArray();
+        for (int i=0;i<text.length();i++){
+            if( (ch[i]>='A' && ch[i]<='z')||(ch[i]<='9' && ch[i]>='0')){
+
+            }else{
+                ch[i]='\u0000';
+            }
+        }
+        return  String.valueOf(ch);
+    }
+    public boolean getUserValidBool(String text){
+        char []ch=text.toCharArray();
+        boolean flag=true;
+        for (int i=0;i<text.length();i++){
+            if( (ch[i]>='A' && ch[i]<='z')||(ch[i]<='9' && ch[i]>='0')){
+
+            }else{
+//                ch[i]='\u0000';
+                flag=false;
+            }
+        }
+        return  flag;
+    }
 
     //Email Validation
     public boolean getEmailValid(String text){
@@ -139,6 +163,73 @@ public class Validations {
         }
         return  password_valid;
     }
+    public int getPasswordLevels(String Password,int Password_length,int specila_Ch_length,int Digits_length){
+        int levels=0;
+        int length=0,ch_len=0,digit=0;
+        char []ch=Password.toCharArray();
+        for (int i=0;i<Password.length();i++){
+            length++;
+            if ((ch[i]<'A' || ch[i]>'z')&&(!(ch[i]>='0' && ch[i]<'9'))){
+                ch_len++;
+            }
+            if ((ch[i]>='0' && ch[i]<'9')){
+                digit++;
+            }
+        }
+        if(length>=Password_length&&ch_len>=specila_Ch_length&&digit>=Digits_length){
+            levels++;
+        }
+        if(digit>=Digits_length){
+            levels++;
+        }
+        if(ch_len>=specila_Ch_length){
+            levels++;
+        }
+        if(length>=Password_length){
+            levels++;
+        }
+
+        return  levels;
+    }
+
+    public boolean getQuantityValid(String quantity,String symbol,String stored_Quantity){
+       boolean result=false;
+       if (symbol.equals("<")){
+           if(getIntValid(quantity)<getIntValid(stored_Quantity)){
+               result =true;
+           }
+       }else if (symbol.equals(">")){
+           if(getIntValid(quantity)>getIntValid(stored_Quantity)){
+               result =true;
+           }
+       }else if (symbol.equals("<=")){
+           if(getIntValid(quantity) <= getIntValid(stored_Quantity)){
+               result =true;
+           }
+       }else if (symbol.equals(">=")){
+           if(getIntValid(quantity) >= getIntValid(stored_Quantity)){
+               result =true;
+           }
+       }else if (symbol.equals("==")){
+           if(getIntValid(quantity) == getIntValid(stored_Quantity)){
+               result =true;
+           }
+       }
+       return result;
+    }
+    public boolean getQuantityValid(String quantity) {
+        Integer value = 0;
+        boolean flag=true;
+        try {
+            value = Integer.parseInt(quantity);
+        } catch (NumberFormatException nfe) { }
+        if(value<0){
+            flag=false;
+        }
+        return flag;
+
+
+    }
 
     public static void main(String [] args) throws IOException {
        Validations v=new Validations();
@@ -146,6 +237,11 @@ public class Validations {
         System.out.println(v.getFloatValid("qasim",35.35));
         System.out.println(v.getTextValid("qasim 123 !@# raheem",'@'));
         System.out.println(v.getEmailValid("qasim123!@#raheem"));
-          System.out.println(v.getPasswordValid("qalid12!@#",12,3,2));
+        System.out.println(v.getQuantityValid("12","==","12"));
+        System.out.println(v.getPasswordValid("Allahis1!",8,1,1));
+        System.out.println(v.getPasswordLevels("Allahis1!",8,1,1));
+        System.out.println("text:"+v.getUserValid("ABab0123456789@[]!@#"));
+        System.out.println("text:"+v.getUserValidBool("ABab0123456789"));
+
     }
 }

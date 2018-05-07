@@ -12,18 +12,18 @@ import java.util.List;
 
 public class Employee_Get {
 
-
-        public static void main(String[] args) {
-        try {
-            List<Employee_Data> d = new ArrayList<>();
-            d=Employee_Get.get();
-            System.out.println(d.size());
-            for(int i=0;i<d.size();i++)
-                System.out.println(d.get(0).getUsername());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//
+//        public static void main(String[] args) {
+//        try {
+//            List<Employee_Data> d = new ArrayList<>();
+//            d=Employee_Get.get();
+//            System.out.println(d.size());
+//            for(int i=0;i<d.size();i++)
+//                System.out.println(d.get(0).getUsername());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public static List<Employee_Data> get() throws Exception {
         String url = "http://localhost:8081";
