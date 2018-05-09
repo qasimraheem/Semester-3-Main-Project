@@ -1,0 +1,21 @@
+body{
+  margin:0;
+  font: normal 16px Arial, Helvetica, sand-serif;
+  color:#333;
+}
+
+#login{
+  background:#fff;
+  opacity:0.9;
+  padding:2em;
+  border:#ccc 2px solid;
+  position:absolute;
+  top:100px;
+  left:50px;
+}
+
+#login input[type="text"], #login input[type="password"]{
+  padding:7px;
+  margin-bottom:10px;
+  border:1px #ccc solid;
+}

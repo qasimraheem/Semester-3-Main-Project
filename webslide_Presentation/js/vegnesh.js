@@ -166,7 +166,7 @@ $(() => {
             ]
         });
     });
-particlesJS('particles-js', {
+particlesJS('particles.js-js', {
     particles: {
         number: {
             value: 50,

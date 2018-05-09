@@ -7,8 +7,259 @@
     <link rel="stylesheet" type='text/css' media='all' href="../css/svg-icons.css">
     <link rel="stylesheet" type='text/css' media='all' href="../css/presentation.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!--<script src="jquery.slides.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Custom JavaScript -->
 </head>
 <body>
+<script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+<script>
+    class Heart extends mojs.CustomShape {
+        getShape () {
+            return '<path d="M73.6170213,0 C64.4680851,0 56.5957447,5.53191489 51.7021277,13.8297872 C50.8510638,15.3191489 48.9361702,15.3191489 48.0851064,13.8297872 C43.4042553,5.53191489 35.3191489,0 26.1702128,0 C11.9148936,0 0,14.0425532 0,31.2765957 C0,48.0851064 14.893617,77.8723404 47.6595745,99.3617021 C49.1489362,100.212766 50.8510638,100.212766 52.1276596,99.3617021 C83.8297872,78.5106383 99.787234,48.2978723 99.787234,31.2765957 C100,14.0425532 88.0851064,0 73.6170213,0 L73.6170213,0 Z"></path>';
+        }
+    }
+    mojs.addShape( 'heart', Heart );
+
+    const CIRCLE_RADIUS = 20;
+    const RADIUS = 32;
+    const circle = new mojs.Shape({
+        left: 0, top: 0,
+        stroke:   '#FF9C00',
+        strokeWidth: { [2*CIRCLE_RADIUS] : 0 },
+        fill:       'none',
+        scale:      { 0: 1 },
+        radius:     CIRCLE_RADIUS,
+        duration:   400,
+        easing:     'cubic.out'
+    });
+
+    const burst = new mojs.Burst({
+        left: 0, top: 0,
+        radius:   { 4: RADIUS },
+        angle:    45,
+        count:    14,
+        timeline: { delay: 300 },
+        children: {
+            radius:       2.5,
+            fill:         '#FD7932',
+            scale:        { 1: 0, easing: 'quad.in' },
+            pathScale:    [ .8, null ],
+            degreeShift:  [ 13, null ],
+            duration:     [ 500, 700 ],
+            easing:       'quint.out'
+        }
+    });
+
+    const heart = new mojs.Shape({
+        left: 0, top: 2,
+        shape:    'heart',
+        fill:     '#E5214A',
+        scale:    { 0 : 1 },
+        easing:   'elastic.out',
+        duration: 1600,
+        delay:    300,
+        radius:   11
+    });
+
+    document.addEventListener( 'dblclick', function (e) {
+        const coords = { x: e.pageX, y: e.pageY };
+        burst
+            .tune(coords)
+            .replay();
+
+        circle
+            .tune( coords )
+            .replay();
+
+        heart
+            .tune( coords )
+            .replay();
+
+    });
+
+    /////////////////////////////
+
+    const meteors = new mojs.Burst({
+        left: 0, top: 0,
+        count:    17,
+        radius:   { 0: 250 },
+        degree:   0,
+
+        children: {
+            shape:        'line',
+            stroke:       ['#F9DD5E', '#FC2D79', '#11CDC5', '#020202', '#FED11A'],
+            duration:     400,
+            radius:       60,
+            strokeWidth:  8,
+            left:         'stagger(20)',
+            top:          'stagger(20)',
+            delay:        [ 0, 200, 100 ],
+            isForce3d:    true
+        }
+    });
+
+    document.addEventListener( 'mousewheel', function (e) {
+        meteors
+            .tune({ x: e.pageX, y: e.pageY })
+            .replay();
+    } );
+
+    ////////////////////////////////////////////////////
+
+
+    const COLORS = {
+        RED:      '#FD5061',
+        YELLOW:   '#FFCEA5',
+        BLACK:    '#29363B',
+        WHITE:    'white',
+        VINOUS:   '#A50710'
+    }
+
+    const burst1 = new mojs.Burst({
+        left: 0, top: 0,
+        count:          8,
+        radius:         { 50: 150 },
+        children: {
+            shape:        'line',
+            stroke:       [ 'white', '#FFE217', '#FC46AD', '#D0D202', '#B8E986', '#D0D202' ],
+            scale:        1,
+            scaleX:       { 1 : 0 },
+            // pathScale:    'rand(.5, 1.25)',
+            degreeShift:  'rand(-90, 90)',
+            radius:       'rand(20, 40)',
+            // duration:     200,
+            delay:        'rand(0, 150)',
+            isForce3d:    true
+        }
+    });
+
+    const largeBurst = new mojs.Burst({
+        left: 0, top: 0,
+        count:          4,
+        radius:         0,
+        angle:         45,
+        radius:        { 0: 450  },
+        children: {
+            shape:        'line',
+            stroke:       '#4ACAD9',
+            scale:        1,
+            scaleX:       { 1 : 0 },
+            radius:       100,
+            duration:     450,
+            isForce3d:    true,
+            easing:       'cubic.inout'
+        }
+    });
+
+    const CIRCLE_OPTS = {
+        left: 0, top: 0,
+        scale:      { 0: 1 },
+    }
+
+    const largeCircle = new mojs.Shape({
+        ...CIRCLE_OPTS,
+        fill:       'none',
+        stroke:     'white',
+        strokeWidth: 4,
+        opacity:    { .25 : 0 },
+        radius:     250,
+        duration:   600,
+    });
+
+    const smallCircle = new mojs.Shape({
+        ...CIRCLE_OPTS,
+        fill:       'white',
+        opacity:    { .5 : 0 },
+        radius:     30,
+    });
+
+    document.addEventListener( 'click', function (e) {
+
+        burst1
+            .tune({ x: e.pageX, y: e.pageY })
+            .generate()
+            .replay();
+
+        largeBurst
+            .tune({ x: e.pageX, y: e.pageY })
+            .replay();
+
+        largeCircle
+            .tune({ x: e.pageX, y: e.pageY })
+            .replay();
+
+        smallCircle
+            .tune({ x: e.pageX, y: e.pageY })
+            .replay();
+
+    });
+
+    ///////////////////////////////////////////////////
+
+
+
+    const DURATION = 400
+
+    const bubbles = new mojs.Burst({
+        left: 0, top: 0,
+        degree:   0,
+        count:    3,
+        radius:   { 0: 100 },
+        children: {
+            fill:       '#F4C718',
+            pathScale:  'rand(0.5, 1)',
+            radius:     'rand(12, 15)',
+            swirlSize:  'rand(10, 15)',
+            swirlFrequency: 'rand(2, 4)',
+            direction:  [ 1, -1 ],
+            duration:   `rand(${1*DURATION}, ${2*DURATION})`,
+            delay:      'rand(0, 75)',
+            easing:     'quad.out',
+            isSwirl:    true,
+            isForce3d:  true,
+        }
+    });
+
+    const circle2 = new mojs.Shape({
+        top: 0, left: 0,
+        radius:       { 20: 0 },
+        stroke:       '#4444DD',
+        strokeWidth:  { 5: 0 },
+        fill:         'none',
+        duration:     500
+        // delay:        200
+    });
+
+    const cross = new mojs.Shape({
+        top: 0, left: 0,
+        angle:        45,
+        shape:        'cross',
+        radius:       { 10: 0 },
+        stroke:       '#F4C718',
+        fill:         '#F4C718',
+        easing:       'cubic.out',
+        duration:     500
+    });
+
+    document.addEventListener( 'mousemove',  (e) => {
+        bubbles
+            .tune({ x: e.pageX, y: e.pageY })
+            .generate()
+            .replay();
+        circle2
+            .tune({ x: e.pageX, y: e.pageY })
+            .replay();
+
+        cross
+            .tune({ x: e.pageX, y: e.pageY })
+            .replay();
+    });
+</script>
+
+
+
     <header role="banner" id="my_header">
         <nav role="navigation" id="header_float">
             <p><a href="presentation.html" title="Home"><img src="../images/logo.png"></a></p>
@@ -32,16 +283,23 @@
             </ul>
         </nav>
     </header>
+    <div  id="particles-js" style="width: 100%;height: 100%">
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function(){
+            console.log('particles.json loaded...');
+        });
+    </script>
     <main role="main">
         <article id="webslides" class="vertical">
             <section>
-                <span class="background" style="background-image:url('../images/logo.png')"></span>
                 <div class="wrap aligncenter">
                     <h1 id="title_heading"><strong>Point Of Sale</strong></h1>
                     <p class="text-intro">Convert the Manual Shop Handling Records to Auto
                     </p>
                     <p>
-                        <a href="https://codeload.github.com/qasimraheem/Semester-3-Main-Project/zip/master" class="button zoomIn" title="Download WebSlides for free">
+                        <a href="https://codeload.github.com/qasimraheem/Semester-3-Main-Project/zip/master" class="button zoomIn sim-button button12" title="Download WebSlides for free">
                             <svg class="fa-cloud-download">
                                 <use xlink:href="#fa-cloud-download"></use>
                             </svg>
@@ -284,60 +542,70 @@
                     <div class="wrap size-50 aligncenter">
                         <h1 id="team_title"><strong>Our Team</strong></h1>
                     </div>
-                    <div class="maininner">
-                        <div class="inner">
-                            <div class ="circle circle1">
+                    <div class="team-cards-container">
+                        <div class="maininner ">
+                            <div class="inner ">
+                                <div class ="circle circle1">
+                                </div>
+                                <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.0/TweenMax.min.js'></script>
+                                <script src="../js/index.js"></script>
+                                <div class="name">
+                                    <p1 >QASIM RAHEEM</p1><br><p1 style="font-size: 20px">Project Manager</p1>
+                                </div>
+                                <div class="logoimage1">
+                                    <a class="teambuttons" href="https://github.com/qasimraheem"><img src="../images/if_icon-social-github_211904.png" width="50px" height="50px"></a>
+                                </div>
+                                <div class="logoimage2">
+                                    <a class="teambuttons" href="https://www.facebook.com/qasim.raheem.khokhar"><img src="../images/if_square-facebook_317727.png" width="50px" height="50px"></a>
+                                </div>
                             </div>
-                            <div class="name">
-                                <p1 >QASIM RAHEEM</p1><br><p1 style="font-size: 20px">Project Manager</p1>
+                            <div class="inner">
+                                <div class ="circle circle2">
+                                </div>
+                                <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.0/TweenMax.min.js'></script>
+                                <script src="../js/index.js"></script>
+                                <div class="name">
+                                    <p1 >M TAHSEEN</p1><br><p1 style="font-size: 20px">Programmer</p1>
+                                </div>
+                                <div class="logoimage1">
+                                    <a class="teambuttons" href="https://github.com/tahseenmashaidi"><img src="../images/if_icon-social-github_211904.png" width="50px" height="50px"></a>
+                                </div>
+                                <div class="logoimage2">
+                                    <a class="teambuttons" href="https://www.facebook.com/tahseenmashaidi"> <img src="../images/if_square-facebook_317727.png" width="50px" height="50px"></a>
+                                </div>
                             </div>
-                            <div class="logoimage1">
-                                <a class="teambuttons" href="https://github.com/qasimraheem"><img src="../images/if_icon-social-github_211904.png" width="50px" height="50px"></a>
+                            <div class="inner">
+                                <div class ="circle circle3">
+                                </div>
+                                <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.0/TweenMax.min.js'></script>
+                                <script src="../js/index.js"></script>
+                                <div class="name">
+                                    <p1 >SAAD IMRAN</p1><br><p1 style="font-size: 20px">Quality Assurance</p1>
+                                </div>
+                                <div class="logoimage1">
+                                    <a class="teambuttons" href="https://www.facebook.com/saad.imran.391"><img src="../images/if_icon-social-github_211904.png" width="50px" height="50px"></a>
+                                </div>
+                                <div class="logoimage2">
+                                    <a class="teambuttons" href="https://www.facebook.com/saad.imran.391"> <img src="../images/if_square-facebook_317727.png" width="50px" height="50px"></a>
+                                </div>
                             </div>
-                            <div class="logoimage2">
-                                <a class="teambuttons" href="https://www.facebook.com/qasim.raheem.khokhar?ref=br_rs"><img src="../images/if_square-facebook_317727.png" width="50px" height="50px"></a>
+                            <div class="inner">
+                                <div class ="circle circle4">
+                                </div>
+                                <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.0/TweenMax.min.js'></script>
+                                <script src="../js/index.js"></script>
+                                <div class="name">
+                                    <p1 >CH FARAZ</p1><br><p1 style="font-size: 20px">Programmer</p1>
+                                </div >
+                                <div class="logoimage1">
+                                    <a class="teambuttons" href="https://github.com/faraz3"><img src="../images/if_icon-social-github_211904.png" width="50px" height="50px"></a>
+                                </div>
+                                <div class="logoimage2">
+                                    <a class="teambuttons" href="https://www.facebook.com/faraz.167"> <img src="../images/if_square-facebook_317727.png" width="50px" height="50px"></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="inner">
-                            <div class ="circle">
-                            </div>
-                            <div class="name">
-                                <p1 >M TAHSEEN</p1><br><p1 style="font-size: 20px">Programmer</p1>
-                            </div>
-                            <div class="logoimage1">
-                                <a class="teambuttons" href="https://github.com/tahseenmashaidi"><img src="../images/if_icon-social-github_211904.png" width="50px" height="50px"></a>
-                            </div>
-                            <div class="logoimage2">
-                                <a class="teambuttons" href="https://www.facebook.com/tahseenmashaidi?ref=bookmarks"> <img src="../images/if_square-facebook_317727.png" width="50px" height="50px"></a>
-                            </div>
-                        </div>
-                        <div class="inner">
-                            <div class ="circle">
-                            </div>
-                            <div class="name">
-                                <p1 >SAAD IMRAN</p1><br><p1 style="font-size: 20px">Quality Assurance</p1>
-                            </div>
-                            <div class="logoimage1">
-                                <a class="teambuttons" href="https://github.com/tahseenmashaidi"><img src="../images/if_icon-social-github_211904.png" width="50px" height="50px"></a>
-                            </div>
-                            <div class="logoimage2">
-                                <a class="teambuttons" href="https://www.facebook.com/tahseenmashaidi?ref=bookmarks"> <img src="../images/if_square-facebook_317727.png" width="50px" height="50px"></a>
-                            </div>
-                        </div>
-                        <div class="inner">
-                            <div class ="circle">
-                            </div>
-                            <div class="name">
-                                <p1 >CH FARAZ</p1><br><p1 style="font-size: 20px">Programmer</p1>
-                            </div >
-                            <div class="logoimage1">
-                                <a class="teambuttons" href="https://github.com/tahseenmashaidi"><img src="../images/if_icon-social-github_211904.png" width="50px" height="50px"></a>
-                            </div>
-                            <div class="logoimage2">
-                                <a class="teambuttons" href="https://www.facebook.com/tahseenmashaidi?ref=bookmarks"> <img src="../images/if_square-facebook_317727.png" width="50px" height="50px"></a>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </section>
@@ -377,6 +645,13 @@
                     </a>
                     <div class="lightbox-target" id="sourcetree2">
                         <img src="../images/sourcetree2.png"/>
+                        <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                    </div>
+                    <a class="lightbox" href="#sourcetree3">
+                        <img src="../images/sourcetree3.png"/>
+                    </a>
+                    <div class="lightbox-target" id="sourcetree3">
+                        <img src="../images/sourcetree3.png"/>
                         <a style="margin: 100px" class="lightbox-close" href="#"></a>
                     </div>
                 </div>
@@ -430,6 +705,343 @@
                 </div>
                 <!-- .end .wrap -->
             </section>
+            <section class="whitepaper">
+                <div style="margin-top: -100px">
+                    <h1>Whitepaper of Project</h1>
+                </div>
+                <div class="white_container">
+                    <h1 style="text-align: left;font-size: xx-large">Point of Sale</h1>
+                    <p>
+                        In this project we solved a manual store system to auto computer software.
+                        The software have desktop and web application, both applications have same Idea,
+                         Design Layout, and Features. These features contains Adding, Removing, Searching,
+                        Editing Items to Inventry. Employee Login, Registration, and Editing Employees are some
+                        functions that facilitate to Employees. Billing records also saved to centralized DB,
+                        with respect to time and contains all items with their attributes.
+                    </p>
+                </div>
+            </section>
+            <section class="requirement">
+                <div class="wrap aligncenter">
+                    <h1>Project Requirements</h1>
+                    <p>We gathered some Requirements from our Teachers, and previous students.</p>
+                    <a style="width: 500px;" href="../documents/OOP%20PROJECT%20REQUIREMENTS.pdf" class="button zoomIn sim-button button14" title="Open Requirement Document">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-external-link"></use>
+                        </svg>
+                        Open Requirement Document
+                    </a>
+                    <div>
+                        <a class="lightbox" href="#req">
+                            <img src="../images/requirement.png"/>
+                        </a>
+                        <div class="lightbox-target" id="req">
+                            <img src="../images/requirement.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Planning">
+                <div class="wrap">
+                    <h1>Planning Document</h1>
+                    <p>We Planned the functions, features, flow, architecture, and time for the development of our project to minimise failure.</p>
+                    <a style="width: 500px;" href="../documents/planning.pdf" class="button zoomIn sim-button button13" title="Open Requirement Document">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-external-link"></use>
+                        </svg>
+                        Open Requirement Document
+                    </a>
+                    <div>
+                        <a class="lightbox" href="#plan1">
+                            <img src="../images/plan1.png"/>
+                        </a>
+                        <div class="lightbox-target" id="plan1">
+                            <img src="../images/plan1.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#plan2">
+                            <img src="../images/plan2.png"/>
+                        </a>
+                        <div class="lightbox-target" id="plan2">
+                            <img src="../images/plan2.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#plan3">
+                            <img src="../images/plan3.png"/>
+                        </a>
+                        <div class="lightbox-target" id="plan3">
+                            <img src="../images/plan3.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#plan4">
+                            <img src="../images/plan4.png"/>
+                        </a>
+                        <div class="lightbox-target" id="plan4">
+                            <img src="../images/plan4.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#plan5">
+                            <img src="../images/plan5.png"/>
+                        </a>
+                        <div class="lightbox-target" id="plan5">
+                            <img src="../images/plan5.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="analysis">
+                <div class="wrap">
+                    <h1>Our Analysis</h1>
+                    <p>We double check our requirement documentation and planning, and a deep look on upcoming problems.</p>
+                    <a style="width: 500px;background-color: firebrick" href="" class="button zoomIn sim-button button12" title="NO Analysis Document">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-times"></use>
+                        </svg>
+                        NO Analysis Document
+                    </a>
+                </div>
+            </section>
+            <section class="prototype">
+                <div class="wrap">
+                    <h1>Project Prototype</h1>
+                    <p>We design some prototypes to show our clients what thet are going to get at the end.</p>
+                    <a style="width: 500px;" href="https://github.com/qasimraheem/Semester-3-Main-Project/tree/master/Java%20Mockup" class="button zoomIn sim-button button12" title="View Prototypes Github">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-github"></use>
+                        </svg>
+                        View Prototypes Github
+                    </a>
+                    <div>
+                        <a class="lightbox" href="#pro1">
+                            <img src="../images/classdiagram.png"/>
+                        </a>
+                        <div class="lightbox-target" id="pro1">
+                            <img src="../images/classdiagram.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#pro2">
+                            <img src="../images/General_store.png"/>
+                        </a>
+                        <div class="lightbox-target" id="pro2">
+                            <img src="../images/General_store.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#pro3">
+                            <img src="../images/erd.png"/>
+                        </a>
+                        <div class="lightbox-target" id="pro3">
+                            <img src="../images/erd.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="designs">
+                <div class="wrap">
+                    <h1>Project Designs</h1>
+                    <p>We design some awesome and interactive designs, that the look feels good, and GUI feel so easy.</p>
+
+                    <a style="width: 500px;" href="https://github.com/qasimraheem/Semester-3-Main-Project/tree/master/Java%20Mockup" class="button zoomIn sim-button button12" title="View Prototypes Github">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-github"></use>
+                        </svg>
+                        View Prototypes Github
+                    </a>
+                    <div class="design-images">
+                        <a class="lightbox" href="#des1">
+                            <img src="../images/home.png"/>
+                        </a>
+                        <div class="lightbox-target" id="des1">
+                            <img src="../images/home.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#des2">
+                            <img src="../images/login.png"/>
+                        </a>
+                        <div class="lightbox-target" id="des2">
+                            <img src="../images/login.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#des3">
+                            <img src="../images/team.png"/>
+                        </a>
+                        <div class="lightbox-target" id="des3">
+                            <img src="../images/team.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a style="background-color: #FED11A" class="lightbox" href="#des4">
+                            <img src="../images/darklogo.png"/>
+                        </a>
+                        <div style="background-color: #FED11A" class="lightbox-target" id="des4">
+                            <img src="../images/darklogo.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a style="background-color: #000000" class="lightbox" href="#des5">
+                            <img src="../images/logo.png"/>
+                        </a>
+                        <div style="background-color: #000000" class="lightbox-target" id="des5">
+                            <img src="../images/logo.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="coding">
+                <div class="wrap">
+                    <h1>Coding / Implementation</h1>
+                    <p>We code our software in a wat which is changeable and mergeable with other projects.</p>
+                    <a style="width: 500px;" href="https://github.com/qasimraheem/Semester-3-Main-Project/tree/master/Golang" class="button zoomIn sim-button button26" title="View Golang Github">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-github"></use>
+                        </svg>
+                        View Golang Server Code
+                    </a>
+                    <a style="width: 500px;top:-17px;" href="https://github.com/qasimraheem/Semester-3-Main-Project/tree/master/General%20Store%20Java" class="button zoomIn sim-button button13" title="View java Github">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-github"></use>
+                        </svg>
+                        View Java Application Code
+                    </a>
+                    <a style="width: 500px;margin-top: 50px;" href="https://github.com/qasimraheem/Semester-3-Main-Project/tree/master/General%20Store%20Web" class="button zoomIn sim-button button12" title="View web Github">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-github"></use>
+                        </svg>
+                        View Web Application Code
+                    </a>
+                    <div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="teting">
+                <div class="wrap">
+                    <h1>Testing</h1>
+                    <p>We test our project to reduce our it's failure, debug it, and vaildate it.</p>
+                    <a style="width: 500px;" href="../documents/Black%20Box%20Testing.pdf" class="button zoomIn" title="View Golang Github">
+                        <svg class="fa-cloud-download">
+                            <use xlink:href="#fa-external-link"></use>
+                        </svg>
+                        View Black Box Testing Sheet
+                    </a>
+                    <div>
+                        <a class="lightbox" href="#test1">
+                            <img src="../images/login_design_testing.png"/>
+                        </a>
+                        <div class="lightbox-target" id="test1">
+                            <img src="../images/login_design_testing.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="product">
+                <div class="wrap" style="margin-top: -115px;">
+                    <h1>Java Application</h1>
+                    <p>Our java Application is ready to work on any desktop environment.</p>
+                    <div>
+                        <div class="slideshow-container">
+                            <div class="myslides fade">
+                                <div class="numbers">1 / 7</div>
+                                <div><img src="../images/japp1.png"></div>
+                                <div class="caption">Text 1</div>
+                            </div>
+                            <div class="myslides fade">
+                                <div class="numbers">2 / 7</div>
+                                <div><img src="../images/app2.png"></div>
+                                <div class="caption">Text 2</div>
+                            </div>
+                            <div class="myslides fade">
+                                <div class="numbers">3 / 7</div>
+                                <div><img src="../images/app3.png"></div>
+                                <div class="caption">Text 3</div>
+                            </div>
+                            <div class="myslides fade">
+                                <div class="numbers">4 / 7</div>
+                                <div><img src="../images/app4.png"></div>
+                                <div class="caption">Text 4</div>
+                            </div>
+                            <div class="myslides fade">
+                                <div class="numbers">5 / 7</div>
+                                <div><img src="../images/app5.png"></div>
+                                <div class="caption">Text 5</div>
+                            </div>
+                            <div class="myslides fade">
+                                <div class="numbers">6 / 7</div>
+                                <div><img src="../images/app6.png"></div>
+                                <div class="caption">Text 6</div>
+                            </div>
+                            <div class="myslides fade">
+                                <div class="numbers">7 / 7</div>
+                                <div><img src="../images/app7.png"></div>
+                                <div class="caption">Text 7</div>
+                            </div>
+                            <a style="left:0%;" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+                        <div style="text-align:center">
+                            <span class="dots" onclick="currentSlide(1)"></span>
+                            <span class="dots" onclick="currentSlide(2)"></span>
+                            <span class="dots" onclick="currentSlide(3)"></span>
+                            <span class="dots" onclick="currentSlide(4)"></span>
+                            <span class="dots" onclick="currentSlide(5)"></span>
+                            <span class="dots" onclick="currentSlide(6)"></span>
+                            <span class="dots" onclick="currentSlide(7)"></span>
+                        </div>
+                        <a class="lightbox" href="#app1">
+                            <img src="../images/japp1.png"/>
+                        </a>
+                        <div class="lightbox-target" id="app1">
+                            <img src="../images/japp1.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#app2">
+                            <img src="../images/app2.png"/>
+                        </a>
+                        <div class="lightbox-target" id="app2">
+                            <img src="../images/app2.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#app3">
+                            <img src="../images/app3.png"/>
+                        </a>
+                        <div class="lightbox-target" id="app3">
+                            <img src="../images/app3.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#app4">
+                            <img src="../images/app4.png"/>
+                        </a>
+                        <div class="lightbox-target" id="app4">
+                            <img src="../images/app4.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#app5">
+                            <img src="../images/app5.png"/>
+                        </a>
+                        <div class="lightbox-target" id="app5">
+                            <img src="../images/app5.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#app6">
+                            <img src="../images/app6.png"/>
+                        </a>
+                        <div class="lightbox-target" id="app6">
+                            <img src="../images/app6.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                        <a class="lightbox" href="#app7">
+                            <img src="../images/app7.png"/>
+                        </a>
+                        <div class="lightbox-target" id="app7">
+                            <img src="../images/app7.png"/>
+                            <a style="margin: 100px" class="lightbox-close" href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
     <script src="../js/webslides.js"></script>
@@ -437,5 +1049,59 @@
         window.ws = new WebSlides();
     </script>
     <script defer src="../js/svg-icons.js"></script>
+    <script type="text/javascript">
+
+        var slideIndex = 1;
+
+        showSlide(slideIndex);
+
+
+        function plusSlides(n){
+
+            showSlide(slideIndex += n);
+
+        }
+
+
+        function currentSlide(n) {
+
+            showSlide(slideIndex = n);
+
+        }
+
+
+        function showSlide(n){
+
+            var i;
+
+            var slides = document.getElementsByClassName("myslides");
+
+            var dots = document.getElementsByClassName("dots");
+
+            if (n > slides.length) { slideIndex = 1};
+
+            if (n < 1) { slideIndex = slides.length};
+
+            for (i=0;i<slides.length;i++) {
+
+                slides[i].style.display = "none";
+
+            };
+
+            for (i=0;i<dots.length;i++) {
+
+                dots[i].className = dots[i].className.replace(" active","");
+
+            };
+
+            slides[slideIndex-1].style.display = "block";
+
+            dots[slideIndex-1].className += " active";
+
+        }
+
+
+
+    </script>
 </body>
 </html>
