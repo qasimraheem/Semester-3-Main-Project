@@ -228,6 +228,8 @@ public class Controller implements Initializable {
     @FXML
     private ImageView productButtonRefresh;
 
+    @FXML
+    private TableView<productTable> pTableID;
 
     @FXML
     private TableColumn<productTable, String> pTableName;
@@ -389,20 +391,6 @@ public class Controller implements Initializable {
     @FXML
     private VBox Product2;
 
-    @FXML
-    private TableView<?> pTableID1;
-
-    @FXML
-    private TableColumn<?, ?> pTableName1;
-
-    @FXML
-    private TableColumn<?, ?> pTableQuantity1;
-
-    @FXML
-    private TableColumn<?, ?> pTableBuyPrice1;
-
-    @FXML
-    private TableColumn<?, ?> pTableSalePrice1;
 
     @FXML
     private TableView<SaleSearch_Table> SaleSearchTable;
@@ -583,8 +571,7 @@ public class Controller implements Initializable {
     String temp_password;
     String temp_Image;
 
-    @FXML
-    private TableView<productTable> pTableID;
+
     ObservableList<productTable> data;
     ObservableList<productTable> data2;
     ObservableList<SaleSearch_Table> SaleSearchdata;
@@ -594,6 +581,7 @@ public class Controller implements Initializable {
     ObservableList<Bill_Table> Billdata;
     ObservableList<BillDetail_Table> Billdetaildata;
     ObservableList<BillDetail_Table> BillDetaildata;
+
     List<Bill_Data> Billd = new ArrayList<>();
 
     Validations validate = new Validations();
@@ -772,7 +760,6 @@ public class Controller implements Initializable {
 
         SaleSearchTable.setItems(SaleSearchdata);
     }
-
     public void getSaleBillTableData() {
         double bill_total = 0;
         for (int i = 0; i < SaleItemdata.size(); i++) {
@@ -791,7 +778,6 @@ public class Controller implements Initializable {
         SaleBillTable.setItems(SaleBilldata);
 
     }
-
     public void SaleButtonsActions(MouseEvent mouseEvent) {
         boolean flagquantityremove = true;
         boolean flagquantityadd = true;
@@ -1168,7 +1154,6 @@ public class Controller implements Initializable {
 
         pTableID.setItems(data);
     }
-
     public void DeleteProduct(MouseEvent mouseEvent) {
 
         if (mouseEvent.getSource() == productButtonDelete && (pTableID.getSelectionModel().getSelectedItem() != null)) {
@@ -1227,7 +1212,6 @@ public class Controller implements Initializable {
         }
 
     }
-
     public void UpdateProduct(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == productButtonUpdate && (pTableID.getSelectionModel().getSelectedItem() != null)) {
             productUpdateName.setText(pTableID.getSelectionModel().getSelectedItem().gettName());
@@ -1336,7 +1320,6 @@ public class Controller implements Initializable {
             productUpdateNewSalePrice.setText(productUpdateSalePrice.getText());
         }
     }
-
     public void SearchProduct(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == productButtonSearch) {
             data2 = data;
@@ -1352,7 +1335,6 @@ public class Controller implements Initializable {
             vboxSearchProduct.setVisible(false);
         }
     }
-
     public void SearchProductList(KeyEvent keyEvent) {
 
         SortedList<productTable> sortedData, sortedQuantity, sortedBuyPrice, sortedSalePrice;
@@ -1444,7 +1426,6 @@ public class Controller implements Initializable {
 
 
     }
-
     public void RefreshProduct(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == productButtonRefresh) {
 
@@ -1520,7 +1501,6 @@ public class Controller implements Initializable {
 
         BillTable.setItems(Billdata);
     }
-
     public void GetBillsDetail(MouseEvent mouseEvent) {
         int index = BillTable.getSelectionModel().getSelectedIndex();
         System.out.println("index" + index);
@@ -1540,7 +1520,6 @@ public class Controller implements Initializable {
         );
         BillTableDetait.setItems(BillDetaildata);
     }
-
     public void SearchBillList(KeyEvent keyEvent) {
 
         SortedList<Bill_Table> sortedBillId, sortedBillItems, sortedBillPrice, sortedBillDate;
@@ -1612,7 +1591,6 @@ public class Controller implements Initializable {
 
 
     }
-
     public void BillButtons(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == billSearch) {
             vboxBillSearch.setVisible(true);
@@ -1651,7 +1629,6 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
     public void SetImages() {
 
         String imguser = tepm_user.replace(" ", "%20");
@@ -1697,10 +1674,12 @@ public class Controller implements Initializable {
         canvas.load("");
 
     }
-
     public void Explorer(MouseEvent event) {
         if (event.getSource() == AddImage || event.getSource() == productIcon) {
             FileChooser fileChooser = new FileChooser();
+            FileChooser.ExtensionFilter extFilter =
+                    new FileChooser.ExtensionFilter("Images ", "*.png","*.jpg","*.gif","*.bmp");
+            fileChooser.getExtensionFilters().add(extFilter);
             File SelectedFile = fileChooser.showOpenDialog(null);
             if (SelectedFile != null) {
 //            listview.getItems().add(SelectedFile.getName());
@@ -1714,7 +1693,6 @@ public class Controller implements Initializable {
             }
         }
     }
-
     public void EmployeeButtons(MouseEvent event) {
         if (event.getSource() == EmployeeEdit) {
 
@@ -1840,8 +1818,6 @@ public class Controller implements Initializable {
             }
         }
     }
-
-
     public void HideImageEdit(MouseEvent event) {
         AddImage.setVisible(false);
     }

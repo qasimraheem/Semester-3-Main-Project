@@ -7,7 +7,6 @@ public class productTable {
 
 
 
-
     private final SimpleStringProperty tQuantity;
     private final SimpleStringProperty tBuyPrice;
     private final SimpleStringProperty tSalePrice;
