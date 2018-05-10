@@ -61,7 +61,7 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
+            <state relative-caret-position="-6001">
               <caret line="234" column="36" selection-start-line="234" selection-start-column="24" selection-end-line="234" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -70,20 +70,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="productTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/productClasses/productTable.java">
+      <file leaf-file-name="sample.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/sample.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+            <state relative-caret-position="184">
+              <caret line="151" column="110" lean-forward="true" selection-start-line="151" selection-start-column="110" selection-end-line="151" selection-end-column="110" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="productTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/productClasses/productTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -118,7 +128,6 @@
       <find>productUpdate</find>
       <find>total</find>
       <find>up</find>
-      <find>table</find>
       <find>SimpleStringProperty</find>
       <find>tick</find>
       <find>d</find>
@@ -130,6 +139,7 @@
       <find>getIntValid</find>
       <find>image</find>
       <find>productTable</find>
+      <find>table</find>
     </findStrings>
     <replaceStrings>
       <replace>AddProduct</replace>
@@ -211,10 +221,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="x" value="-6" />
+    <option name="y" value="1" />
+    <option name="width" value="1378" />
+    <option name="height" value="733" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
@@ -224,8 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,6 +263,8 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,11 +505,12 @@
       <workItem from="1525780446228" duration="3054000" />
       <workItem from="1525846194206" duration="1211000" />
       <workItem from="1525875004887" duration="378000" />
+      <workItem from="1525937142884" duration="2183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276078000" />
+    <option name="totallyTimeSpent" value="278261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -515,12 +526,12 @@
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20031796" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21303657" />
       <window_info anchor="right" id="Mongo Explorer" order="8" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17130308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17130308" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -561,13 +572,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/saleClasses/SaleBill_Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/saleClasses/SaleItems_Table.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
@@ -846,9 +850,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productClasses/productTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
+        <state relative-caret-position="-6001">
           <caret line="234" column="36" selection-start-line="234" selection-start-column="24" selection-end-line="234" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -856,17 +874,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productClasses/productTable.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/sample.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="184">
+          <caret line="151" column="110" lean-forward="true" selection-start-line="151" selection-start-column="110" selection-end-line="151" selection-end-column="110" />
         </state>
       </provider>
     </entry>
