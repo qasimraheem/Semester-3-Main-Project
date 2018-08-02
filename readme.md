@@ -2,7 +2,7 @@
 
 ----
 ## Description 
-> This is a full working project, and project name is General Store to manage a store functionalities. Project have a web application and the desktop application, and both have one database (Mongo-db) to store its data in json format, mongo is connected to (GOLang) server to create a (Rest API) which is then called by javascript for web application, and by java for desktop application.
+> This is a full working project, and project name is General Store to manage a store functionalities. Project have a web application and the desktop application, and both have one database (Mongo-db) to store its data in json format, mongo is connected to (GoLang) server to create a (Rest API) which is then called by javascript for web application, and by java for desktop application.
 
 ----
 ## Store management project
